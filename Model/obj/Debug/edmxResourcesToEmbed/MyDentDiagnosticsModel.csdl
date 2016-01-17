@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDentDiagnosticsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Name="AreaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Diagnostics" Relationship="MyDentDiagnosticsDBModel.FK_Diagnostics_AreaId" FromRole="Area" ToRole="Diagnostic" />
+  </EntityType>
+  <EntityContainer Name="MyDentDiagnosticsDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Areas" EntityType="Self.Area" />
+    <EntitySet Name="Logs" EntityType="MyDentDiagnosticsDBModel.Log" />
+    <EntitySet Name="Diagnostics" EntityType="MyDentDiagnosticsDBModel.Diagnostic" />
+    <AssociationSet Name="FK_Diagnostics_AreaId" Association="MyDentDiagnosticsDBModel.FK_Diagnostics_AreaId">
+      <End Role="Area" EntitySet="Areas" />
+      <End Role="Diagnostic" EntitySet="Diagnostics" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ErrorDetail" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MethodName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Diagnostic">
+    <Key>
+      <PropertyRef Name="DiagnosticId" />
+    </Key>
+    <Property Name="DiagnosticId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AreaId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PicturePath1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PicturePath2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Area" Relationship="MyDentDiagnosticsDBModel.FK_Diagnostics_AreaId" FromRole="Diagnostic" ToRole="Area" />
+  </EntityType>
+  <Association Name="FK_Diagnostics_AreaId">
+    <End Type="MyDentDiagnosticsDBModel.Area" Role="Area" Multiplicity="1" />
+    <End Type="MyDentDiagnosticsDBModel.Diagnostic" Role="Diagnostic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="AreaId" />
+      </Principal>
+      <Dependent Role="Diagnostic">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

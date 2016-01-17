@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyDentDiagnosticsDBModelStoreContainer" CdmEntityContainer="MyDentDiagnosticsDBEntities">
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.Area">
+        <MappingFragment StoreEntitySet="Areas">
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.Log">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="MethodName" ColumnName="MethodName" />
+          <ScalarProperty Name="ErrorDetail" ColumnName="ErrorDetail" />
+          <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diagnostics">
+      <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.Diagnostic">
+        <MappingFragment StoreEntitySet="Diagnostics">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="PicturePath2" ColumnName="PicturePath2" />
+          <ScalarProperty Name="PicturePath1" ColumnName="PicturePath1" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="DiagnosticId" ColumnName="DiagnosticId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,15 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="MyDentDiagnostics.AddEditAreaModal"
+	x:Name="Window"
+	Title="Agregar área"
+	Width="380" Height="147" Icon="/MyDentDiagnostics;component/Images/app.ico" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+
+	<Grid x:Name="LayoutRoot">
+		<Button x:Name="btnAddUpdate" Content="Agregar" Margin="92.17,0,0,9" Cursor="Hand" TabIndex="2" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="91" Click="btnAddUpdate_Click"/>
+		<Button x:Name="btnCancel" Content="Cancelar" Margin="188.17,0,0,9" Cursor="Hand" TabIndex="3" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="91" Click="btnCancel_Click"/>
+		<Label x:Name="lblTreatmentName" Content="Nombre del área:" Height="27" Margin="10,10,8,0" VerticalAlignment="Top"/>
+		<TextBox x:Name="txtAreaName" Height="27" Margin="10,37,8,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="1" BorderThickness="1" BorderBrush="Black" TextAlignment="Center"/>
+	</Grid>
+</Window>

@@ -1,8 +1,13 @@
 ﻿<Window x:Class="MyDentDiagnostics.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MyDent - Diagnósticos" Height="151.5" Width="285.5" Closing="Window_Closing" Closed="Window_Closed" Icon="Images/app.ico" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Button x:Name="btnManageAreas" Margin="10,10,0,10" Width="90" Click="btnManageAreas_Click" Cursor="Hand" HorizontalAlignment="Left"> 
+        	<StackPanel Orientation="Vertical">
+        		<Image Source="/MyDentDiagnostics;component/Images/areas_icon.png" Width="50" Height="50"  />
+        		<TextBlock TextAlignment="Center" ><Run Text="Administrar"/><LineBreak/><Run Text="Diagnósticos"/></TextBlock>
+        	</StackPanel>
+		</Button>
     </Grid>
 </Window>

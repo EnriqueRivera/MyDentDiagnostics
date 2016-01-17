@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDentDiagnosticsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Areas">
+    <Key>
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Name="AreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Diagnostics">
+    <Key>
+      <PropertyRef Name="DiagnosticId" />
+    </Key>
+    <Property Name="DiagnosticId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AreaId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="PicturePath1" Type="varchar(max)" />
+    <Property Name="PicturePath2" Type="varchar(max)" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar(max)" Nullable="false" />
+    <Property Name="LogDate" Type="datetime" Nullable="false" />
+    <Property Name="ErrorDetail" Type="varchar(max)" Nullable="false" />
+    <Property Name="MethodName" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Diagnostics_AreaId">
+    <End Role="Areas" Type="Self.Areas" Multiplicity="1" />
+    <End Role="Diagnostics" Type="Self.Diagnostics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Areas">
+        <PropertyRef Name="AreaId" />
+      </Principal>
+      <Dependent Role="Diagnostics">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyDentDiagnosticsDBModelStoreContainer">
+    <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diagnostics" EntityType="Self.Diagnostics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Diagnostics_AreaId" Association="Self.FK_Diagnostics_AreaId">
+      <End Role="Areas" EntitySet="Areas" />
+      <End Role="Diagnostics" EntitySet="Diagnostics" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
