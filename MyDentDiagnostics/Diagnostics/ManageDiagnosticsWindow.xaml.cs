@@ -103,13 +103,13 @@ namespace MyDentDiagnostics
         {
             string searchTerm = txtSearchTerm.Text;
 
-            _diagnosticsViewModel = new Controllers.CustomViewModel<Model.Diagnostic>(d => d.IsDeleted == false && d.Name.Contains(searchTerm), "Name", "asc");
+            _diagnosticsViewModel = new Controllers.CustomViewModel<Model.Diagnostic>(d => d.IsDeleted == false && d.AreaId == _selectedArea.AreaId && d.Name.Contains(searchTerm), "Name", "asc");
             dgDiagnostics.DataContext = _diagnosticsViewModel;
         }
 
         private void UpdateGridAll()
         {
-            _diagnosticsViewModel = new Controllers.CustomViewModel<Model.Diagnostic>(d => d.IsDeleted == false, "Name", "asc");
+            _diagnosticsViewModel = new Controllers.CustomViewModel<Model.Diagnostic>(d => d.IsDeleted == false && d.AreaId == _selectedArea.AreaId, "Name", "asc");
             dgDiagnostics.DataContext = _diagnosticsViewModel;
         }
         #endregion

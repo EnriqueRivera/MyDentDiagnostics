@@ -104,8 +104,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Patients\ManagePatientsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Patients\ManagePatientsWindow.xaml.cs">
+      <DependentUpon>ManagePatientsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -146,6 +153,7 @@
     <Resource Include="Images\areas_icon.png" />
     <Resource Include="Images\find_icon.png" />
     <Resource Include="Images\folder_images_icon.png" />
+    <Resource Include="Images\notes_icon.png" />
     <Resource Include="Images\remove_icon.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -27,3 +27,5 @@ C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Diagnostics\ManageDiagnosticsWindow.baml
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Diagnostics\AddEditDiagnosticModal.g.cs
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Diagnostics\ManageDiagnosticsWindow.g.cs
+C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\ManagePatientsWindow.baml
+C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\ManagePatientsWindow.g.cs

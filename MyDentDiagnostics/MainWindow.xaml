@@ -3,11 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MyDent - Diagnósticos" Height="151.5" Width="285.5" Closing="Window_Closing" Closed="Window_Closed" Icon="Images/app.ico" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="btnManageAreas" Margin="10,10,0,10" Width="90" Click="btnManageAreas_Click" Cursor="Hand" HorizontalAlignment="Left"> 
+        <Button x:Name="btnManageAreas" Margin="30,10,0,10" Width="90" Click="btnManageAreas_Click" Cursor="Hand" HorizontalAlignment="Left"> 
         	<StackPanel Orientation="Vertical">
         		<Image Source="/MyDentDiagnostics;component/Images/areas_icon.png" Width="50" Height="50"  />
         		<TextBlock TextAlignment="Center" ><Run Text="Administrar"/><LineBreak/><Run Text="Diagnósticos"/></TextBlock>
         	</StackPanel>
 		</Button>
+        <Button x:Name="btnManagePatientNotes" Margin="0,10,31.5,10" Width="90" Cursor="Hand" HorizontalAlignment="Right" Click="btnManagePatientNotes_Click"> 
+        	<StackPanel Orientation="Vertical">
+        		<Image Source="Images/notes_icon.png" Width="50" Height="50"  />
+        		<TextBlock TextAlignment="Center" ><Run Text="Notas de"/><LineBreak/><Run Text="Pacientes"/></TextBlock>
+        	</StackPanel>
+        </Button>
     </Grid>
 </Window>

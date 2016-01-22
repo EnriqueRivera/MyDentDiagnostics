@@ -22,6 +22,7 @@ namespace MyDentDiagnostics
         #region Instance variables
         //Windows
         private ManageAreasWindow _manageAreasWindow;
+        private ManagePatientsWindow _managePatientNotesWindow;
         #endregion
 
         #region Constructors
@@ -35,6 +36,7 @@ namespace MyDentDiagnostics
         private void CloseAllWindows()
         {
             CloseWindow(_manageAreasWindow);
+            CloseWindow(_managePatientNotesWindow);
         }
 
         private void CloseWindow(Window windowToClose)
@@ -53,6 +55,10 @@ namespace MyDentDiagnostics
             {
                 _manageAreasWindow = null;
             }
+            else if (sender is ManagePatientsWindow)
+            {
+                _managePatientNotesWindow = null;
+            }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -70,6 +76,18 @@ namespace MyDentDiagnostics
 
             _manageAreasWindow.Show();
             _manageAreasWindow.WindowState = WindowState.Normal;
+        }
+
+        private void btnManagePatientNotes_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (_managePatientNotesWindow == null)
+            {
+                _managePatientNotesWindow = new ManagePatientsWindow();
+                _managePatientNotesWindow.Closed += Window_Closed;
+            }
+
+            _managePatientNotesWindow.Show();
+            _managePatientNotesWindow.WindowState = WindowState.Normal;
         }
         #endregion
     }
