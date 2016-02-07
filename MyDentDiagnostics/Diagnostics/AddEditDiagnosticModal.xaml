@@ -12,9 +12,7 @@
 			<ColumnDefinition Width="8*"/>
 		</Grid.ColumnDefinitions>
 		<Label x:Name="lblReminderMessage" Content="Descripción:" Height="25.672" Margin="12,81.03,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
-		<Border BorderThickness="1" BorderBrush="Black" Margin="9.5,106.702,9.5,54.963">
-			<TextBox x:Name="txtDiagnosticDescription" Margin="0,0,0,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True"/>
-		</Border>
+		<TextBox x:Name="txtDiagnosticDescription" Margin="10.5,107.702,9.5,54.963" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black"/>
 		<Label x:Name="lblTreatmentName" Content="Nombre del diagnóstico:" Height="27" Margin="9.5,10,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
 		<TextBox x:Name="txtDiagnosticName" Height="27" Margin="9.5,37,9.5,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="1" BorderThickness="1" BorderBrush="Black" TextAlignment="Center"/>
 		<Button x:Name="btnAddUpdate" Content="Agregar" Margin="0,0,106,10" Cursor="Hand" TabIndex="2" Height="29" VerticalAlignment="Bottom" Click="btnAddUpdate_Click" HorizontalAlignment="Right" Width="91" Grid.Column="1"/>

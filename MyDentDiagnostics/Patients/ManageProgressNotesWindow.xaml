@@ -1,0 +1,21 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="MyDentDiagnostics.ManageProgressNotesWindow"
+	x:Name="Window"
+	Title="Administrar Notas de evolución"
+	Width="528.06" Height="363.343" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen">
+
+	<Grid x:Name="LayoutRoot">
+		<DataGrid x:Name="dgProgressNotes" TabIndex="4" SelectionMode="Single" Margin="10,10,10,44" ItemsSource="{Binding ObservableData}" IsReadOnly="True" CanUserAddRows="False" CanUserSortColumns="True" CanUserDeleteRows="False" AutoGenerateColumns="False">
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{Binding ProgressNoteId}" Header="Número de nota" Width="0.4*"/>
+				<DataGridTextColumn Binding="{Binding CreatedDate}" Header="Fecha de creación" Width="0.6*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		<Button x:Name="btnDelete" Content="Eliminar" Margin="0,0,10,10" Cursor="Hand" TabIndex="8" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Click="btnDelete_Click"/>
+		<Button x:Name="btnEdit" Content="Editar" Margin="0,0,106,10" Cursor="Hand" TabIndex="7" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Click="btnEdit_Click"/>
+		<Button x:Name="btnAdd" Content="Agregar" Margin="0,0,202,10" Cursor="Hand" TabIndex="6" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Click="btnAdd_Click"/>
+		<Button x:Name="btnExportToPDF" Content="Exportar a PDF" Margin="10,0,0,10" Cursor="Hand" TabIndex="5" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="111" Click="btnExportToPDF_Click"/>
+	</Grid>
+</Window>

@@ -123,7 +123,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Patients\AddEditProgressNoteModal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Patients\ManagePatientsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Patients\ManageProgressNotesWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -132,8 +140,14 @@
     <Compile Include="Patients\AddEditInitialDentalNoteWindow.xaml.cs">
       <DependentUpon>AddEditInitialDentalNoteWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Patients\AddEditProgressNoteModal.xaml.cs">
+      <DependentUpon>AddEditProgressNoteModal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Patients\ManagePatientsWindow.xaml.cs">
       <DependentUpon>ManagePatientsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\ManageProgressNotesWindow.xaml.cs">
+      <DependentUpon>ManageProgressNotesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

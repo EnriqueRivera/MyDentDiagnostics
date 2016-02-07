@@ -55,7 +55,7 @@ namespace MyDentDiagnostics
 
             if (selectedPatient != null)
             {
-                //TODO: View Patients notes
+                new ManageProgressNotesWindow(selectedPatient).ShowDialog();
             }
 		}
 
@@ -81,7 +81,7 @@ namespace MyDentDiagnostics
 
             if (selectedPatient != null)
             {
-                new AddEditInitialDentalNoteWindow(selectedPatient);
+                new AddEditInitialDentalNoteWindow(selectedPatient).ShowDialog();
                 UpdateGrid();
             }
 		}

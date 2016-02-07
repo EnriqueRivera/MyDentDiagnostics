@@ -28,6 +28,8 @@ namespace MyDentDiagnostics
 		{
 			this.InitializeComponent();
 
+            AddEmptyItemToComboBoxes();
+
             _patientToUpdate = patientToUpdate;
             _isUpdateDentalInitialNote = patientToUpdate != null;
 
@@ -68,7 +70,27 @@ namespace MyDentDiagnostics
 
         private void btnAddUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            // TODO: Add event handler implementation here.
+            if (!_isUpdateDentalInitialNote)
+            {
+                _patientToUpdate = new Model.Patient()
+                {
+                    FullName = txtFullName.Text.Trim(),
+                    IsDCM = false,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now
+                };
+
+                if (!Controllers.BusinessController.Instance.Add<Model.Patient>(_patientToUpdate))
+                {
+                    MessageBox.Show("Error al crear el paciente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
+
+            if (UpdateInitialDentalNote())
+                this.Close();
+            else
+                MessageBox.Show("Error al guardar la nota inicial dental del paciente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void btnCancel_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -78,11 +100,42 @@ namespace MyDentDiagnostics
         #endregion
 
         #region Window's logic
-        private Control GetControlByName(string name)
+        private bool UpdateInitialDentalNote()
         {
-            return gridInitialDentalNote.Children.OfType<Control>()
-                        .Where(t => t.Name == name)
-                        .FirstOrDefault();
+            bool result = true;
+            var controls = gridInitialDentalNote.Children.OfType<Control>()
+                                .Where(t => t.Tag != null && !string.IsNullOrEmpty(t.Tag.ToString()))
+                                .ToList();
+
+            foreach (var item in controls)
+            {
+                if (item is TextBox)
+                {
+                    TextBox textField = item as TextBox;
+                    string fieldName = textField.Tag.ToString();
+                    string fieldValue = textField.Text.Trim();
+
+                    result &= AddUpdateInitialDentalNoteAttributeValue(fieldName, fieldValue);
+                }
+                else if (item is CheckBox)
+                {
+                    CheckBox checkBox = item as CheckBox;
+                    string fieldName = checkBox.Tag.ToString().Split('|')[0];
+                    string fieldValue = checkBox.IsChecked.Value.ToString();
+
+                    result &= AddUpdateInitialDentalNoteAttributeValue(fieldName, fieldValue);
+                }
+                else if (item is ComboBox)
+                {
+                    ComboBox comboBox = item as ComboBox;
+                    string fieldName = comboBox.Tag.ToString();
+                    string fieldValue = comboBox.SelectedValue.ToString();
+
+                    result &= AddUpdateInitialDentalNoteAttributeValue(fieldName, fieldValue);
+                }
+            }
+
+            return result;
         }
 
         private bool AddUpdateInitialDentalNoteAttributeValue(string fieldName, string fieldValue)
@@ -107,12 +160,75 @@ namespace MyDentDiagnostics
                 attribute.Value = fieldValue;
                 return Controllers.BusinessController.Instance.Update<Model.InitialDentalNote>(attribute);
             }
+        }
 
+        private Control GetControlByName(string name)
+        {
+            return gridInitialDentalNote.Children.OfType<Control>()
+                        .Where(t => t.Name == name)
+                        .FirstOrDefault();
+        }
+
+        private void AddEmptyItemToComboBoxes()
+        {
+            var controls = gridInitialDentalNote.Children.OfType<ComboBox>().ToList();
+
+            foreach (var item in controls)
+            {
+                item.Items.Insert(0, string.Empty);
+                item.SelectedIndex = 0;
+            }
         }
 
         private void PrepareWindowForUpdates()
         {
-            throw new NotImplementedException();
+            this.Title = "Actualizar Nota Inicial Dental";
+            btnAddUpdate.Content = "Actualizar";
+
+            txtFullName.Text = _patientToUpdate.FullName;
+            LoadInitialDentalNoteInfo();
+        }
+
+        private void LoadInitialDentalNoteInfo()
+        {
+            var controls = gridInitialDentalNote.Children.OfType<Control>()
+                                .Where(t => t.Tag != null && !string.IsNullOrEmpty(t.Tag.ToString()))
+                                .ToList();
+
+            foreach (var item in controls)
+            {
+                if (item is TextBox)
+                {
+                    TextBox textField = item as TextBox;
+                    string fieldName = textField.Tag.ToString();
+                    Model.InitialDentalNote attribute = GetInitialDentalNoteAttributeValue(fieldName);
+
+                    textField.Text = attribute == null ? string.Empty : attribute.Value;
+                }
+                else if (item is CheckBox)
+                {
+                    CheckBox checkBox = item as CheckBox;
+                    string fieldName = checkBox.Tag.ToString().Split('|')[0];
+                    Model.InitialDentalNote attribute = GetInitialDentalNoteAttributeValue(fieldName);
+                    bool isChecked;
+                    bool.TryParse(attribute == null ? string.Empty : attribute.Value, out isChecked);
+
+                    checkBox.IsChecked = isChecked;
+                }
+                else if (item is ComboBox)
+                {
+                    ComboBox comboBox = item as ComboBox;
+                    string fieldName = comboBox.Tag.ToString();
+                    Model.InitialDentalNote attribute = GetInitialDentalNoteAttributeValue(fieldName);
+
+                    comboBox.SelectedValue = attribute == null ? string.Empty : attribute.Value;
+                }
+            }
+        }
+
+        private Model.InitialDentalNote GetInitialDentalNoteAttributeValue(string fieldName)
+        {
+            return Controllers.BusinessController.Instance.FindBy<Model.InitialDentalNote>(c => c.PatientId == _patientToUpdate.PatientId && c.Name == fieldName).FirstOrDefault();
         }
         #endregion
     }

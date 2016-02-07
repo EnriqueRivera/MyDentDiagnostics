@@ -12,21 +12,15 @@ namespace Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Patient
+    public partial class ProgressNote
     {
-        public Patient()
-        {
-            this.InitialDentalNotes = new HashSet<InitialDentalNote>();
-            this.ProgressNotes = new HashSet<ProgressNote>();
-        }
-    
-        public int PatientId { get; set; }
-        public string FullName { get; set; }
-        public bool IsDCM { get; set; }
-        public bool IsDeleted { get; set; }
+        public int ProgressNoteId { get; set; }
         public System.DateTime CreatedDate { get; set; }
+        public string VitalSigns { get; set; }
+        public string Description { get; set; }
+        public int PatientId { get; set; }
+        public bool IsDeleted { get; set; }
     
-        public virtual ICollection<InitialDentalNote> InitialDentalNotes { get; set; }
-        public virtual ICollection<ProgressNote> ProgressNotes { get; set; }
+        public virtual Patient Patient { get; set; }
     }
 }

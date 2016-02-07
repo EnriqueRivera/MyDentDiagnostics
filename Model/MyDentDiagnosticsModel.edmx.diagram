@@ -12,6 +12,8 @@
         <EntityTypeShape EntityType="MyDentDiagnosticsDBModel.InitialDentalNote" Width="1.5" PointX="7.625" PointY="1.125" />
         <EntityTypeShape EntityType="MyDentDiagnosticsDBModel.Patient" Width="1.5" PointX="5.375" PointY="0.875" />
         <AssociationConnector Association="MyDentDiagnosticsDBModel.FK_InitialDentalNotes_PatientId" />
+        <EntityTypeShape EntityType="MyDentDiagnosticsDBModel.ProgressNote" Width="1.5" PointX="7.625" PointY="4" />
+        <AssociationConnector Association="MyDentDiagnosticsDBModel.FK_ProgressNotes_PatientId" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

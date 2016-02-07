@@ -51,6 +51,17 @@
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
   </EntityType>
+  <EntityType Name="ProgressNotes">
+    <Key>
+      <PropertyRef Name="ProgressNoteId" />
+    </Key>
+    <Property Name="ProgressNoteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="VitalSigns" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="PatientId" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
   <Association Name="FK_Diagnostics_AreaId">
     <End Role="Areas" Type="Self.Areas" Multiplicity="1" />
     <End Role="Diagnostics" Type="Self.Diagnostics" Multiplicity="*" />
@@ -75,12 +86,25 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProgressNotes_PatientId">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="ProgressNotes" Type="Self.ProgressNotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="ProgressNotes">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="MyDentDiagnosticsDBModelStoreContainer">
     <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Diagnostics" EntityType="Self.Diagnostics" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InitialDentalNotes" EntityType="Self.InitialDentalNotes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgressNotes" EntityType="Self.ProgressNotes" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Diagnostics_AreaId" Association="Self.FK_Diagnostics_AreaId">
       <End Role="Areas" EntitySet="Areas" />
       <End Role="Diagnostics" EntitySet="Diagnostics" />
@@ -88,6 +112,10 @@
     <AssociationSet Name="FK_InitialDentalNotes_PatientId" Association="Self.FK_InitialDentalNotes_PatientId">
       <End Role="Patients" EntitySet="Patients" />
       <End Role="InitialDentalNotes" EntitySet="InitialDentalNotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProgressNotes_PatientId" Association="Self.FK_ProgressNotes_PatientId">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="ProgressNotes" EntitySet="ProgressNotes" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

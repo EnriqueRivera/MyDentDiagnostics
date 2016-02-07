@@ -1,0 +1,17 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="MyDentDiagnostics.AddEditProgressNoteModal"
+	x:Name="Window"
+	Title="Agregar nota de evolución"
+	Width="365.5" Height="256.5" Icon="/MyDentDiagnostics;component/Images/app.ico" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+
+	<Grid x:Name="LayoutRoot">
+		<Button x:Name="btnAddUpdate" Content="Agregar" Margin="82.17,0,0,10" Cursor="Hand" TabIndex="2" HorizontalAlignment="Left" Width="91" Click="btnAddUpdate_Click" Height="31" VerticalAlignment="Bottom"/>
+		<Button x:Name="btnCancel" Content="Cancelar" Margin="178.17,0,0,10" Cursor="Hand" TabIndex="3" HorizontalAlignment="Left" Width="91" Click="btnCancel_Click" Height="31" VerticalAlignment="Bottom"/>
+		<Label x:Name="lblTreatmentName" Content="Signos vitales:" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83.933"/>
+		<TextBox x:Name="txtVitalSigns" Height="27" Margin="98.933,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="1" BorderThickness="1" BorderBrush="Black" TextAlignment="Center"/>
+		<Label x:Name="lblFullName_Copy31" Content="Descripción:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="9,53,0,0" Height="25.96" Width="90.06"/>
+		<TextBox x:Name="txtDescription" Margin="10,78.96,10,51" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Gineco-Obstétrico Obervaciones" BorderThickness="1" BorderBrush="Black"/>
+	</Grid>
+</Window>
