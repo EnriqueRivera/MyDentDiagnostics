@@ -15,8 +15,7 @@
 						ItemsSource="{Binding ObservableData}" AutoGenerateColumns="False" CanUserAddRows="False" 
 						CanUserDeleteRows="False" TabIndex="4">
 						<DataGrid.Columns>
-							<DataGridTextColumn Header="Nombre(s)" Binding="{Binding FirstName}" Width="0.085*"/>
-							<DataGridTextColumn Header="Apellido(s)" Binding="{Binding LastName}" Width="0.085*"/>
+							<DataGridTextColumn Header="Nombre" Binding="{Binding FullName}" Width="0.085*"/>
 							<DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.085*"/>
 						</DataGrid.Columns>
 					</DataGrid>
@@ -28,8 +27,7 @@
 						ItemsSource="{Binding ObservableData}" AutoGenerateColumns="False" CanUserAddRows="False" 
 						CanUserDeleteRows="False" TabIndex="4">
 						<DataGrid.Columns>
-							<DataGridTextColumn Header="Nombre(s)" Binding="{Binding FirstName}" Width="0.085*"/>
-							<DataGridTextColumn Header="Apellido(s)" Binding="{Binding LastName}" Width="0.085*"/>
+							<DataGridTextColumn Header="Nombre" Binding="{Binding FullName}" Width="0.085*"/>
 							<DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.085*"/>
 						</DataGrid.Columns>
 					</DataGrid>
@@ -47,8 +45,7 @@
 		<Button x:Name="btnViewNotes" Content="Ver notas" Margin="10,0,0,10" Cursor="Hand" TabIndex="6" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="91" Click="btnViewNotes_Click"/>
 		<Button x:Name="btnExportToPdf" Content="Exportar a PDF" Margin="106,0,0,10" Cursor="Hand" TabIndex="6" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="104" Click="btnExportToPdf_Click"/>
 		<ComboBox x:Name="cbFilter" Height="26" Margin="84,12,0,0" VerticalAlignment="Top" FontWeight="Normal" TabIndex="1" HorizontalAlignment="Left" Width="100.5" SelectedIndex="0">
-			<System:String>Nombre(s)</System:String>
-			<System:String>Apellido(s)</System:String>
+			<System:String>Nombre</System:String>
 		</ComboBox>
 		<Label Width="69" VerticalAlignment="Top" Margin="10,10,0,0" Height="27" HorizontalAlignment="Left" Content="Buscar por:"/>
 	</Grid>

@@ -18,6 +18,12 @@
       <End Role="Area" EntitySet="Areas" />
       <End Role="Diagnostic" EntitySet="Diagnostics" />
     </AssociationSet>
+    <EntitySet Name="InitialDentalNotes" EntityType="MyDentDiagnosticsDBModel.InitialDentalNote" />
+    <EntitySet Name="Patients" EntityType="MyDentDiagnosticsDBModel.Patient" />
+    <AssociationSet Name="FK_InitialDentalNotes_PatientId" Association="MyDentDiagnosticsDBModel.FK_InitialDentalNotes_PatientId">
+      <End Role="Patient" EntitySet="Patients" />
+      <End Role="InitialDentalNote" EntitySet="InitialDentalNotes" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Log">
     <Key>
@@ -52,6 +58,39 @@
       </Principal>
       <Dependent Role="Diagnostic">
         <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="InitialDentalNote">
+    <Key>
+      <PropertyRef Name="PatientId" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="PatientId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Patient" Relationship="MyDentDiagnosticsDBModel.FK_InitialDentalNotes_PatientId" FromRole="InitialDentalNote" ToRole="Patient" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsDCM" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="InitialDentalNotes" Relationship="MyDentDiagnosticsDBModel.FK_InitialDentalNotes_PatientId" FromRole="Patient" ToRole="InitialDentalNote" />
+  </EntityType>
+  <Association Name="FK_InitialDentalNotes_PatientId">
+    <End Type="MyDentDiagnosticsDBModel.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="MyDentDiagnosticsDBModel.InitialDentalNote" Role="InitialDentalNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="InitialDentalNote">
+        <PropertyRef Name="PatientId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

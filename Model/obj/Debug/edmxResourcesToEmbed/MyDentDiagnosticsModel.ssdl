@@ -22,6 +22,15 @@
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="InitialDentalNotes">
+    <Key>
+      <PropertyRef Name="PatientId" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="PatientId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="Logs">
     <Key>
       <PropertyRef Name="LogId" />
@@ -31,6 +40,16 @@
     <Property Name="LogDate" Type="datetime" Nullable="false" />
     <Property Name="ErrorDetail" Type="varchar(max)" Nullable="false" />
     <Property Name="MethodName" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patients">
+    <Key>
+      <PropertyRef Name="PatientId" />
+    </Key>
+    <Property Name="PatientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="varchar(max)" Nullable="false" />
+    <Property Name="IsDCM" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
   </EntityType>
   <Association Name="FK_Diagnostics_AreaId">
     <End Role="Areas" Type="Self.Areas" Multiplicity="1" />
@@ -44,13 +63,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_InitialDentalNotes_PatientId">
+    <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+    <End Role="InitialDentalNotes" Type="Self.InitialDentalNotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patients">
+        <PropertyRef Name="PatientId" />
+      </Principal>
+      <Dependent Role="InitialDentalNotes">
+        <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="MyDentDiagnosticsDBModelStoreContainer">
     <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Diagnostics" EntityType="Self.Diagnostics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InitialDentalNotes" EntityType="Self.InitialDentalNotes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Diagnostics_AreaId" Association="Self.FK_Diagnostics_AreaId">
       <End Role="Areas" EntitySet="Areas" />
       <End Role="Diagnostics" EntitySet="Diagnostics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InitialDentalNotes_PatientId" Association="Self.FK_InitialDentalNotes_PatientId">
+      <End Role="Patients" EntitySet="Patients" />
+      <End Role="InitialDentalNotes" EntitySet="InitialDentalNotes" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

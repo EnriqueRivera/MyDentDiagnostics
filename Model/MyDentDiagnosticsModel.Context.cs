@@ -28,5 +28,7 @@ namespace Model
         public virtual DbSet<Area> Areas { get; set; }
         public virtual DbSet<Log> Logs { get; set; }
         public virtual DbSet<Diagnostic> Diagnostics { get; set; }
+        public virtual DbSet<InitialDentalNote> InitialDentalNotes { get; set; }
+        public virtual DbSet<Patient> Patients { get; set; }
     }
 }

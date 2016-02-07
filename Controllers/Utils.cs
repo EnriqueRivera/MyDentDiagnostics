@@ -26,7 +26,7 @@ namespace Controllers
                 sep = "|";
             }
 
-            dlg.Filter = String.Format("{0}{1}{2} ({3})|{3}", dlg.Filter, sep, "All Files", "*.*");
+            dlg.Filter = String.Format("{2} ({3})|{3}{1}{0}", dlg.Filter, sep, "All Files", "*.*");
             dlg.DefaultExt = ".png"; // Default file extension 
 
             return dlg;
