@@ -39,6 +39,13 @@ namespace MyDentDiagnostics
         #endregion
 
         #region Window event handlers
+        /// <summary>
+        /// Tag = {0}|{1},{2},...
+        /// {0} Attribute name
+        /// {1}, {2},... Controls to enable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckBox_CheckedUncheked(object sender, System.Windows.RoutedEventArgs e)
         {
             CheckBox checkbox = sender as CheckBox;
@@ -48,22 +55,31 @@ namespace MyDentDiagnostics
                 if (tagAttributes.Length > 1)
                 {
                     string[] controls = tagAttributes[1].Split(',');
-                    foreach (var item in controls)
-                    {
-                        var controlToDisable = GetControlByName(item);
-                        if (controlToDisable != null)
-                        {
-                            controlToDisable.IsEnabled = checkbox.IsChecked.Value;
+                    EnableDisableControls(controls, checkbox.IsChecked.Value);
+                }
+            }
+        }
 
-                            if (!controlToDisable.IsEnabled)
-                            {
-                                if (controlToDisable is TextBox)
-                                    (controlToDisable as TextBox).Text = string.Empty;
-                                else if (controlToDisable is CheckBox)
-                                    (controlToDisable as CheckBox).IsChecked = false;
-                            }
-                        }
-                    }
+        /// <summary>
+        /// Tag = {0}|{1},{2},...
+        /// {0} Attribute name
+        /// {1}, {2},... Controls to enable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+
+            if (comboBox.Tag != null && !string.IsNullOrEmpty(comboBox.Tag.ToString()))
+            {
+                string[] tagAttributes = comboBox.Tag.ToString().Split('|');
+                if (tagAttributes.Length > 2)
+                {
+                    int selectedIndex = comboBox.SelectedIndex;
+                    int[] indexes = tagAttributes[1].Split(',').Select(i => Convert.ToInt32(i) + 1).ToArray();
+                    string[] controls = tagAttributes[2].Split(',');
+                    EnableDisableControls(controls, indexes.Contains(selectedIndex));
                 }
             }
         }
@@ -100,6 +116,28 @@ namespace MyDentDiagnostics
         #endregion
 
         #region Window's logic
+        private void EnableDisableControls(string[] controls, bool enable)
+        {
+            foreach (var item in controls)
+            {
+                var controlToDisable = GetControlByName(item);
+                if (controlToDisable != null)
+                {
+                    controlToDisable.IsEnabled = enable;
+
+                    if (!controlToDisable.IsEnabled)
+                    {
+                        if (controlToDisable is TextBox)
+                            (controlToDisable as TextBox).Text = string.Empty;
+                        else if (controlToDisable is CheckBox)
+                            (controlToDisable as CheckBox).IsChecked = false;
+                        else if (controlToDisable is ComboBox)
+                            (controlToDisable as ComboBox).SelectedIndex = 0;
+                    }
+                }
+            }
+        }
+
         private bool UpdateInitialDentalNote()
         {
             bool result = true;
