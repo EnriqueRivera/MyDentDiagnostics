@@ -5,15 +5,15 @@
 	x:Class="MyDentDiagnostics.AddEditInitialDentalNoteWindow"
 	x:Name="Window"
 	Title="Agregar Nota Inicial Dental"
-	Width="1050" Height="1389.5" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen">
+	Width="1050" Height="3076" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized">
 
 	<Grid x:Name="LayoutRoot">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="388*"/>
 			<ColumnDefinition Width="245*"/>
 		</Grid.ColumnDefinitions>
-		<ScrollViewer x:Name="svInitialDentalNote" Margin="0,0,0,57" HorizontalScrollBarVisibility="Auto">
-			<Grid x:Name="gridInitialDentalNote" VerticalAlignment="Top" Height="1262">
+		<ScrollViewer x:Name="svInitialDentalNote" Margin="-5,0,5,10" HorizontalScrollBarVisibility="Auto">
+			<Grid x:Name="gridInitialDentalNote" VerticalAlignment="Top" Height="3025.5">
 				<Label x:Name="lblTreatmentName" Content="NOMBRE DEL PACIENTE" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142"/>
 				<TextBox x:Name="txtFullName" Height="27" Margin="157,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center"/>
 				<Label x:Name="lblTreatmentName_Copy" Content="Paciente" Height="27" Margin="10,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="54.167"/>
@@ -150,6 +150,479 @@
 				<TextBox x:Name="txtDiagnosticDescription1" Margin="16.083,1031,12.773,0" Height="88.835" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Antecedentes personales patológicos" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
 				<Label x:Name="lblFullName_Copy33" Content="PADECIMIENTO ACTUAL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,1132.04,0,0" Height="25.96" Width="297.569" FontWeight="Bold"/>
 				<TextBox x:Name="txtDiagnosticDescription2" Margin="16.083,1159,12.773,0" Height="88.835" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Padecimiento actual" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
+				<Label x:Name="lblFullName_Copy34" Content="EXPLORACIÓN FÍSICA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1267.845,0,0" Height="25.96" Width="297.569" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy35" Content="A la exploración extraoral, se observa cráneo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,1298.805,0,0" Height="25.96" Width="247.092"/>
+				<ComboBox x:Name="cbFilter_Copy8" Height="26" Margin="263.006,1300.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="97.698" SelectedIndex="0" Tag="Observa Craneo">
+					<System:String>Braquicéfalo</System:String>
+					<System:String>Mesocéfalo</System:String>
+					<System:String>Dolicocéfalo</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy36" Content=", suturas craneales " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="360.704,1300.805,0,0" Height="25.96" Width="106.595"/>
+				<ComboBox x:Name="cbFilter_Copy9" Height="26" Margin="472.299,1302.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="97.698" SelectedIndex="0" Tag="Sutura craneal">
+					<System:String>Palpables</System:String>
+					<System:String>No palpables</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy2" Height="27" Margin="16.083,1333.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="225.061" Tag="Sutura craneal comentario" Text="Activa si se selecciona palable"/>
+				<Label x:Name="lblFullName_Copy37" Content="cráneo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246.144,1331.765,0,0" Height="25.96" Width="45.759"/>
+				<ComboBox x:Name="cbFilter_Copy10" Height="26" Margin="296.903,1333.765,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="132.629" SelectedIndex="0" Tag="Craneo">
+					<System:String>Íntegro, sin hundimientos ni exostosis</System:String>
+					<System:String>con hundimientos</System:String>
+					<System:String>con exostosis</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy3" Height="27" Margin="434.532,1333.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="174.393" Tag="Craneo comentario" Text="Inactiva con integro"/>
+				<Label x:Name="lblFullName_Copy38" Content="Rostro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1365.805,0,0" Height="25.96" Width="45.759"/>
+				<Label x:Name="lblFullName_Copy39" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="608.925,1333.765,0,0" Height="25.96" Width="12.773"/>
+				<ComboBox x:Name="cbFilter_Copy11" Height="26" Margin="61.946,1367.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="90.054" SelectedIndex="0" Tag="Rostro">
+					<System:String>simétrico</System:String>
+					<System:String>asimétrico</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy40" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,1365.805,0,0" Height="25.96" Width="88.783"/>
+				<TextBox x:Name="txtAreaName_Copy4" Height="27" Margin="250.783,1367.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="178.749" Tag="Rostro comentario" Text="Si se selecciona asimétrico"/>
+				<Label x:Name="lblFullName_Copy41" Content=", cabello color" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="429.532,1365.805,0,0" Height="25.96" Width="85.735"/>
+				<ComboBox x:Name="cbFilter_Copy12" Height="26" Margin="520.267,1367.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="88.658" SelectedIndex="0" Tag="Cabello color">
+					<System:String>negro</System:String>
+					<System:String>castaño</System:String>
+					<System:String>rojo</System:String>
+					<System:String>rubio</System:String>
+					<System:String>otros</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy42" Content=", consistencia" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="152,1397.805,0,0" Height="25.96" Width="80.735"/>
+				<ComboBox x:Name="cbFilter_Copy13" Height="26" Margin="232.735,1400,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="84.964" SelectedIndex="0" Tag="Cabello consistencia">
+					<System:String>normal</System:String>
+					<System:String>fina</System:String>
+					<System:String>gruesa</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy43" Content=", cantidad" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="315.342,1397.805,0,0" Height="25.96" Width="62.818"/>
+				<ComboBox x:Name="cbFilter_Copy14" Height="26" Margin="383.16,1400,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="84.964" SelectedIndex="0" Tag="Cabello cantidad">
+					<System:String>normal</System:String>
+					<System:String>escasa</System:String>
+					<System:String>abundante</System:String>
+					<System:String>otros</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy5" Height="27" Margin="15.083,1400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="135.917" Tag="Color cabello comentario" Text="Si selecciona otros"/>
+				<TextBox x:Name="txtAreaName_Copy6" Height="27" Margin="472.299,1400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="135.917" Tag="Cabello cantidad comentario" Text="Si selecciona otros"/>
+				<Label x:Name="lblFullName_Copy44" Content=", carácter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1431.805,0,0" Height="25.96" Width="62.818"/>
+				<ComboBox x:Name="cbFilter_Copy15" Height="26" Margin="78.901,1433.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="84.964" SelectedIndex="0" Tag="Cabello caracter">
+					<System:String>liso</System:String>
+					<System:String>ondulado o rizado</System:String>
+					<System:String>otros</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy7" Height="27" Margin="168.865,1433.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="135.917" Tag="Cabello caracter comentario" Text="Si selecciona otros"/>
+				<Label x:Name="lblFullName_Copy45" Content=", implantación" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="304.782,1431.805,0,0" Height="25.96" Width="84.818"/>
+				<ComboBox x:Name="cbFilter_Copy16" Height="26" Margin="394.6,1433.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="124.694" SelectedIndex="0" Tag="Implantacion">
+					<System:String>normal</System:String>
+					<System:String>fácil desprendible</System:String>
+					<System:String>alto</System:String>
+					<System:String>bajo</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy46" Content=", pabellones auriculares" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1464.805,0,0" Height="25.96" Width="135.917"/>
+				<ComboBox x:Name="cbFilter_Copy17" Height="26" Margin="152,1466.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="124.694" SelectedIndex="0" Tag="Pabellones auriculares">
+					<System:String>bien implantados</System:String>
+					<System:String>bajos</System:String>
+					<System:String>altos</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy47" Content="de tamaño" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="281.694,1464.805,0,0" Height="25.96" Width="68.818"/>
+				<ComboBox x:Name="cbFilter_Copy18" Height="26" Margin="355.512,1466.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="124.694" SelectedIndex="0" Tag="Pabellones tamaño">
+					<System:String>normal</System:String>
+					<System:String>con hiperplasia</System:String>
+					<System:String>con hipoplasia</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy48" Content="con" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1497.805,0,0" Height="25.96" Width="30.449"/>
+				<ComboBox x:Name="cbFilter_Copy19" Height="26" Margin="51.532,1499.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="383.361" SelectedIndex="0" Tag="Pabellones secrecion">
+					<System:String>ausencia de secresiones patológicas por conducto auditivo externo</System:String>
+					<System:String>presencia de secresión patológica por conducto auditivo externo</System:String>
+					<System:String>altos</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy8" Height="27" Margin="441.026,1499.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="167.19" Tag="Cabello caracter comentario" Text="Si selecciona 2da opcion"/>
+				<Label x:Name="lblFullName_Copy49" Content="Ojos" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1530.805,0,0" Height="25.96" Width="35.259"/>
+				<Label x:Name="lblFullName_Copy50" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="608.216,1499.805,0,0" Height="25.96" Width="12.773"/>
+				<ComboBox x:Name="cbFilter_Copy20" Height="26" Margin="56.342,1532.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="88.694" SelectedIndex="0" Tag="Ojos">
+					<System:String>simétricos</System:String>
+					<System:String>asimétricos</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy14" Height="27" Margin="242.243,1532.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="135.917" Tag="Ojos comentario" Text="Si selecciona asimetrico"/>
+				<Label x:Name="lblFullName_Copy51" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.036,1530.805,0,0" Height="25.96" Width="88.783"/>
+				<Label x:Name="lblFullName_Copy52" Content=", pupilas de tamaño" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="378.516,1530.805,0,0" Height="25.96" Width="115.723"/>
+				<ComboBox x:Name="cbFilter_Copy21" Height="26" Margin="499.239,1532.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="108.977" SelectedIndex="0" Tag="Pupilas tamaño">
+					<System:String>normal</System:String>
+					<System:String>midriasis (diámetro pupilar aumentado)</System:String>
+					<System:String>miosis (diámetro pupiar disminuido)</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy53" Content="y forma" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1563.805,0,0" Height="25.96" Width="53.167"/>
+				<ComboBox x:Name="cbFilter_Copy22" Height="26" Margin="74.25,1565.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="88.694" SelectedIndex="0" Tag="Pupilas forma">
+					<System:String>isocóricas</System:String>
+					<System:String>anisocoria</System:String>
+					<System:String>discoria</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy54" Content=", reflejo fotomotor" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="162.944,1563.805,0,0" Height="25.96" Width="108.75"/>
+				<ComboBox x:Name="cbFilter_Copy23" Height="26" Margin="276.694,1565.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="88.694" SelectedIndex="0" Tag="Pupilas reflejo">
+					<System:String>normal</System:String>
+					<System:String>anormal</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy55" Content="a estímulos luminosos," HorizontalAlignment="Left" VerticalAlignment="Top" Margin="370.388,1563.805,0,0" Height="25.96" Width="132.75"/>
+				<Label x:Name="lblFullName_Copy56" Content="reflejo consensual" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1596.805,0,0" Height="25.96" Width="105.199"/>
+				<ComboBox x:Name="cbFilter_Copy24" Height="26" Margin="126.282,1598.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="88.694" SelectedIndex="0" Tag="Reflejo consensual">
+					<System:String>normal</System:String>
+					<System:String>anormal</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy57" Content=", nariz" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214.976,1596.805,0,0" Height="25.96" Width="47.199"/>
+				<ComboBox x:Name="cbFilter_Copy25" Height="26" Margin="267.175,1598.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="88.694" SelectedIndex="0" Tag="Nariz posicion">
+					<System:String>central</System:String>
+					<System:String>posición anormal</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy58" Content="y" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="360.704,1596.805,0,0" Height="25.96" Width="17.456"/>
+				<ComboBox x:Name="cbFilter_Copy26" Height="26" Margin="381.66,1598.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="88.694" SelectedIndex="0" Tag="Nariz simetrica">
+					<System:String>simétrica</System:String>
+					<System:String>asimétrica</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy59" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="475.508,1596.805,0,0" Height="25.96" Width="88.783"/>
+				<TextBox x:Name="txtAreaName_Copy15" Height="27" Margin="16.083,1629.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="187.917" Tag="Nariz simetrica comentario" Text="Si selecciona asimetrico"/>
+				<Label x:Name="lblFullName_Copy60" Content=", labios" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="204,1627.805,0,0" Height="25.96" Width="47.199"/>
+				<ComboBox x:Name="cbFilter_Copy27" Height="26" Margin="256.199,1629.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="120.461" SelectedIndex="0" Tag="Labios">
+					<System:String>hipodróticos</System:String>
+					<System:String>hidratación normal</System:String>
+				</ComboBox>
+				<ComboBox x:Name="cbFilter_Copy28" Height="26" Margin="381.66,1629.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="88.694" SelectedIndex="0" Tag="Labios simetricos">
+					<System:String>simétricos</System:String>
+					<System:String>asimétricos</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy61" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="475.354,1627.805,0,0" Height="25.96" Width="88.783"/>
+				<TextBox x:Name="txtAreaName_Copy16" Height="27" Margin="16.083,1661.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="187.917" Tag="Labios simetricos comentario" Text="Si selecciona asimetrico"/>
+				<ComboBox x:Name="cbFilter_Copy29" Height="26" Margin="209,1661.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.903" SelectedIndex="0" Tag="Labios tamaño">
+					<System:String>chicos</System:String>
+					<System:String>medianos</System:String>
+					<System:String>grandes</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy62" Content=", de grosor" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="291.903,1659.805,0,0" Height="25.96" Width="68.801"/>
+				<ComboBox x:Name="cbFilter_Copy30" Height="26" Margin="365.704,1661.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.903" SelectedIndex="0" Tag="Labios grosor">
+					<System:String>delgado</System:String>
+					<System:String>mediano</System:String>
+					<System:String>grueso</System:String>
+				</ComboBox>
+				<ComboBox x:Name="cbFilter_Copy31" Height="26" Margin="453.607,1661.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.903" SelectedIndex="0" Tag="Labios grosor 2">
+					<System:String>cortos</System:String>
+					<System:String>evertidos</System:String>
+					<System:String>protrusivos</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy63" Content="y función" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.283,1693.805,0,0" Height="25.96" Width="62.618"/>
+				<ComboBox x:Name="cbFilter_Copy32" Height="26" Margin="83.901,1695.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.903" SelectedIndex="0" Tag="Labios funcion">
+					<System:String>normal</System:String>
+					<System:String>limitada</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy17" Height="27" Margin="171.804,1695.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="187.917" Tag="Labios funcion comentario" Text="Si selecciona limitada"/>
+				<Label x:Name="lblFullName_Copy64" Content="perfil facial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="364.721,1693.805,0,0" Height="25.96" Width="68.801"/>
+				<ComboBox x:Name="cbFilter_Copy33" Height="26" Margin="438.522,1695.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.903" SelectedIndex="0" Tag="Perfil facial">
+					<System:String>cóncavo</System:String>
+					<System:String>convexo</System:String>
+					<System:String>recto</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy65" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="521.425,1693.805,0,0" Height="25.96" Width="12.773"/>
+				<Label x:Name="lblFullName_Copy66" Content="Cuello" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,1726.805,0,0" Height="25.96" Width="46.759"/>
+				<ComboBox x:Name="cbFilter_Copy34" Height="26" Margin="66.842,1728.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.903" SelectedIndex="0" Tag="Cuello">
+					<System:String>simétrico</System:String>
+					<System:String>asimétrico</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy67" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,1726.805,0,0" Height="25.96" Width="88.783"/>
+				<TextBox x:Name="txtAreaName_Copy22" Height="27" Margin="250.783,1728.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="187.917" Tag="Cuello comentario" Text="Si selecciona asimetrico"/>
+				<Label x:Name="lblFullName_Copy68" Content=", movimientos de flexión" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="438.7,1726.805,0,0" Height="25.96" Width="141.243"/>
+				<ComboBox x:Name="cbFilter_Copy35" Height="26" Margin="16.283,1761.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.903" SelectedIndex="0" Tag="Cuello movimiento">
+					<System:String>normal</System:String>
+					<System:String>limitado</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy69" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="104.186,1759.805,0,0" Height="25.96" Width="88.783"/>
+				<TextBox x:Name="txtAreaName_Copy23" Height="27" Margin="197.969,1761.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="187.917" Tag="Cuello comentario" Text="Si selecciona limitado"/>
+				<Label x:Name="lblFullName_Copy70" Content="de configuración" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="390.886,1759.805,0,0" Height="25.96" Width="98.743"/>
+				<ComboBox x:Name="cbFilter_Copy36" Height="26" Margin="494.629,1761.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.903" SelectedIndex="0" Tag="Cuello configuracion">
+					<System:String>normal</System:String>
+					<System:String>muy corto</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy71" Content="de configuración" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="390.886,1759.805,0,0" Height="25.96" Width="98.743"/>
+				<ComboBox x:Name="cbFilter_Copy37" Height="26" Margin="16.792,1793.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="155.894" SelectedIndex="0" Tag="Cuello lesiones">
+					<System:String>sin presencia de lesiones</System:String>
+					<System:String>con presencia de lesiones</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy24" Height="27" Margin="177.686,1793.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="430.53" Tag="Cuello lesiones comentario" Text="Si selecciona limitado"/>
+				<Label x:Name="lblFullName_Copy72" Content="Tráquea en posición" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,1824.805,0,0" Height="25.96" Width="122.116"/>
+				<ComboBox x:Name="cbFilter_Copy38" Height="26" Margin="139.906,1826.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="155.894" SelectedIndex="0" Tag="Traquea posicion">
+					<System:String>normal</System:String>
+					<System:String>lateralizada a la derecha</System:String>
+					<System:String>lateralizada a la izquierda</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy73" Content=", ganglios linfáticos" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="295.8,1824.805,0,0" Height="25.96" Width="114.366"/>
+				<ComboBox x:Name="cbFilter_Copy39" Height="26" Margin="415.166,1826.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="124.175" SelectedIndex="0" Tag="Ganglios linfaticos">
+					<System:String>palpables</System:String>
+					<System:String>no palpables</System:String>
+					<System:String>lateralizada a la izquierda</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy74" Content=", con movilidad" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,1857.805,0,0" Height="25.96" Width="92.851"/>
+				<ComboBox x:Name="cbFilter_Copy40" Height="26" Margin="114.643,1859.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="78.326" SelectedIndex="0" Tag="Ganglios movilidad">
+					<System:String>sí</System:String>
+					<System:String>adherida</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy25" Height="27" Margin="197.969,1859.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="282.237" Tag="Cuello lesiones comentario" Text="Si selecciona adherida"/>
+				<ComboBox x:Name="cbFilter_Copy41" Height="26" Margin="485.206,1859.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="78.326" SelectedIndex="0" Tag="Ganglios movilidad 2">
+					<System:String>aislados</System:String>
+					<System:String>confluentes</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy75" Content="de consistencia" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,1890.805,0,0" Height="25.96" Width="92.851"/>
+				<ComboBox x:Name="cbFilter_Copy42" Height="26" Margin="114.643,1892.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="78.326" SelectedIndex="0" Tag="Ganglios consistencia">
+					<System:String>blanda</System:String>
+					<System:String>dura</System:String>
+					<System:String>pétrea</System:String>
+					<System:String>renitente</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy76" Content=", de localización" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="192.969,1890.805,0,0" Height="25.96" Width="92.851"/>
+				<ComboBox x:Name="cbFilter_Copy43" Height="26" Margin="290.82,1892.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.712" SelectedIndex="0" Tag="Ganglios localizacion">
+					<System:String>submandibular</System:String>
+					<System:String>preauricular</System:String>
+					<System:String>retroauricular</System:String>
+					<System:String>supraclavicular</System:String>
+					<System:String>mastoidea</System:String>
+					<System:String>cervical posterior</System:String>
+					<System:String>cervical anterior</System:String>
+					<System:String>submentoniana</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtDiagnosticDescription2_Copy" Margin="135.282,1923.805,12.064,0" Height="88.835" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Pares craneales" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
+				<Label x:Name="lblFullName_Copy77" Content="Pares craneales con" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,1923.805,0,0" Height="25.96" Width="113.49"/>
+				<Label x:Name="lblFullName_Copy78" Content="Articulación temporomandibular" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2024.805,0,0" Height="25.96" Width="182.041"/>
+				<ComboBox x:Name="cbFilter_Copy44" Height="26" Margin="203.833,2024.765,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="194.712" SelectedIndex="0" Tag="Articulacion temporomandibular">
+					<System:String>con desplazamiento en función</System:String>
+					<System:String>sin desplazamiento en función</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy26" Height="27" Margin="403.545,2023.765,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="204.671" Tag="Articulacion temporomandibular comentario" Text="explicar con primer opcion"/>
+				<Label x:Name="lblFullName_Copy79" Content=", con" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2055.765,0,0" Height="25.96" Width="34.55"/>
+				<ComboBox x:Name="cbFilter_Copy45" Height="26" Margin="56.487,2055.765,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="194.712" SelectedIndex="0" Tag="Articulacion temporomandibular articular">
+					<System:String>presencia de ruidos articulares</System:String>
+					<System:String>ausencia de ruidos articulares</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy27" Height="27" Margin="256.199,2055.765,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="204.671" Tag="Articulacion temporomandibular articular comentario" Text="explicar con primer opcion"/>
+				<Label x:Name="lblFullName_Copy80" Content="," HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460.87,2055.765,0,0" Height="25.96" Width="13.335"/>
+				<ComboBox x:Name="cbFilter_Copy46" Height="26" Margin="16.792,2086.725,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="240.045" SelectedIndex="0" Tag="Articulacion temporomandibular masticacion">
+					<System:String>asintomático a la apertura o masticación</System:String>
+					<System:String>dolor a la apertura o masticación</System:String>
+				</ComboBox>
+				<TextBox x:Name="txtAreaName_Copy28" Height="27" Margin="261.837,2086.725,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="204.671" Tag="Articulacion temporomandibular masticacion comentario" Text="explicar con segunda opcion"/>
+				<Label x:Name="lblFullName_Copy81" Content=", cóndilo derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="466.871,2086.725,0,0" Height="25.96" Width="129.12"/>
+				<ComboBox x:Name="cbFilter_Copy47" Height="26" Margin="16.792,2117.725,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.394" SelectedIndex="0" Tag="Condilo derecho">
+					<System:String>hipermóvil</System:String>
+					<System:String>hipomóvil</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy82" Content=", cóndilo izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="99.75,2115.725,0,0" Height="25.96" Width="111.12"/>
+				<ComboBox x:Name="cbFilter_Copy48" Height="26" Margin="215.87,2117.725,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.394" SelectedIndex="0" Tag="Condilo izquierdo">
+					<System:String>hipermóvil</System:String>
+					<System:String>hipomóvil</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy83" Content=", lateralidad derecha con" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="299.457,2115.725,0,0" Height="25.96" Width="139.243"/>
+				<ComboBox x:Name="cbFilter_Copy49" Height="26" Margin="443.7,2117.685,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.394" SelectedIndex="0" Tag="Lateralidad derecha">
+					<System:String>1 mm</System:String>
+					<System:String>2 mm</System:String>
+					<System:String>3 mm</System:String>
+					<System:String>4 mm</System:String>
+					<System:String>5 mm</System:String>
+					<System:String>6 mm</System:String>
+					<System:String>7 mm</System:String>
+					<System:String>8 mm</System:String>
+					<System:String>9 mm</System:String>
+					<System:String>10 mm</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy84" Content=", lateralidad izquierda con" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2148.725,0,0" Height="25.96" Width="147.073"/>
+				<ComboBox x:Name="cbFilter_Copy50" Height="26" Margin="168.865,2148.685,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.394" SelectedIndex="0" Tag="Lateralidad izquierda">
+					<System:String>1 mm</System:String>
+					<System:String>2 mm</System:String>
+					<System:String>3 mm</System:String>
+					<System:String>4 mm</System:String>
+					<System:String>5 mm</System:String>
+					<System:String>6 mm</System:String>
+					<System:String>7 mm</System:String>
+					<System:String>8 mm</System:String>
+					<System:String>9 mm</System:String>
+					<System:String>10 mm</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy85" Content=", apertura bucal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250.783,2148.685,0,0" Height="25.96" Width="92.059"/>
+				<ComboBox x:Name="cbFilter_Copy51" Height="26" Margin="347.842,2150.685,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.394" SelectedIndex="0" Tag="Apertura bucal">
+					<System:String>normal</System:String>
+					<System:String>restringida</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy86" Content="de" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435.236,2146.685,0,0" Height="25.96" Width="25.634"/>
+				<ComboBox x:Name="cbFilter_Copy52" Height="26" Margin="465.87,2150.725,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.394" SelectedIndex="0" Tag="Apertura bucal de">
+					<System:String>1 mm</System:String>
+					<System:String>2 mm</System:String>
+					<System:String>3 mm</System:String>
+					<System:String>4 mm</System:String>
+					<System:String>5 mm</System:String>
+					<System:String>6 mm</System:String>
+					<System:String>7 mm</System:String>
+					<System:String>8 mm</System:String>
+					<System:String>9 mm</System:String>
+					<System:String>10 mm</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy87" Content="Músculos" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,2185.685,0,0" Height="25.96" Width="62.818"/>
+				<ComboBox x:Name="cbFilter_Copy53" Height="26" Margin="83.901,2187.685,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="173.686" SelectedIndex="0" Tag="Musculos palpacion">
+					<System:String>asintomáticos a la palpación</System:String>
+					<System:String>dolor a la palpación</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy88" Content="en" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="261.837,2185.685,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy89" Content="Masetero superficial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2218.685,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy90" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2249.645,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy91" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,2280.605,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy29" Height="27" Margin="84.61,2251.645,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Masetero superficial izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy30" Height="27" Margin="84.61,2280.605,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Masetero superficial derecho"/>
+				<Label x:Name="lblFullName_Copy92" Content="Masetero profundo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205.561,2218.685,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy93" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207.27,2249.645,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy94" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="212.937,2280.605,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy31" Height="27" Margin="275.088,2251.645,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Masetero profundo izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy32" Height="27" Margin="275.088,2280.605,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Masetero profundo derecho"/>
+				<Label x:Name="lblFullName_Copy98" Content="Fibras anteriores" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2349.185,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy99" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2380.145,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy100" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,2411.105,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy35" Height="27" Margin="84.61,2382.145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Fibras anteriores izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy36" Height="27" Margin="84.61,2411.105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Fibras anteriores derecho"/>
+				<Label x:Name="lblFullName_Copy101" Content="Fibras medias" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205.561,2349.185,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy102" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207.27,2380.145,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy103" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="212.937,2411.105,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy37" Height="27" Margin="275.088,2382.145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Fibras medias izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy38" Height="27" Margin="275.088,2411.105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Fibras medias derecho"/>
+				<Label x:Name="lblFullName_Copy104" Content="Fibras posteriores" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="398.207,2348.145,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy105" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="399.916,2379.105,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy106" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="405.583,2410.065,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy39" Height="27" Margin="467.734,2381.105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Fibras posteriores izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy40" Height="27" Margin="467.734,2410.065,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Fibras posteriores derecho"/>
+				<Label x:Name="lblFullName_Copy107" Content="Superficial" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2478.185,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy108" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2509.145,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy109" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,2540.105,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy41" Height="27" Margin="84.61,2511.145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Superficial izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy42" Height="27" Margin="84.61,2540.105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Superficial derecho"/>
+				<Label x:Name="lblFullName_Copy110" Content="Produndo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205.561,2478.185,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy111" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207.27,2509.145,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy112" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="212.937,2540.105,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy43" Height="27" Margin="275.088,2511.145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Produndo izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy44" Height="27" Margin="275.088,2540.105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Produndo derecho"/>
+				<Label x:Name="lblFullName_Copy113" Content="Trapecio" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="398.207,2477.145,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy114" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="399.916,2508.105,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy115" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="405.583,2539.065,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy45" Height="27" Margin="467.734,2510.105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Trapecio izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy46" Height="27" Margin="467.734,2539.065,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Trapecio derecho"/>
+				<Label x:Name="lblFullName_Copy116" Content="Anterior" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2602.685,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy117" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2633.645,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy118" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,2664.605,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy47" Height="27" Margin="84.61,2635.645,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Anterior izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy48" Height="27" Margin="84.61,2664.605,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Anterior derecho"/>
+				<Label x:Name="lblFullName_Copy119" Content="Medio" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205.561,2602.685,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy120" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207.27,2633.645,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy121" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="212.937,2664.605,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy49" Height="27" Margin="275.088,2635.645,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Medio izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy50" Height="27" Margin="275.088,2664.605,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Medio derecho"/>
+				<Label x:Name="lblFullName_Copy122" Content="Posterior" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="398.207,2601.645,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+				<Label x:Name="lblFullName_Copy123" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="399.916,2632.605,0,0" Height="25.96" Width="62.818"/>
+				<Label x:Name="lblFullName_Copy124" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="405.583,2663.565,0,0" Height="25.96" Width="56.442"/>
+				<TextBox x:Name="txtAreaName_Copy51" Height="27" Margin="467.734,2634.605,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Posterior izquierdo"/>
+				<TextBox x:Name="txtAreaName_Copy52" Height="27" Margin="467.734,2663.565,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Posterior derecho"/>
+				<Label x:Name="lblFullName_Copy95" Content="Temporales" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,2325.225,0,0" Height="25.96" Width="137.518" FontWeight="Bold" FontStyle="Italic"/>
+				<Label x:Name="lblFullName_Copy96" Content="Esternocleidomastoideos" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2454.894,0,0" Height="25.96" Width="152.657" FontWeight="Bold" FontStyle="Italic"/>
+				<Label x:Name="lblFullName_Copy97" Content="Escalenos" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2580.725,0,0" Height="25.96" Width="152.657" FontWeight="Bold" FontStyle="Italic"/>
+				<Label x:Name="lblFullName_Copy125" Content="Mapeo del dolor con alteración en" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2707.938,0,0" Height="25.96" Width="192.517"/>
+				<ComboBox x:Name="cbFilter_Copy54" Height="26" Margin="211.976,2709.938,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="36.861" SelectedIndex="0" Tag="Mapeo alteracion derecha">
+					<System:String>1</System:String>
+					<System:String>2</System:String>
+					<System:String>3</System:String>
+					<System:String>4</System:String>
+					<System:String>5</System:String>
+					<System:String>6</System:String>
+					<System:String>7</System:String>
+					<System:String>8</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy126" Content="de lado derecho y en" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255.006,2707.938,0,0" Height="25.96" Width="126.594"/>
+				<ComboBox x:Name="cbFilter_Copy55" Height="26" Margin="385.375,2709.938,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="36.861" SelectedIndex="0" Tag="Mapeo alteracion derecha">
+					<System:String>1</System:String>
+					<System:String>2</System:String>
+					<System:String>3</System:String>
+					<System:String>4</System:String>
+					<System:String>5</System:String>
+					<System:String>6</System:String>
+					<System:String>7</System:String>
+					<System:String>8</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy127" Content="de lado izquierdo." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="427.236,2707.938,0,0" Height="25.96" Width="126.594"/>
+				<Label x:Name="lblFullName_Copy128" Content="A la exploración intraoral se observa lengua" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2750.938,0,0" Height="25.96" Width="242.504"/>
+				<CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="261.837,2756.27,0,0" VerticalAlignment="Top" Width="13.833" Tag="Exploracion lengua check" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+				<TextBox x:Name="txtAreaName_Copy33" Height="27" Margin="285.043,2750.938,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Exploracion lengua"/>
+				<Label x:Name="lblFullName_Copy129" Content=", paladar duro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="385.375,2750.938,0,0" Height="25.96" Width="84.979"/>
+				<CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="471.942,2756.27,0,0" VerticalAlignment="Top" Width="13.833" Tag="Paladar duro check" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+				<TextBox x:Name="txtAreaName_Copy34" Height="27" Margin="495.148,2750.938,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Paladar duro"/>
+				<Label x:Name="lblFullName_Copy130" Content=", paladar blando" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2781.898,0,0" Height="25.96" Width="99.56"/>
+				<CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="119.643,2787.898,0,0" VerticalAlignment="Top" Width="13.833" Tag="Paladar blando check" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+				<TextBox x:Name="txtAreaName_Copy53" Height="27" Margin="140.301,2781.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Paladar blando"/>
+				<Label x:Name="lblFullName_Copy131" Content=", vestíbulos" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="239.644,2781.898,0,0" Height="25.96" Width="70.698"/>
+				<CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="315.342,2787.898,0,0" VerticalAlignment="Top" Width="13.833" Tag="Vestibulos check" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+				<TextBox x:Name="txtAreaName_Copy54" Height="27" Margin="334.175,2780.858,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Vestibulos"/>
+				<Label x:Name="lblFullName_Copy132" Content=", piso de boca" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14.958,2813.898,0,0" Height="25.96" Width="84.228"/>
+				<CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="103.518,2819.898,0,0" VerticalAlignment="Top" Width="13.833" Tag="Piso de boca check" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+				<TextBox x:Name="txtAreaName_Copy55" Height="27" Margin="124.176,2813.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Piso de boca"/>
+				<Label x:Name="lblFullName_Copy133" Content=", glándulas salivales" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="225.019,2813.898,0,0" Height="25.96" Width="113.543"/>
+				<CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="343.898,2819.898,0,0" VerticalAlignment="Top" Width="13.833" Tag="Glandulas salivales check" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+				<TextBox x:Name="txtAreaName_Copy56" Height="27" Margin="362.731,2812.858,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Glandulas salivales"/>
+				<Label x:Name="lblFullName_Copy134" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="463.4,2813.898,0,0" Height="25.96" Width="16.806"/>
+				<Label x:Name="lblFullName_Copy135" Content="Placa dentobacteriana" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2847.898,0,0" Height="25.96" Width="128.953"/>
+				<ComboBox x:Name="cbFilter_Copy56" Height="26" Margin="149.036,2849.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="85.608" SelectedIndex="0" Tag="Placa dentobacteriana">
+					<System:String>presente</System:String>
+					<System:String>ausente</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy136" Content="en" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="239.644,2847.898,0,0" Height="25.96" Width="22.531"/>
+				<ComboBox x:Name="cbFilter_Copy57" Height="26" Margin="267.175,2849.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="85.608" SelectedIndex="0" Tag="Placa dentobacteriana cantidad">
+					<System:String>Poca</System:String>
+					<System:String>Mediana</System:String>
+					<System:String>Abundante</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy137" Content="cantidad, de distribución" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="359.37,2847.898,0,0" Height="25.96" Width="140.101"/>
+				<ComboBox x:Name="cbFilter_Copy58" Height="26" Margin="504.471,2849.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="103.745" SelectedIndex="0" Tag="Placa dentobacteriana distribucion">
+					<System:String>localizada</System:String>
+					<System:String>generalizada</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy138" Content=";" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="608.216,2847.898,-3.848,0" Height="25.96" Width="17.33"/>
+				<Label x:Name="lblFullName_Copy139" Content="cálculo dental" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,2880.898,0,0" Height="25.96" Width="83.103"/>
+				<ComboBox x:Name="cbFilter_Copy59" Height="26" Margin="103.518,2882.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="85.608" SelectedIndex="0" Tag="Calculo dental">
+					<System:String>presente</System:String>
+					<System:String>ausente</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy140" Content="en" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="194.126,2880.898,0,0" Height="25.96" Width="22.531"/>
+				<ComboBox x:Name="cbFilter_Copy60" Height="26" Margin="221.657,2882.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="85.608" SelectedIndex="0" Tag="Calculo dental cantidad">
+					<System:String>Poca</System:String>
+					<System:String>Mediana</System:String>
+					<System:String>Abundante</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy141" Content="cantidad, de distribución" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="312.265,2880.898,0,0" Height="25.96" Width="140.009"/>
+				<ComboBox x:Name="cbFilter_Copy61" Height="26" Margin="457.274,2882.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="103.745" SelectedIndex="0" Tag="Calculo dental distribucion">
+					<System:String>localizada</System:String>
+					<System:String>generalizada</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy142" Content="y localización" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2913.898,0,0" Height="25.96" Width="84.103"/>
+				<ComboBox x:Name="cbFilter_Copy62" Height="26" Margin="104.186,2915.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="99.814" SelectedIndex="0" Tag="Calculo dental localizacion">
+					<System:String>supragingival</System:String>
+					<System:String>infragingival</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy143" Content=", higiene bucal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205.561,2913.898,0,0" Height="25.96" Width="90.239"/>
+				<ComboBox x:Name="cbFilter_Copy63" Height="26" Margin="300.8,2915.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="75.86" SelectedIndex="0" Tag="Higiene bucal">
+					<System:String>excelente</System:String>
+					<System:String>buena</System:String>
+					<System:String>regular</System:String>
+					<System:String>mala</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy144" Content="con un índice de Higiene Oral Simplificado de" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,2946.898,0,0" Height="25.96" Width="254.902"/>
+				<TextBox x:Name="txtAreaName_Copy57" Height="27" Margin="276.694,2946.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="171.913" Tag="Higiene bucal indice"/>
+				<Label x:Name="lblFullName_Copy145" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="448.607,2946.898,0,0" Height="25.96" Width="17.901"/>
+				<Label x:Name="lblFullName_Copy146" Content="Dentición" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2978.898,0,0" Height="25.96" Width="63.818"/>
+				<ComboBox x:Name="cbFilter_Copy64" Height="26" Margin="83.901,2980.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="99.814" SelectedIndex="0" Tag="Denticion temporal">
+					<System:String>temporal</System:String>
+					<System:String>mixta</System:String>
+					<System:String>permanente</System:String>
+				</ComboBox>
+				<ComboBox x:Name="cbFilter_Copy65" Height="26" Margin="188.715,2980.898,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="99.814" SelectedIndex="0" Tag="Denticion completa">
+					<System:String>completa</System:String>
+					<System:String>incompleta</System:String>
+					<System:String>excedida</System:String>
+				</ComboBox>
+				<Label x:Name="lblFullName_Copy147" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="293.913,2978.898,0,0" Height="25.96" Width="87.687"/>
+				<TextBox x:Name="txtAreaName_Copy58" Height="27" Margin="386.6,2978.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="171.913" Tag="Higiene bucal indice" Text="activo si selecciona 2 y 3"/>
 			</Grid>
 		</ScrollViewer>
 		<ScrollViewer x:Name="svDiagnostic" Grid.Column="1" Margin="0,0,0,57">
