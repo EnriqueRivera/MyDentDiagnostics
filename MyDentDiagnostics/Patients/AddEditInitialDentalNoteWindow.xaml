@@ -5,7 +5,7 @@
 	x:Class="MyDentDiagnostics.AddEditInitialDentalNoteWindow"
 	x:Name="Window"
 	Title="Agregar Nota Inicial Dental"
-	Width="1050" Height="3076" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+	Width="1050" Height="4672.7" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized">
 
     <Grid x:Name="LayoutRoot">
         <Grid.ColumnDefinitions>
@@ -13,7 +13,7 @@
             <ColumnDefinition Width="245*"/>
         </Grid.ColumnDefinitions>
         <ScrollViewer x:Name="svInitialDentalNote" Margin="-5,0,5,10" HorizontalScrollBarVisibility="Auto">
-            <Grid x:Name="gridInitialDentalNote" VerticalAlignment="Top" Height="3025.5">
+            <Grid x:Name="gridInitialDentalNote" VerticalAlignment="Top" Height="4571" Width="638.698">
                 <Label x:Name="lblTreatmentName" Content="NOMBRE DEL PACIENTE" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142"/>
                 <TextBox x:Name="txtFullName" Height="27" Margin="157,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center"/>
                 <Label x:Name="lblTreatmentName_Copy" Content="Paciente" Height="27" Margin="10,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="54.167"/>
@@ -32,12 +32,12 @@
                 <Label x:Name="lblFullName_Copy15" Content="Discracias sanguíneas:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12.773,233,0,0" Height="25.96" Width="139.227"/>
                 <Label x:Name="lblFullName_Copy17" Content="Enfermedades cardiacas:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12.773,265,0,0" Height="25.96" Width="139.227"/>
                 <Label x:Name="lblFullName_Copy19" Content="Otro padecimiento:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12.773,297,0,0" Height="25.96" Width="139.227"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,144,0,0" VerticalAlignment="Top" Width="13.833" Tag="AH_HipertensionArterial_SiNo|txtHipertension,chkHipertension" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,175.998,0,0" VerticalAlignment="Top" Width="13.833" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_DiabetesMellitus_SiNo|txtDiabetes,chkDiabetes"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,207.67,0,0" VerticalAlignment="Top" Width="13.833" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_Cancer_SiNo|txtCancer,chkCancer"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,239.67,0,0" VerticalAlignment="Top" Width="13.833" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_DiscranciasSanguineas_SiNo|txtDiscrancias,chkDiscrancias"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,271.998,0,0" VerticalAlignment="Top" Width="13.833" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_Cardiacas_SiNo|txtCardiacas,chkCardiacas"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,303.998,0,0" VerticalAlignment="Top" Width="13.833" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_OtroPadecimiento_SiNo|txtPadecimientoParteDe,chkPadecimiento,txtPadecimiento"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,144,0,0" VerticalAlignment="Top" Width="17.433" Tag="AH_HipertensionArterial_SiNo|txtHipertension,chkHipertension" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,175.998,0,0" VerticalAlignment="Top" Width="17.433" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_DiabetesMellitus_SiNo|txtDiabetes,chkDiabetes"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,207.67,0,0" VerticalAlignment="Top" Width="17.433" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_Cancer_SiNo|txtCancer,chkCancer"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,239.67,0,0" VerticalAlignment="Top" Width="17.433" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_DiscranciasSanguineas_SiNo|txtDiscrancias,chkDiscrancias"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,271.998,0,0" VerticalAlignment="Top" Width="17.433" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_Cardiacas_SiNo|txtCardiacas,chkCardiacas"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,303.998,0,0" VerticalAlignment="Top" Width="17.433" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked" Tag="AH_OtroPadecimiento_SiNo|txtPadecimientoParteDe,chkPadecimiento,txtPadecimiento"/>
                 <Label x:Name="lblFullName_Copy9" Content="Por parte de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231.365,137,0,0" Height="25.96" Width="78.977"/>
                 <Label x:Name="lblFullName_Copy" Content="Por parte de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231.365,167.96,0,0" Height="25.96" Width="78.977"/>
                 <Label x:Name="lblFullName_Copy1" Content="Por parte de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="231.365,201,0,0" Height="25.96" Width="78.977"/>
@@ -92,13 +92,13 @@
                 </ComboBox>
                 <TextBox x:Name="txtAreaName_Copy13" Height="27" Margin="331.814,472.96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="162.425" Tag="Vivienda (2)"/>
                 <Label x:Name="lblFullName_Copy6" Content="Alcoholismo:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,524,0,0" Height="25.96" Width="139.227"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,530.003,0,0" VerticalAlignment="Top" Width="13.833" Tag="APNP_Alcoholismo_SiNo|txtAlcoholismo" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,530.003,0,0" VerticalAlignment="Top" Width="17.433" Tag="APNP_Alcoholismo_SiNo|txtAlcoholismo" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
                 <Label x:Name="lblFullName_Copy10" Content="Tabaquismo:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,554.96,0,0" Height="25.96" Width="139.227"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,560.963,0,0" VerticalAlignment="Top" Width="13.833" Tag="APNP_Tabaquismo_SiNo|txtTabaquismo" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,560.963,0,0" VerticalAlignment="Top" Width="17.433" Tag="APNP_Tabaquismo_SiNo|txtTabaquismo" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
                 <Label x:Name="lblFullName_Copy12" Content="Toxicomanías:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,585.92,0,0" Height="25.96" Width="139.227"/>
                 <Label x:Name="lblFullName_Copy14" Content="Hospitalizaciones o cirugías:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,616.88,0,0" Height="25.96" Width="160.56"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,592.423,0,0" VerticalAlignment="Top" Width="13.833" Tag="APNP_Toxicomanias_SiNo|txtToxicomanias" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,624.423,0,0" VerticalAlignment="Top" Width="13.833" Tag="APNP_Cirugias_SiNo|txtCirugias" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,592.423,0,0" VerticalAlignment="Top" Width="17.433" Tag="APNP_Toxicomanias_SiNo|txtToxicomanias" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="190.167,624.423,0,0" VerticalAlignment="Top" Width="17.433" Tag="APNP_Cirugias_SiNo|txtCirugias" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
                 <TextBox x:Name="txtAlcoholismo" Height="27" Margin="220.814,522.96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="273.425" Tag="APNP_Alcoholismo_Observacion" IsEnabled="False"/>
                 <TextBox x:Name="txtTabaquismo" Height="27" Margin="220.814,554.96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="273.425" Tag="APNP_Tabaquismo_Observacion" IsEnabled="False"/>
                 <TextBox x:Name="txtToxicomanias" Height="27" Margin="220.814,585.92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="273.425" Tag="APNP_Toxicomanias_Observacion" IsEnabled="False"/>
@@ -457,10 +457,7 @@
                 </ComboBox>
                 <Label x:Name="lblFullName_Copy87" Content="Músculos" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,2185.685,0,0" Height="25.96" Width="62.818"/>
                 <ComboBox x:Name="cbFilter_Copy53" Height="26" Margin="83.901,2187.685,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="173.686" SelectedIndex="0" 
-                          Tag="Musculos palpacion|1|txtMaseteroSuperficialIzquierdo,txtMaseteroSuperficialDerecho,txtMaseteroProfundoIzquierdo,txtMaseteroProfundoDerecho,txtFibraAnteriorIzquierda,
-                          txtFibraAnteriorDerecha,txtFibraMediaIzquierda,txtFibraMediaDerecha,txtFibraPosteriorIzquierda,txtFibraPosteriorDerecha,txtEsternoSuperficialIzquierdo,txtEsternoSuperficialDerecho,
-                          txtEsternoProfundoIzquierdo,txtEsternoProfundoDerecho,txtEsternoTrapecioIzquierdo,txtEsternoTrapecioDerecho,txtEscalenosAnteriorIzquierdo,txtEscalenosAnteriorDerecho,
-                          txtEscalenosMedioIzquierdo,txtEscalenosMedioDerecho,txtEscalenosPosteriorIzquierdo,txtEscalenosPosteriorDerecho" SelectionChanged="ComboBox_SelectionChanged">
+                          Tag="Musculos palpacion|1|txtMaseteroSuperficialIzquierdo,txtMaseteroSuperficialDerecho,txtMaseteroProfundoIzquierdo,txtMaseteroProfundoDerecho,txtFibraAnteriorIzquierda,txtFibraAnteriorDerecha,txtFibraMediaIzquierda,txtFibraMediaDerecha,txtFibraPosteriorIzquierda,txtFibraPosteriorDerecha,txtEsternoSuperficialIzquierdo,txtEsternoSuperficialDerecho,txtEsternoProfundoIzquierdo,txtEsternoProfundoDerecho,txtEsternoTrapecioIzquierdo,txtEsternoTrapecioDerecho,txtEscalenosAnteriorIzquierdo,txtEscalenosAnteriorDerecho,txtEscalenosMedioIzquierdo,txtEscalenosMedioDerecho,txtEscalenosPosteriorIzquierdo,txtEscalenosPosteriorDerecho" SelectionChanged="ComboBox_SelectionChanged">
                     <System:String>asintomáticos a la palpación</System:String>
                     <System:String>dolor a la palpación</System:String>
                 </ComboBox>
@@ -495,7 +492,7 @@
                 <Label x:Name="lblFullName_Copy109" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,2540.105,0,0" Height="25.96" Width="56.442"/>
                 <TextBox x:Name="txtEsternoSuperficialIzquierdo" Height="27" Margin="84.61,2511.145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Superficial izquierdo" IsEnabled="False"/>
                 <TextBox x:Name="txtEsternoSuperficialDerecho" Height="27" Margin="84.61,2540.105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Superficial derecho" IsEnabled="False"/>
-                <Label x:Name="lblFullName_Copy110" Content="Produndo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205.561,2478.185,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
+                <Label x:Name="lblFullName_Copy110" Content="Profundo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205.561,2478.185,0,0" Height="25.96" Width="137.518" FontWeight="Bold"/>
                 <Label x:Name="lblFullName_Copy111" Content="Izquierdo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="207.27,2509.145,0,0" Height="25.96" Width="62.818"/>
                 <Label x:Name="lblFullName_Copy112" Content="Derecho" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="212.937,2540.105,0,0" Height="25.96" Width="56.442"/>
                 <TextBox x:Name="txtEsternoProfundoIzquierdo" Height="27" Margin="275.088,2511.145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.557" Tag="Produndo izquierdo" IsEnabled="False"/>
@@ -547,22 +544,22 @@
                 </ComboBox>
                 <Label x:Name="lblFullName_Copy127" Content="de lado izquierdo." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="427.236,2707.938,0,0" Height="25.96" Width="126.594"/>
                 <Label x:Name="lblFullName_Copy128" Content="A la exploración intraoral se observa lengua" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2750.938,0,0" Height="25.96" Width="242.504"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="261.837,2756.27,0,0" VerticalAlignment="Top" Width="13.833" Tag="Exploracion lengua check|txtExploracionLengua" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="261.837,2756.27,0,0" VerticalAlignment="Top" Width="16.331" Tag="Exploracion lengua check|txtExploracionLengua" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
                 <TextBox x:Name="txtExploracionLengua" Height="27" Margin="285.043,2750.938,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Exploracion lengua" IsEnabled="False"/>
                 <Label x:Name="lblFullName_Copy129" Content=", paladar duro" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="385.375,2750.938,0,0" Height="25.96" Width="84.979"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="471.942,2756.27,0,0" VerticalAlignment="Top" Width="13.833" Tag="Paladar duro check|txtPaladarDuro" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="471.942,2756.27,0,0" VerticalAlignment="Top" Width="15.583" Tag="Paladar duro check|txtPaladarDuro" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
                 <TextBox x:Name="txtPaladarDuro" Height="27" Margin="495.148,2750.938,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Paladar duro" IsEnabled="False"/>
                 <Label x:Name="lblFullName_Copy130" Content=", paladar blando" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2781.898,0,0" Height="25.96" Width="99.56"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="119.643,2787.898,0,0" VerticalAlignment="Top" Width="13.833" Tag="Paladar blando check|txtPaladarBlando" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="119.643,2787.898,0,0" VerticalAlignment="Top" Width="15.658" Tag="Paladar blando check|txtPaladarBlando" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
                 <TextBox x:Name="txtPaladarBlando" Height="27" Margin="140.301,2781.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Paladar blando" IsEnabled="False"/>
                 <Label x:Name="lblFullName_Copy131" Content=", vestíbulos" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="239.644,2781.898,0,0" Height="25.96" Width="70.698"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="315.342,2787.898,0,0" VerticalAlignment="Top" Width="13.833" Tag="Vestibulos check|txtVestibulos" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="315.342,2787.898,0,0" VerticalAlignment="Top" Width="15.583" Tag="Vestibulos check|txtVestibulos" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
                 <TextBox x:Name="txtVestibulos" Height="27" Margin="334.175,2780.858,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Vestibulos" IsEnabled="False"/>
                 <Label x:Name="lblFullName_Copy132" Content=", piso de boca" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14.958,2813.898,0,0" Height="25.96" Width="84.228"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="103.518,2819.898,0,0" VerticalAlignment="Top" Width="13.833" Tag="Piso de boca check|txtPisoBoca" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="103.518,2819.898,0,0" VerticalAlignment="Top" Width="15.658" Tag="Piso de boca check|txtPisoBoca" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
                 <TextBox x:Name="txtPisoBoca" Height="27" Margin="124.176,2813.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Piso de boca" IsEnabled="False"/>
                 <Label x:Name="lblFullName_Copy133" Content=", glándulas salivales" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="225.019,2813.898,0,0" Height="25.96" Width="113.543"/>
-                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="343.898,2819.898,0,0" VerticalAlignment="Top" Width="13.833" Tag="Glandulas salivales check|txtGlandulasSalivales" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="343.898,2819.898,0,0" VerticalAlignment="Top" Width="15.823" Tag="Glandulas salivales check|txtGlandulasSalivales" Checked="CheckBox_CheckedUncheked" Unchecked="CheckBox_CheckedUncheked"/>
                 <TextBox x:Name="txtGlandulasSalivales" Height="27" Margin="362.731,2812.858,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="100.843" Tag="Glandulas salivales" IsEnabled="False"/>
                 <Label x:Name="lblFullName_Copy134" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="463.4,2813.898,0,0" Height="25.96" Width="16.806"/>
                 <Label x:Name="lblFullName_Copy135" Content="Placa dentobacteriana" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,2847.898,0,0" Height="25.96" Width="128.953"/>
@@ -625,7 +622,128 @@
                     <System:String>excedida</System:String>
                 </ComboBox>
                 <Label x:Name="lblFullName_Copy147" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="293.913,2978.898,0,0" Height="25.96" Width="87.687"/>
-                <TextBox x:Name="txtDenticion" Height="27" Margin="386.6,2978.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="171.913" Tag="Higiene bucal indice" Text="activo si selecciona 2 y 3" IsEnabled="False"/>
+                <TextBox x:Name="txtDenticion" Height="27" Margin="386.6,2978.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="171.913" Tag="Denticion completa comentario" Text="activo si selecciona 2 y 3" IsEnabled="False"/>
+                <Label x:Name="lblFullName_Copy71" Content="," HorizontalAlignment="Left" VerticalAlignment="Top" Margin="559.613,2978.898,0,0" Height="25.96" Width="17.33"/>
+                <Label x:Name="lblFullName_Copy148" Content="órganos dentales con " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12.773,3011.898,0,0" Height="25.96" Width="127.244"/>
+                <ComboBox x:Name="cbFilter_Copy3" Height="26" Margin="145.017,3011.858,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="99.814" SelectedIndex="0" Tag="Organos dentales">
+                	<System:String>hipodoncia</System:String>
+                	<System:String>anodoncia parcial</System:String>
+                	<System:String>anodoncia total</System:String>
+					<System:String>supernumerarios</System:String>
+                </ComboBox>
+                <TextBox x:Name="txtAreaName_Copy2" Height="27" Margin="253.837,3011.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="357.861" Tag="Organos dentales comentario"/>
+                <Label x:Name="lblFullName_Copy149" Content="posición" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12.773,3042.858,0,0" Height="25.96" Width="56.477"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="74.25,3048.818,0,0" VerticalAlignment="Top" Width="15.658" Tag="Posicion apinamiento"/>
+                <Label x:Name="lblFullName_Copy150" Content="apiñamiento" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94.908,3042.858,0,0" Height="25.96" Width="76.75"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="74.25,3074.778,0,0" VerticalAlignment="Top" Width="15.658" Tag="Posicion diastemas"/>
+                <Label x:Name="lblFullName_Copy151" Content="diastemas" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94.908,3068.818,0,0" Height="25.96" Width="76.75"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="74.25,3100.738,0,0" VerticalAlignment="Top" Width="15.658" Tag="Posicion mesializacion"/>
+                <Label x:Name="lblFullName_Copy152" Content="mesialización" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94.908,3094.778,0,0" Height="25.96" Width="80.735"/>
+                <CheckBox Content="" HorizontalAlignment="Left" Height="14.96" Margin="74.25,3126.698,0,0" VerticalAlignment="Top" Width="15.658" Tag="Posicion distalizacion"/>
+                <Label x:Name="lblFullName_Copy153" Content="distalización" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94.908,3120.738,0,0" Height="25.96" Width="76.75"/>
+                <ComboBox x:Name="cbFilter_Copy4" Height="26" Margin="192.089,3047.828,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="186.071" SelectedIndex="0" Tag="Denticion posicion alteracion|0|txtPosicionAlteracion" SelectionChanged="ComboBox_SelectionChanged">
+                	<System:String>con alteraciones de estructura </System:String>
+                	<System:String>sin alteraciones de estructura</System:String>
+                </ComboBox>
+                <TextBox x:Name="txtPosicionAlteracion" Height="27" Margin="385.375,3046.858,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="171.913" Tag="Denticion posicion alteracion comentario" Text="activo si selecciona 1" IsEnabled="False"/>
+                <ComboBox x:Name="cbFilter_Copy5" Height="26" Margin="16.792,3151.698,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="164.375" SelectedIndex="0" Tag="Denticion posicion alteracion color">
+                	<System:String>con alteraciones del color</System:String>
+                	<System:String>sin alteraciones del color</System:String>
+                </ComboBox>
+                <Label x:Name="lblFullName_Copy154" Content=", dientes con movilidad" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="184.667,3149.698,0,0" Height="25.96" Width="133.032"/>
+                <ComboBox x:Name="cbFilter_Copy66" Height="26" Margin="322.699,3151.698,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="75.846" SelectedIndex="0" Tag="Dientes movilidad grado">
+                	<System:String>Grado I</System:String>
+                	<System:String>Grado II</System:String>
+					<System:String>Grado III</System:String>
+					<System:String>Grado IV</System:String>
+                </ComboBox>
+                <Label x:Name="lblFullName_Copy155" Content="," HorizontalAlignment="Left" VerticalAlignment="Top" Margin="399.916,3149.698,0,0" Height="25.96" Width="13.159"/>
+                <ComboBox x:Name="cbFilter_Copy67" Height="26" Margin="415.166,3151.698,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="95.101" SelectedIndex="0" Tag="Denticion movilidad dolor|0|txtDenticionMovilidadDolor" SelectionChanged="ComboBox_SelectionChanged">
+                	<System:String>con dolor en</System:String>
+                	<System:String>asintomático actualmente</System:String>
+                </ComboBox>
+                <TextBox x:Name="txtDenticionMovilidadDolor" Height="27" Margin="515.267,3153.698,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="96.431" Tag="Denticion movilidad dolor comentario" Text="activo si selecciona 1" IsEnabled="False"/>
+                <Label x:Name="lblFullName_Copy156" Content="De intensidad" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17.968,3182.698,0,0" Height="25.96" Width="84.175"/>
+                <ComboBox x:Name="cbFilter_Copy68" Height="26" Margin="107.143,3184.698,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="74.024" SelectedIndex="0" Tag="Dolor dientes intensidad">
+                	<System:String>leve</System:String>
+                	<System:String>moderada</System:String>
+					<System:String>severa</System:String>
+                </ComboBox>
+                <Label x:Name="lblFullName_Copy157" Content="," HorizontalAlignment="Left" VerticalAlignment="Top" Margin="181.167,3184.738,0,0" Height="25.96" Width="14.166"/>
+                <ComboBox x:Name="cbFilter_Copy69" Height="26" Margin="195.333,3184.738,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="100.467" SelectedIndex="0" Tag="Dolor dientes palpacion">
+                	<System:String>a la palpación</System:String>
+                	<System:String>a la percusión</System:String>
+                </ComboBox>
+                <TextBox x:Name="txtAreaName_Copy3" Height="27" Margin="300.8,3184.698,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="209.467" Tag="Dolor dientes palpacion comentario"/>
+                <ComboBox x:Name="cbFilter_Copy70" Height="26" Margin="15.083,3215.698,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="192.517" SelectedIndex="0" Tag="Dolor dientes restauraciones|1|txtDolorDientesRestauracionesComentario" SelectionChanged="ComboBox_SelectionChanged">
+                	<System:String>sin presencia de restauraciones</System:String>
+                	<System:String>con presencia de restauraciones</System:String>
+                </ComboBox>
+                <TextBox x:Name="txtDolorDientesRestauracionesComentario" Height="27" Margin="213.911,3215.698,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="117.014" Tag="Dolor Dientes Restauraciones Comentario" Text="activo si selecciona 2" IsEnabled="False"/>
+                <Label x:Name="lblFullName_Copy158" Content="," HorizontalAlignment="Left" VerticalAlignment="Top" Margin="510.267,3185.738,0,0" Height="25.96" Width="17.33"/>
+                <ComboBox x:Name="cbFilter_Copy71" Height="26" Margin="335.925,3215.698,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="151.6" SelectedIndex="0" Tag="Dolor dientes caries|0|txtDolorDientesCariesComentario" SelectionChanged="ComboBox_SelectionChanged">
+                	<System:String>con presencia de caries</System:String>
+                	<System:String>sin presencia de caries</System:String>
+                </ComboBox>
+                <TextBox x:Name="txtDolorDientesCariesComentario" Height="27" Margin="492.62,3215.698,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="117.014" Tag="Dolor Dientes Caries Comentario" Text="activo si selecciona 1" IsEnabled="False"/>
+                <Label x:Name="lblFullName_Copy159" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="608.925,3215.738,-4.557,0" Height="25.96" Width="17.33"/>
+                <Label x:Name="lblFullName_Copy160" Content="Fluorosis" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,3257.725,0,0" Height="25.96" Width="152.657" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy161" Content="ESCALA DEAN" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,3283.685,0,0" Height="25.96" Width="92.851" FontWeight="Bold"/>
+                <Label x:Name="lblFullName_Copy162" Content="ESCALA DEAN" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,3283.685,0,0" Height="25.96" Width="92.851" FontWeight="Bold"/>
+                <Label x:Name="lblFullName_Copy163" Content="NORMAL&#xD;&#xA;TF 0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3332.645,0,0" Height="42.627" Width="62.109"/>
+                <Label x:Name="lblFullName_Copy164" Content="PPM DE FLÚOR" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135.282,3283.685,0,0" Height="25.96" Width="99.362" FontWeight="Bold"/>
+                <Label x:Name="lblFullName_Copy165" Content="0.7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3332.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy166" Content="CARACTERÍSTICAS" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="275.088,3283.685,0,0" Height="25.96" Width="121.247" FontWeight="Bold"/>
+                <Label x:Name="lblFullName_Copy167" Content="ESQUEMA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="443.936,3283.685,0,0" Height="25.96" Width="72.535" FontWeight="Bold"/>
+                <Label x:Name="lblFullName_Copy168" Content="Esmalte normal, liso, translúcido&#xD;&#xA;y cristalino de color uniforme" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244.783,3332.645,0,0" Height="42.627" Width="179.453"/>
+                <Image Margin="449.937,3315.645,128.761,1181.355" Source="/MyDentDiagnostics;component/Images/EscalaDean_1.png" Stretch="Fill" Height="74" Width="60"/>
+                <TextBox x:Name="txtAreaName_Copy4" Height="27" Margin="541.817,3339.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis normal"/>
+                <Label x:Name="lblFullName_Copy169" Content="CUESTIONABLE&#xA;TF 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3421.645,0,0" Height="42.627" Width="98.308"/>
+                <Label x:Name="lblFullName_Copy170" Content="1.0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3421.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy171" Content="Esmalte translúcido y cristalino&#xD;&#xA;con finas bandas horizontales &#xD;&#xA;de color blanquecino" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244.783,3412.645,0,0" Height="58.627" Width="179.453"/>
+                <TextBox x:Name="txtAreaName_Copy5" Height="27" Margin="541.817,3428.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis cuestionable"/>
+                <Image Margin="449.937,3405.145,128.761,1091.855" Source="/MyDentDiagnostics;component/Images/EscalaDean_2.png" Stretch="Fill" Width="60" Height="74"/>
+                <Image Margin="449.937,3496.645,128.761,1000.355" Source="/MyDentDiagnostics;component/Images/EscalaDean_3.png" Stretch="Fill" Width="60" Height="74"/>
+                <Label x:Name="lblFullName_Copy172" Content="MUY LEVE&#xA;TF 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3513.645,0,0" Height="42.627" Width="98.308"/>
+                <Label x:Name="lblFullName_Copy173" Content="1.3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3513.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy174" Content="Esmalte liso, translúcido y cristalino&#xD;&#xA;con gruesas líneas horizontales&#xD;&#xA;blanquecina. No compromete estética" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3504.645,0,0" Height="58.627" Width="216.966"/>
+                <TextBox x:Name="txtAreaName_Copy6" Height="27" Margin="541.817,3520.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis muy leve"/>
+                <Image Margin="449.937,3585.645,128.761,911.355" Source="/MyDentDiagnostics;component/Images/EscalaDean_4.png" Stretch="Fill"/>
+                <Label x:Name="lblFullName_Copy175" Content="LEVE&#xA;TF 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3602.645,0,0" Height="42.627" Width="98.308"/>
+                <Label x:Name="lblFullName_Copy176" Content="1.5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3602.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy177" Content="Esmalte liso, translúcido y cristalino&#xD;&#xA;acompañado por gruesas líneas opacas&#xD;&#xA;blanquecinas, con manchones opacos&#xD;&#xA;del amarillo al café (esmalte moteado)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3585.645,0,0" Height="74" Width="216.966"/>
+                <TextBox x:Name="txtAreaName_Copy7" Height="27" Margin="541.817,3609.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis leve"/>
+                <Image Margin="449.937,3674.312,128.761,822.688" Source="/MyDentDiagnostics;component/Images/EscalaDean_5.png" Stretch="Fill" Width="60"/>
+                <Label x:Name="lblFullName_Copy178" Content="MODERADO&#xA;TF 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3690.645,0,0" Height="42.627" Width="98.308"/>
+                <Label x:Name="lblFullName_Copy179" Content="2.0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3690.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy180" Content="Todas las superficies con marcada&#xD;&#xA;opacidad, que varía del blanco opaco&#xD;&#xA;al gris. Puede estar acompañado de&#xD;&#xA;vetas amarillo o café. Puede haber&#xD;&#xA;áreas con atrición" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3662.645,0,0" Height="92" Width="216.966"/>
+                <TextBox x:Name="txtAreaName_Copy8" Height="27" Margin="541.817,3697.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis moderado"/>
+                <Image Margin="450.933,3762.605,127.765,734.395" Source="/MyDentDiagnostics;component/Images/EscalaDean_6.png" Stretch="Fill"/>
+                <Label x:Name="lblFullName_Copy181" Content="SEVERO&#xA;TF 5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3783.645,0,0" Height="42.627" Width="98.308"/>
+                <Label x:Name="lblFullName_Copy182" Content="2.7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3783.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy183" Content="Superficie totalmente opaca con&#xD;&#xA;pérdida del esmalte en forma de&#xD;&#xA;cráter no mayor a 2 mm de diám. Las&#xD;&#xA;pigmentaciones están en el fondo del&#xD;&#xA;cráter. Suelen ser extrínsecas" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3755.645,0,0" Height="92" Width="216.966"/>
+                <TextBox x:Name="txtAreaName_Copy14" Height="27" Margin="541.817,3790.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 5"/>
+                <Image Margin="451.6,3858.646,127.098,638.354" Source="/MyDentDiagnostics;component/Images/EscalaDean_7.png" Stretch="Fill"/>
+                <Label x:Name="lblFullName_Copy184" Content="SEVERO&#xA;TF 6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3878.645,0,0" Height="42.627" Width="98.308"/>
+                <Label x:Name="lblFullName_Copy185" Content="3.9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3878.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy186" Content="Superficie blanca opaca con mayor &#xD;&#xA;cantidad de cráteres. Bandas&#xD;&#xA;horizontales de esmalte faltante. &#xD;&#xA;Pigmentaciones en fondo de cráter&#xD;&#xA;Suelen ser extrínsecas" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3850.645,0,0" Height="92" Width="216.966"/>
+                <TextBox x:Name="txtAreaName_Copy15" Height="27" Margin="541.817,3885.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 6"/>
+                <Image Margin="451.6,3951.272,127.098,545.728" Source="/MyDentDiagnostics;component/Images/EscalaDean_8.png" Stretch="Fill"/>
+                <Label x:Name="lblFullName_Copy187" Content="SEVERO&#xA;TF 7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3970.645,0,0" Height="42.627" Width="98.308"/>
+                <Label x:Name="lblFullName_Copy188" Content="&gt;3.9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3970.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy189" Content="Superficie totalmente blanca opaca&#xD;&#xA;con pérdida de esmalte en áreas&#xD;&#xA;irregulares, iniciando en tercio incisal&#xD;&#xA;(oclusal) menor al 50% de la superf." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3950.645,0,0" Height="73.627" Width="216.966"/>
+                <TextBox x:Name="txtAreaName_Copy16" Height="27" Margin="541.817,3977.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 7"/>
+                <Image Margin="451.6,4039.272,127.098,457.728" Source="/MyDentDiagnostics;component/Images/EscalaDean_9.png" Stretch="Fill"/>
+                <Label x:Name="lblFullName_Copy190" Content="SEVERO&#xA;TF 8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,4058.645,0,0" Height="42.627" Width="98.308"/>
+                <Label x:Name="lblFullName_Copy191" Content="&gt;3.9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,4058.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy192" Content="Pérdida de la superficie del esmalte&#xD;&#xA;mas de 50%. Esmalte blanco opaco.&#xD;&#xA;Puede haber exposición de dentina&#xD;&#xA;con caries" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,4038.645,0,0" Height="73.627" Width="216.966"/>
+                <TextBox x:Name="txtAreaName_Copy17" Height="27" Margin="541.817,4065.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 8"/>
+                <Image Margin="452.6,4124.272,126.098,372.728" Source="/MyDentDiagnostics;component/Images/EscalaDean_10.png" Stretch="Fill"/>
+                <Label x:Name="lblFullName_Copy193" Content="SEVERO&#xA;TF 9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,4144.645,0,0" Height="42.627" Width="98.308"/>
+                <Label x:Name="lblFullName_Copy194" Content="&gt;3.9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,4144.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
+                <Label x:Name="lblFullName_Copy195" Content="Pérdida de la mayor parte del&#xD;&#xA;esmalte. Dentina expuesta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,4138.645,0,0" Height="46.627" Width="216.966"/>
+                <TextBox x:Name="txtAreaName_Copy18" Height="27" Margin="541.817,4151.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 9"/>
+                <Label x:Name="lblFullName_Copy196" Content="Que se indique la escala) según indice de Dean" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17.968,4207.645,0,0" Height="26.627" Width="267.852"/>
             </Grid>
         </ScrollViewer>
         <ScrollViewer x:Name="svDiagnostic" Grid.Column="1" Margin="0,0,0,57">

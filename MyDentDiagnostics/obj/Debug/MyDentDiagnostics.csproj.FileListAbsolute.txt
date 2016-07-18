@@ -35,3 +35,5 @@ C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\MyDentDiagnostics.csproj.GenerateResource.Cache
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\MyDentDiagnostics.exe
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\MyDentDiagnostics.pdb
+C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Simple Styles.baml
+C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\App.baml

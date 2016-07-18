@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
+    <ExpressionBlendVersion>12.0.60617.0</ExpressionBlendVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -135,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Patients\AddEditInitialDentalNoteWindow.xaml.cs">
@@ -185,8 +189,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image1.png" />
+    <Resource Include="Image2.png" />
     <Resource Include="Images\app.ico" />
     <Resource Include="Images\areas_icon.png" />
+    <Resource Include="Images\EscalaDean_1.png" />
+    <Resource Include="Images\EscalaDean_10.png" />
+    <Resource Include="Images\EscalaDean_2.png" />
+    <Resource Include="Images\EscalaDean_3.png" />
+    <Resource Include="Images\EscalaDean_4.png" />
+    <Resource Include="Images\EscalaDean_5.png" />
+    <Resource Include="Images\EscalaDean_6.png" />
+    <Resource Include="Images\EscalaDean_7.png" />
+    <Resource Include="Images\EscalaDean_8.png" />
+    <Resource Include="Images\EscalaDean_9.png" />
     <Resource Include="Images\find_icon.png" />
     <Resource Include="Images\folder_images_icon.png" />
     <Resource Include="Images\notes_icon.png" />
