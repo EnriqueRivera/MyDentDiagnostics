@@ -166,10 +166,19 @@ namespace MyDentDiagnostics
                 else if (item is ComboBox)
                 {
                     ComboBox comboBox = item as ComboBox;
-                    string fieldName = comboBox.Tag.ToString();
+                    string fieldName = comboBox.Tag.ToString().Split('|')[0];
                     string fieldValue = comboBox.SelectedValue.ToString();
 
                     result &= AddUpdateInitialDentalNoteAttributeValue(fieldName, fieldValue);
+                }
+                else if (item is RadioButton)
+                {
+                    RadioButton radioButton = item as RadioButton;
+                    string groupName = radioButton.GroupName;
+                    string tagName = radioButton.Tag.ToString();
+
+                    if (radioButton.IsChecked.Value)
+                        result &= AddUpdateInitialDentalNoteAttributeValue(groupName, tagName);
                 }
             }
 
@@ -256,10 +265,21 @@ namespace MyDentDiagnostics
                 else if (item is ComboBox)
                 {
                     ComboBox comboBox = item as ComboBox;
-                    string fieldName = comboBox.Tag.ToString();
+                    string fieldName = comboBox.Tag.ToString().Split('|')[0];
                     Model.InitialDentalNote attribute = GetInitialDentalNoteAttributeValue(fieldName);
 
                     comboBox.SelectedValue = attribute == null ? string.Empty : attribute.Value;
+                }
+                else if (item is RadioButton)
+                {
+                    RadioButton radioButton = item as RadioButton;
+                    string groupName = radioButton.GroupName;
+                    string tagName = radioButton.Tag.ToString();
+                    Model.InitialDentalNote attribute = GetInitialDentalNoteAttributeValue(groupName);
+
+                    if (attribute != null)
+                        radioButton.IsChecked = attribute.Value == tagName;
+                    
                 }
             }
         }

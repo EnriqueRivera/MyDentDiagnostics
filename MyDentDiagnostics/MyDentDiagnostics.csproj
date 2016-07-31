@@ -189,8 +189,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image1.png" />
-    <Resource Include="Image2.png" />
     <Resource Include="Images\app.ico" />
     <Resource Include="Images\areas_icon.png" />
     <Resource Include="Images\EscalaDean_1.png" />
@@ -205,6 +203,8 @@
     <Resource Include="Images\EscalaDean_9.png" />
     <Resource Include="Images\find_icon.png" />
     <Resource Include="Images\folder_images_icon.png" />
+    <Resource Include="Images\Maloclusiones_1.png" />
+    <Resource Include="Images\Maloclusiones_2.png" />
     <Resource Include="Images\notes_icon.png" />
     <Resource Include="Images\remove_icon.ico" />
   </ItemGroup>
