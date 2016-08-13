@@ -72,7 +72,7 @@ namespace MyDentDiagnostics
 
         private void btnAddUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            string diagnosticName = txtDiagnosticName.Text.Trim();
+            string diagnosticName = txtDiagnosticName.Text.Trim().Replace("|", string.Empty);
             string diagnosticDescription = txtDiagnosticDescription.Text.Trim();
             string picturePath1 = diagnosticImage1.ToolTip == null ? null : diagnosticImage1.ToolTip.ToString();
             string picturePath2 = diagnosticImage2.ToolTip == null ? null : diagnosticImage2.ToolTip.ToString();
@@ -147,24 +147,8 @@ namespace MyDentDiagnostics
             this.Title = "Actualizar información del diagnóstico";
             btnAddUpdate.Content = "Actualizar";
 
-            SetImage(_selectedDiagnostic.PicturePath1, diagnosticImage1);
-            SetImage(_selectedDiagnostic.PicturePath2, diagnosticImage2);
-        }
-
-        private void SetImage(string imagePath, Image imageControl)
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(imagePath) == false)
-                {
-                    imageControl.Source = new BitmapImage(new Uri(imagePath));
-                    imageControl.ToolTip = imagePath;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo cargar la imagen\n\nDetalle del error:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            MainWindow.SetImage(_selectedDiagnostic.PicturePath1, diagnosticImage1);
+            MainWindow.SetImage(_selectedDiagnostic.PicturePath2, diagnosticImage2);
         }
         #endregion
     }

@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Linq;
+using Controllers;
+using System.Diagnostics;
 
 namespace MyDentDiagnostics
 {
@@ -28,6 +30,7 @@ namespace MyDentDiagnostics
 		{
 			this.InitializeComponent();
 
+            FillTreatments();
             AddEmptyItemToComboBoxes();
 
             _patientToUpdate = patientToUpdate;
@@ -81,6 +84,45 @@ namespace MyDentDiagnostics
                     string[] controls = tagAttributes[2].Split(',');
                     EnableDisableControls(controls, indexes.Contains(selectedIndex));
                 }
+            }
+        }
+
+        private void cbDiagnostics_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            FillDiagnosticInfo((cbDiagnostics.SelectedItem as Controllers.ComboBoxItem).Value as Model.Diagnostic);
+        }
+
+        private void btnRemoveDiagnostic_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var items = lstDiagnostics.SelectedItems.OfType<string>().ToList();
+            foreach (var item in items)
+            {
+                lstDiagnostics.Items.Remove(item);
+            }
+        }
+
+        private void btnAddDiagnostic_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var selectedDiagnostic = (cbDiagnostics.SelectedItem as Controllers.ComboBoxItem).Value as Model.Diagnostic;
+
+            if (selectedDiagnostic != null && !lstDiagnostics.Items.Contains(selectedDiagnostic.Name))
+            {
+                lstDiagnostics.Items.Add(selectedDiagnostic.Name);
+            }
+        }
+
+        private void diagnosticImage_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            try
+            {
+                Image imageControl = sender as Image;
+
+                if (imageControl.ToolTip != null && string.IsNullOrEmpty(imageControl.ToolTip.ToString()) == false)
+                    Process.Start(imageControl.ToolTip.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo abrir la imagen\n\nDetalle del error:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -180,6 +222,14 @@ namespace MyDentDiagnostics
                     if (radioButton.IsChecked.Value)
                         result &= AddUpdateInitialDentalNoteAttributeValue(groupName, tagName);
                 }
+                else if (item is ListBox)
+                {
+                    ListBox listBox = item as ListBox;
+                    string fieldName = listBox.Tag.ToString();
+                    string fieldValue = string.Join("|", listBox.Items.OfType<string>().ToList());
+
+                    result &= AddUpdateInitialDentalNoteAttributeValue(fieldName, fieldValue);
+                }
             }
 
             return result;
@@ -218,12 +268,45 @@ namespace MyDentDiagnostics
 
         private void AddEmptyItemToComboBoxes()
         {
-            var controls = gridInitialDentalNote.Children.OfType<ComboBox>().ToList();
+            var controls = gridInitialDentalNote.Children.OfType<ComboBox>()
+                            .Where(t => t.Tag != null && !string.IsNullOrEmpty(t.Tag.ToString()))
+                            .ToList();
 
             foreach (var item in controls)
             {
                 item.Items.Insert(0, string.Empty);
                 item.SelectedIndex = 0;
+            }
+        }
+
+        private void FillTreatments()
+        {
+            List<Model.Diagnostic> diagnostics = BusinessController.Instance.FindBy<Model.Diagnostic>(t => t.IsDeleted == false)
+                                                .OrderBy(t => t.Name)
+                                                .ToList();
+
+            cbDiagnostics.Items.Add(new Controllers.ComboBoxItem() { Text = string.Empty, Value = null });
+
+            foreach (Model.Diagnostic diagnostic in diagnostics)
+            {
+                cbDiagnostics.Items.Add(new Controllers.ComboBoxItem() { Text = diagnostic.Name, Value = diagnostic });
+            }
+        }
+
+        private void FillDiagnosticInfo(Model.Diagnostic diagnostic)
+        {
+            if (diagnostic == null)
+            {
+                gridDiagnostic.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else
+            {
+                gridDiagnostic.Visibility = System.Windows.Visibility.Visible;
+
+                txtDiagnosticName.Content = diagnostic.Name;
+                txtDiagnosticDescription.Text = diagnostic.Description;
+                MainWindow.SetImage(diagnostic.PicturePath1, diagnosticImage1);
+                MainWindow.SetImage(diagnostic.PicturePath2, diagnosticImage2);
             }
         }
 
@@ -280,6 +363,21 @@ namespace MyDentDiagnostics
                     if (attribute != null)
                         radioButton.IsChecked = attribute.Value == tagName;
                     
+                }
+                else if (item is ListBox)
+                {
+                    ListBox listBox = item as ListBox;
+                    string fieldName = listBox.Tag.ToString();
+                    Model.InitialDentalNote attribute = GetInitialDentalNoteAttributeValue(fieldName);
+
+                    if (attribute != null)
+                    {
+                        var items = attribute.Value.Split('|');
+                        for (int i = 0; i < items.Length; i++)
+                        {
+                            listBox.Items.Add(items[i]);
+                        }
+                    }
                 }
             }
         }

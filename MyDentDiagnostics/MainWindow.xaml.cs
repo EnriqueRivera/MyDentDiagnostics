@@ -90,5 +90,27 @@ namespace MyDentDiagnostics
             _managePatientNotesWindow.WindowState = WindowState.Normal;
         }
         #endregion
+
+        #region Methods for multiple windows
+        public static void SetImage(string imagePath, Image imageControl)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(imagePath) == false)
+                {
+                    imageControl.Source = new BitmapImage(new Uri(imagePath));
+                    imageControl.ToolTip = imagePath;
+                }
+                else
+                {
+                    imageControl.Source = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo cargar la imagen\n\nDetalle del error:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        #endregion
     }
 }

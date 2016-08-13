@@ -145,11 +145,11 @@
                     <System:String>Condón o preservativo</System:String>
                 </ComboBox>
                 <Label x:Name="lblFullName_Copy31" Content="Observaciones:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,871,0,0" Height="25.96" Width="90.06"/>
-                <TextBox x:Name="txtDiagnosticDescription" Margin="16.083,897.96,12.773,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Gineco-Obstétrico Obervaciones" Height="87.835" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
+                <TextBox x:Name="txtDiagnosticDescription31" Margin="16.083,897.96,12.773,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Gineco-Obstétrico Obervaciones" Height="87.835" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
                 <Label x:Name="lblFullName_Copy32" Content="ANTECEDENTES PERSONALES PATOLÓGICOS:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,1004.04,0,0" Height="25.96" Width="297.569" FontWeight="Bold"/>
-                <TextBox x:Name="txtDiagnosticDescription1" Margin="16.083,1031,12.773,0" Height="88.835" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Antecedentes personales patológicos" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
+                <TextBox x:Name="txtDiagnosticDescription12" Margin="16.083,1031,12.773,0" Height="88.835" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Antecedentes personales patológicos" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
                 <Label x:Name="lblFullName_Copy33" Content="PADECIMIENTO ACTUAL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,1132.04,0,0" Height="25.96" Width="297.569" FontWeight="Bold"/>
-                <TextBox x:Name="txtDiagnosticDescription2" Margin="16.083,1159,12.773,0" Height="88.835" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Padecimiento actual" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
+                <TextBox x:Name="txtDiagnosticDescription21" Margin="16.083,1159,12.773,0" Height="88.835" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Tag="Padecimiento actual" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black"/>
                 <Label x:Name="lblFullName_Copy34" Content="EXPLORACIÓN FÍSICA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1267.845,0,0" Height="25.96" Width="297.569" FontWeight="Bold"/>
                 <Label x:Name="lblFullName_Copy35" Content="A la exploración extraoral, se observa cráneo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15.083,1298.805,0,0" Height="25.96" Width="247.092"/>
                 <ComboBox x:Name="cbFilter_Copy8" Height="26" Margin="263.006,1300.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="97.698" SelectedIndex="0" Tag="Observa Craneo">
@@ -756,10 +756,43 @@
                 <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="23.792,4640.8,0,0" VerticalAlignment="Top" Width="61.292" GroupName="Relacion Canina" IsChecked="True" Tag="Clase I"/>
                 <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="146.308,4640.8,0,0" VerticalAlignment="Top" Width="98.523" GroupName="Relacion Canina" Tag="Clase II"/>
                 <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="281.55,4640.8,0,0" VerticalAlignment="Top" Width="95.11" GroupName="Relacion Canina" Tag="Clase III"/>
+                <Label x:Name="lblFullName_Copy199" Content="CLASIFICACIÓN DE LAS RETENCIONES DENTARIAS" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18.044,4679.8,0,0" Height="25.96" Width="316.103" FontWeight="Bold" FontStyle="Italic"/>
+                <Image Margin="18.044,4705.76,18.823,506.991" Source="/MyDentDiagnostics;component/Images/RetencionesDentarias.png" Stretch="Fill" VerticalAlignment="Top" Height="159"/>
+                <Label x:Name="lblFullName_Copy200" Content="Se trata de paciente de la" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18.163,4976.698,0,0" Height="25.96" Width="144.345"/>
+                <ComboBox x:Name="cbFilter_Copy72" Height="26" Margin="166.511,4978.698,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0" Tag="Decada de vida">
+                	<System:String>1a decada de la vida</System:String>
+                	<System:String>2a decada de la vida</System:String>
+                	<System:String>3a decada de la vida</System:String>
+					<System:String>4a decada de la vida</System:String>
+					<System:String>5a decada de la vida</System:String>
+					<System:String>6a decada de la vida</System:String>
+					<System:String>7a decada de la vida</System:String>
+					<System:String>8a decada de la vida</System:String>
+                </ComboBox>
+                <Label x:Name="lblFullName_Copy201" Content="ESPACIO PENDIENTE..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="251.99,4906.198,0,0" Height="25.96" Width="144.345"/>
+                <Label x:Name="lblFullName_Copy202" Content=", con diagnostico de" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="306.046,4976.698,0,0" Height="25.96" Width="119.19"/>
+                <ComboBox x:Name="cbDiagnostics" Height="26" Margin="104.186,5011.738,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0" SelectionChanged="cbDiagnostics_SelectionChanged"/>
+                <Label x:Name="lblFullName_Copy204" Content="Diagnosticos:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18.163,5009.738,0,0" Height="25.96" Width="81.023"/>
+                <ListBox x:Name="lstDiagnostics" HorizontalAlignment="Left" Height="106" Margin="286.464,5011.738,0,0" VerticalAlignment="Top" Width="152.236" Tag="Diagnosticos" SelectionMode="Multiple"/>
+                <Label x:Name="lblFullName_Copy205" Content=", requiere tratamiento de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,5132.698,0,0" Height="25.96" Width="144.052"/>
+                <TextBox x:Name="txtAreaName_Copy22" Height="27" Margin="172.133,5132.325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="209.467" Tag="Requiere tratamiento de"/>
+                <Button x:Name="btnAddDiagnostic" Content="+" HorizontalAlignment="Left" Height="26" Margin="254,5011.738,0,0" VerticalAlignment="Top" Width="25.344" Click="btnAddDiagnostic_Click" Cursor="Hand"/>
+                <Button x:Name="btnRemoveDiagnostic" Content="-" HorizontalAlignment="Left" Height="26" Margin="443.936,5011.738,0,0" VerticalAlignment="Top" Width="25.344" Click="btnRemoveDiagnostic_Click" Cursor="Hand"/>
             </Grid>
         </ScrollViewer>
-        <ScrollViewer x:Name="svDiagnostic" Grid.Column="1" Margin="0,0,0,57">
-            <Grid x:Name="gridDiagnostic" VerticalAlignment="Top" Height="840"/>
+        <ScrollViewer x:Name="svDiagnostic" Grid.Column="1" Margin="0,0,0,57" VerticalScrollBarVisibility="Auto">
+            <Grid x:Name="gridDiagnostic">
+				<Border BorderBrush="Black" BorderThickness="1" Margin="35,10,0,0" HorizontalAlignment="Left" Width="130" Height="130" VerticalAlignment="Top">
+					<Image x:Name="diagnosticImage1" Margin="0,0,-1,-1" Cursor="Hand" MouseLeftButtonDown="diagnosticImage_MouseLeftButtonDown"/>
+				</Border>
+				<Border BorderBrush="Black" BorderThickness="1" Margin="223,10,0,0" HorizontalAlignment="Left" Width="130" Height="130" VerticalAlignment="Top">
+					<Image x:Name="diagnosticImage2" Margin="0,0,-1,-1" Cursor="Hand" MouseLeftButtonDown="diagnosticImage_MouseLeftButtonDown"/>
+				</Border>
+            	<Label x:Name="txtDiagnosticName" Content="" VerticalAlignment="Top" Margin="10,189,10,0" Height="25.96" HorizontalContentAlignment="Center"/>
+            	<Label x:Name="lblFullName_Copy206" Content="Nombre del diagnostico:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,163.04,0,0" Height="25.96" Width="224.644" FontWeight="Bold"/>
+            	<Label x:Name="lblFullName_Copy207" Content="Descripción:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,232.04,0,0" Height="25.96" Width="224.644" FontWeight="Bold"/>
+            	<TextBox x:Name="txtDiagnosticDescription" Margin="10,263,10,10" TextWrapping="Wrap" ScrollViewer.CanContentScroll="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+            </Grid>
         </ScrollViewer>
         <Button x:Name="btnAddUpdate" Content="Agregar" Margin="0,0,106,10" Cursor="Hand" TabIndex="1000" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Grid.Column="1" Click="btnAddUpdate_Click"/>
         <Button x:Name="btnCancel" Content="Cancelar" Margin="0,0,10,10" Cursor="Hand" TabIndex="1001" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Grid.Column="1" Click="btnCancel_Click"/>
