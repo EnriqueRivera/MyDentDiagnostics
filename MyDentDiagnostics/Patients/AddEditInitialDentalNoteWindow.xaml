@@ -5,7 +5,7 @@
 	x:Class="MyDentDiagnostics.AddEditInitialDentalNoteWindow"
 	x:Name="Window"
 	Title="Agregar Nota Inicial Dental"
-	Width="1050" Height="5484.05" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+	Width="1050" Height="5649.05" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized">
 
     <Grid x:Name="LayoutRoot">
         <Grid.ColumnDefinitions>
@@ -13,7 +13,7 @@
             <ColumnDefinition Width="245*"/>
         </Grid.ColumnDefinitions>
         <ScrollViewer x:Name="svInitialDentalNote" Margin="-5,0,5,10" HorizontalScrollBarVisibility="Auto">
-            <Grid x:Name="gridInitialDentalNote" VerticalAlignment="Top" Height="5371" Width="638.698">
+            <Grid x:Name="gridInitialDentalNote" VerticalAlignment="Top" Height="5573.5" Width="638.698">
                 <Label x:Name="lblTreatmentName" Content="NOMBRE DEL PACIENTE" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142"/>
                 <TextBox x:Name="txtFullName" Height="27" Margin="157,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center"/>
                 <Label x:Name="lblTreatmentName_Copy" Content="Paciente" Height="27" Margin="10,58,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="54.167"/>
@@ -697,53 +697,42 @@
                 <Label x:Name="lblFullName_Copy167" Content="ESQUEMA" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="443.936,3283.685,0,0" Height="25.96" Width="72.535" FontWeight="Bold"/>
                 <Label x:Name="lblFullName_Copy168" Content="Esmalte normal, liso, translúcido&#xD;&#xA;y cristalino de color uniforme" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244.783,3332.645,0,0" Height="42.627" Width="179.453"/>
                 <Image Margin="449.937,3315.645,128.761,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_1.png" Stretch="Fill" Height="74" Width="60" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtAreaName_Copy4" Height="27" Margin="541.817,3339.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis normal"/>
                 <Label x:Name="lblFullName_Copy169" Content="CUESTIONABLE&#xA;TF 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3421.645,0,0" Height="42.627" Width="98.308"/>
                 <Label x:Name="lblFullName_Copy170" Content="1.0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3421.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
                 <Label x:Name="lblFullName_Copy171" Content="Esmalte translúcido y cristalino&#xD;&#xA;con finas bandas horizontales &#xD;&#xA;de color blanquecino" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244.783,3412.645,0,0" Height="58.627" Width="179.453"/>
-                <TextBox x:Name="txtAreaName_Copy5" Height="27" Margin="541.817,3428.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis cuestionable"/>
                 <Image Margin="449.937,3405.145,128.761,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_2.png" Stretch="Fill" Width="60" Height="74" VerticalAlignment="Top"/>
                 <Image Margin="449.937,3496.645,128.761,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_3.png" Stretch="Fill" Width="60" Height="74" VerticalAlignment="Top"/>
                 <Label x:Name="lblFullName_Copy172" Content="MUY LEVE&#xA;TF 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3513.645,0,0" Height="42.627" Width="98.308"/>
                 <Label x:Name="lblFullName_Copy173" Content="1.3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3513.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
                 <Label x:Name="lblFullName_Copy174" Content="Esmalte liso, translúcido y cristalino&#xD;&#xA;con gruesas líneas horizontales&#xD;&#xA;blanquecina. No compromete estética" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3504.645,0,0" Height="58.627" Width="216.966"/>
-                <TextBox x:Name="txtAreaName_Copy6" Height="27" Margin="541.817,3520.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis muy leve"/>
                 <Image Margin="449.937,3585.645,128.761,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_4.png" Stretch="Fill" Height="74" VerticalAlignment="Top"/>
                 <Label x:Name="lblFullName_Copy175" Content="LEVE&#xA;TF 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3602.645,0,0" Height="42.627" Width="98.308"/>
                 <Label x:Name="lblFullName_Copy176" Content="1.5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3602.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
                 <Label x:Name="lblFullName_Copy177" Content="Esmalte liso, translúcido y cristalino&#xD;&#xA;acompañado por gruesas líneas opacas&#xD;&#xA;blanquecinas, con manchones opacos&#xD;&#xA;del amarillo al café (esmalte moteado)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3585.645,0,0" Height="74" Width="216.966"/>
-                <TextBox x:Name="txtAreaName_Copy7" Height="27" Margin="541.817,3609.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis leve"/>
                 <Image Margin="449.937,3674.312,128.761,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_5.png" Stretch="Fill" Width="60" Height="74" VerticalAlignment="Top"/>
                 <Label x:Name="lblFullName_Copy178" Content="MODERADO&#xA;TF 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3690.645,0,0" Height="42.627" Width="98.308"/>
                 <Label x:Name="lblFullName_Copy179" Content="2.0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3690.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
                 <Label x:Name="lblFullName_Copy180" Content="Todas las superficies con marcada&#xD;&#xA;opacidad, que varía del blanco opaco&#xD;&#xA;al gris. Puede estar acompañado de&#xD;&#xA;vetas amarillo o café. Puede haber&#xD;&#xA;áreas con atrición" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3662.645,0,0" Height="92" Width="216.966"/>
-                <TextBox x:Name="txtAreaName_Copy8" Height="27" Margin="541.817,3697.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis moderado"/>
                 <Image Margin="450.933,3762.605,127.765,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_6.png" Stretch="Fill" Height="74" VerticalAlignment="Top"/>
                 <Label x:Name="lblFullName_Copy181" Content="SEVERO&#xA;TF 5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3783.645,0,0" Height="42.627" Width="98.308"/>
                 <Label x:Name="lblFullName_Copy182" Content="2.7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3783.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
                 <Label x:Name="lblFullName_Copy183" Content="Superficie totalmente opaca con&#xD;&#xA;pérdida del esmalte en forma de&#xD;&#xA;cráter no mayor a 2 mm de diám. Las&#xD;&#xA;pigmentaciones están en el fondo del&#xD;&#xA;cráter. Suelen ser extrínsecas" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3755.645,0,0" Height="92" Width="216.966"/>
-                <TextBox x:Name="txtAreaName_Copy14" Height="27" Margin="541.817,3790.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 5"/>
                 <Image Margin="451.6,3858.646,127.098,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_7.png" Stretch="Fill" Height="74" VerticalAlignment="Top"/>
                 <Label x:Name="lblFullName_Copy184" Content="SEVERO&#xA;TF 6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3878.645,0,0" Height="42.627" Width="98.308"/>
                 <Label x:Name="lblFullName_Copy185" Content="3.9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3878.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
                 <Label x:Name="lblFullName_Copy186" Content="Superficie blanca opaca con mayor &#xD;&#xA;cantidad de cráteres. Bandas&#xD;&#xA;horizontales de esmalte faltante. &#xD;&#xA;Pigmentaciones en fondo de cráter&#xD;&#xA;Suelen ser extrínsecas" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3850.645,0,0" Height="92" Width="216.966"/>
-                <TextBox x:Name="txtAreaName_Copy15" Height="27" Margin="541.817,3885.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 6"/>
                 <Image Margin="451.6,3951.272,127.098,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_8.png" Stretch="Fill" Height="74" VerticalAlignment="Top"/>
                 <Label x:Name="lblFullName_Copy187" Content="SEVERO&#xA;TF 7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,3970.645,0,0" Height="42.627" Width="98.308"/>
                 <Label x:Name="lblFullName_Copy188" Content="&gt;3.9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,3970.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
                 <Label x:Name="lblFullName_Copy189" Content="Superficie totalmente blanca opaca&#xD;&#xA;con pérdida de esmalte en áreas&#xD;&#xA;irregulares, iniciando en tercio incisal&#xD;&#xA;(oclusal) menor al 50% de la superf." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,3950.645,0,0" Height="73.627" Width="216.966"/>
-                <TextBox x:Name="txtAreaName_Copy16" Height="27" Margin="541.817,3977.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 7"/>
                 <Image Margin="451.6,4039.272,127.098,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_9.png" Stretch="Fill" Height="74" VerticalAlignment="Top"/>
                 <Label x:Name="lblFullName_Copy190" Content="SEVERO&#xA;TF 8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,4058.645,0,0" Height="42.627" Width="98.308"/>
                 <Label x:Name="lblFullName_Copy191" Content="&gt;3.9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,4058.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
                 <Label x:Name="lblFullName_Copy192" Content="Pérdida de la superficie del esmalte&#xD;&#xA;mas de 50%. Esmalte blanco opaco.&#xD;&#xA;Puede haber exposición de dentina&#xD;&#xA;con caries" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,4038.645,0,0" Height="73.627" Width="216.966"/>
-                <TextBox x:Name="txtAreaName_Copy17" Height="27" Margin="541.817,4065.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 8"/>
                 <Image Margin="452.6,4124.272,126.098,0" Source="/MyDentDiagnostics;component/Images/EscalaDean_10.png" Stretch="Fill" Height="74" VerticalAlignment="Top"/>
                 <Label x:Name="lblFullName_Copy193" Content="SEVERO&#xA;TF 9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31.974,4144.645,0,0" Height="42.627" Width="98.308"/>
                 <Label x:Name="lblFullName_Copy194" Content="&gt;3.9" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150.762,4144.645,0,0" Height="26.627" Width="62.109" HorizontalContentAlignment="Center"/>
                 <Label x:Name="lblFullName_Copy195" Content="Pérdida de la mayor parte del&#xD;&#xA;esmalte. Dentina expuesta" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="227.27,4138.645,0,0" Height="46.627" Width="216.966"/>
-                <TextBox x:Name="txtAreaName_Copy18" Height="27" Margin="541.817,4151.272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="67.399" Tag="Fluorosis severo 9"/>
-                <Label x:Name="lblFullName_Copy196" Content="Que se indique la escala) según indice de Dean" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17.968,4207.645,0,0" Height="26.627" Width="267.852"/>
                 <Label x:Name="lblFullName_Copy197" Content="CLASIFICACIÓN DE LAS MALOCLUSIONES" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.792,4244.272,0,0" Height="25.96" Width="261.376" FontWeight="Bold" FontStyle="Italic"/>
                 <Image Margin="16.283,4275.232,36.424,0" Source="/MyDentDiagnostics;component/Images/Maloclusiones_1.png" Stretch="Fill" Height="114.65" VerticalAlignment="Top"/>
                 <Image Margin="16.283,4394.882,25.675,0" Source="/MyDentDiagnostics;component/Images/Maloclusiones_2.png" Stretch="Fill" Height="133.918" VerticalAlignment="Top"/>
@@ -753,13 +742,13 @@
                 <RadioButton Content="Clase II Sub. 1" HorizontalAlignment="Left" Height="15.2" Margin="146.308,4570.8,0,0" VerticalAlignment="Top" Width="98.523" GroupName="Clasificacion Angle" Tag="Clase II Sub. 1"/>
                 <RadioButton Content="Clase II Sub. 2" HorizontalAlignment="Left" Height="15.2" Margin="281.55,4570.8,0,0" VerticalAlignment="Top" Width="95.11" GroupName="Clasificacion Angle" Tag="Clase II Sub. 2"/>
                 <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="429.532,4570.8,0,0" VerticalAlignment="Top" Width="64.707" GroupName="Clasificacion Angle" Tag="Clase III"/>
-                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="23.792,4640.8,0,0" VerticalAlignment="Top" Width="61.292" GroupName="Relacion Canina" IsChecked="True" Tag="Clase I"/>
+                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="22.459,4640.8,0,0" VerticalAlignment="Top" Width="61.292" GroupName="Relacion Canina" IsChecked="True" Tag="Clase I"/>
                 <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="146.308,4640.8,0,0" VerticalAlignment="Top" Width="98.523" GroupName="Relacion Canina" Tag="Clase II"/>
                 <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="281.55,4640.8,0,0" VerticalAlignment="Top" Width="95.11" GroupName="Relacion Canina" Tag="Clase III"/>
                 <Label x:Name="lblFullName_Copy199" Content="CLASIFICACIÓN DE LAS RETENCIONES DENTARIAS" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18.044,4679.8,0,0" Height="25.96" Width="316.103" FontWeight="Bold" FontStyle="Italic"/>
                 <Image Margin="18.044,4705.76,18.823,506.991" Source="/MyDentDiagnostics;component/Images/RetencionesDentarias.png" Stretch="Fill" VerticalAlignment="Top" Height="159"/>
-                <Label x:Name="lblFullName_Copy200" Content="Se trata de paciente de la" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18.163,4976.698,0,0" Height="25.96" Width="144.345"/>
-                <ComboBox x:Name="cbFilter_Copy72" Height="26" Margin="166.511,4978.698,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0" Tag="Decada de vida">
+                <Label x:Name="lblFullName_Copy200" Content="Se trata de paciente de la" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.449,5362.873,0,0" Height="25.96" Width="144.345"/>
+                <ComboBox x:Name="cbFilter_Copy72" Height="26" Margin="170.797,5364.873,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0" Tag="Decada de vida">
                 	<System:String>1a decada de la vida</System:String>
                 	<System:String>2a decada de la vida</System:String>
                 	<System:String>3a decada de la vida</System:String>
@@ -769,15 +758,116 @@
 					<System:String>7a decada de la vida</System:String>
 					<System:String>8a decada de la vida</System:String>
                 </ComboBox>
-                <Label x:Name="lblFullName_Copy201" Content="ESPACIO PENDIENTE..." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="251.99,4906.198,0,0" Height="25.96" Width="144.345"/>
-                <Label x:Name="lblFullName_Copy202" Content=", con diagnostico de" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="306.046,4976.698,0,0" Height="25.96" Width="119.19"/>
-                <ComboBox x:Name="cbDiagnostics" Height="26" Margin="104.186,5011.738,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0" SelectionChanged="cbDiagnostics_SelectionChanged"/>
-                <Label x:Name="lblFullName_Copy204" Content="Diagnosticos:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18.163,5009.738,0,0" Height="25.96" Width="81.023"/>
-                <ListBox x:Name="lstDiagnostics" HorizontalAlignment="Left" Height="106" Margin="286.464,5011.738,0,0" VerticalAlignment="Top" Width="152.236" Tag="Diagnosticos" SelectionMode="Multiple"/>
-                <Label x:Name="lblFullName_Copy205" Content=", requiere tratamiento de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,5132.698,0,0" Height="25.96" Width="144.052"/>
-                <TextBox x:Name="txtAreaName_Copy22" Height="27" Margin="172.133,5132.325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="209.467" Tag="Requiere tratamiento de"/>
-                <Button x:Name="btnAddDiagnostic" Content="+" HorizontalAlignment="Left" Height="26" Margin="254,5011.738,0,0" VerticalAlignment="Top" Width="25.344" Click="btnAddDiagnostic_Click" Cursor="Hand"/>
-                <Button x:Name="btnRemoveDiagnostic" Content="-" HorizontalAlignment="Left" Height="26" Margin="443.936,5011.738,0,0" VerticalAlignment="Top" Width="25.344" Click="btnRemoveDiagnostic_Click" Cursor="Hand"/>
+                <Label x:Name="lblFullName_Copy202" Content=", con diagnostico de" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="310.332,5362.873,0,0" Height="25.96" Width="119.19"/>
+                <ComboBox x:Name="cbDiagnostics" Height="26" Margin="108.472,5397.913,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0" SelectionChanged="cbDiagnostics_SelectionChanged"/>
+                <Label x:Name="lblFullName_Copy204" Content="Diagnosticos:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.449,5395.913,0,0" Height="25.96" Width="81.023"/>
+                <ListBox x:Name="lstDiagnostics" HorizontalAlignment="Left" Height="106" Margin="290.75,5397.913,0,0" VerticalAlignment="Top" Width="152.236" Tag="Diagnosticos" SelectionMode="Multiple"/>
+                <Label x:Name="lblFullName_Copy205" Content=", requiere tratamiento de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26.745,5518.873,0,0" Height="25.96" Width="144.052"/>
+                <TextBox x:Name="txtAreaName_Copy22" Height="27" Margin="176.419,5518.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="209.467" Tag="Requiere tratamiento de"/>
+                <Button x:Name="btnAddDiagnostic" Content="+" HorizontalAlignment="Left" Height="26" Margin="258.286,5397.913,0,0" VerticalAlignment="Top" Width="25.344" Click="btnAddDiagnostic_Click" Cursor="Hand"/>
+                <Button x:Name="btnRemoveDiagnostic" Content="-" HorizontalAlignment="Left" Height="26" Margin="448.222,5397.913,0,0" VerticalAlignment="Top" Width="25.344" Click="btnRemoveDiagnostic_Click" Cursor="Hand"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="14.373" Margin="565.717,3347.322,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis normal"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,3436.322,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis cuestionable"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,3527.322,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis muy leve"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,3615.399,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis leve"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,3703.399,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis moderado"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,3797.399,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis severo 5"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,3891.899,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis severo 6"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,3983.322,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis severo 7"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,4070.772,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis severo 8"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,4157.399,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis severo 9"/>
+                <TextBox x:Name="txtAreaName_Copy4" Height="27" Margin="104.186,4209.645,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="479.943" Tag="Fluorosis comentario"/>
+                <Label x:Name="lblFullName_Copy196" Content="Comentario:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,4209.645,0,0" Height="25.96" Width="76.727"/>
+                <Label x:Name="lblFullName_Copy201" Content="ÓRGANO DENTAL 18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,4869.76,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy208" Content="ÓRGANO DENTAL 28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="176.969,4869.76,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy209" Content="ÓRGANO DENTAL 38" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="334.842,4869.76,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy210" Content="ÓRGANO DENTAL 48" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="488.024,4869.76,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy211" Content="Tipo de Retención" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23.792,4900.72,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy218" Content="Clasif. Sánchez Torres" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23.792,4994.219,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy222" Content="Clasif. Pell y Gregory" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,5087.225,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy226" Content="Clasif. de Winter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23.792,5176.273,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <RadioButton Content="Inclusión" HorizontalAlignment="Left" Height="15.2" Margin="35.131,4931.68,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD18 Retencion" Tag="Inclusión" IsChecked="True"/>
+                <RadioButton Content="Impactación" HorizontalAlignment="Left" Height="15.2" Margin="35.121,4951.88,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD18 Retencion" Tag="Impactación"/>
+                <RadioButton Content="Retención" HorizontalAlignment="Left" Height="15.2" Margin="35.131,4972.08,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD18 Retencion" Tag="Retención"/>
+                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="95.151,5023.672,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD18 Sanchez Clase" Tag="Clase I" IsChecked="True"/>
+                <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="95.141,5043.872,0,0" VerticalAlignment="Top" Width="64.075" GroupName="OD18 Sanchez Clase" Tag="Clase II"/>
+                <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="95.151,5064.072,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD18 Sanchez Clase" Tag="Clase III"/>
+                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="40.111,5114.339,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD18 Pell" Tag="Clase I" IsChecked="True"/>
+                <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="40.101,5134.539,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD18 Pell" Tag="Clase II"/>
+                <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="40.111,5154.739,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD18 Pell" Tag="Clase III"/>
+                <RadioButton Content="Mesioangular" HorizontalAlignment="Left" Height="15.2" Margin="35.101,5203.007,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD18 Winter" Tag="Mesioangular" IsChecked="True"/>
+                <RadioButton Content="Distoangular" HorizontalAlignment="Left" Height="15.2" Margin="35.091,5223.207,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD18 Winter" Tag="Distoangular"/>
+                <RadioButton Content="Horizontal" HorizontalAlignment="Left" Height="15.2" Margin="35.101,5243.407,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD18 Winter" Tag="Horizontal"/>
+                <RadioButton Content="Vertical" HorizontalAlignment="Left" Height="15.2" Margin="35.431,5263.607,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD18 Winter" Tag="Vertical"/>
+                <RadioButton Content="Invertido" HorizontalAlignment="Left" Height="15.2" Margin="35.431,5283.807,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD18 Winter" Tag="Invertido"/>
+                <RadioButton Content="Pos. A" HorizontalAlignment="Left" Height="15.2" Margin="20.839,5023.672,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD18 Sanchez Posicion" Tag="Posición A" IsChecked="True"/>
+                <RadioButton Content="Pos. B" HorizontalAlignment="Left" Height="15.2" Margin="20.839,5043.872,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD18 Sanchez Posicion" Tag="Posición B"/>
+                <RadioButton Content="Pos. C" HorizontalAlignment="Left" Height="15.2" Margin="20.839,5064.072,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD18 Sanchez Posicion" Tag="Posición C"/>
+                <Label x:Name="lblFullName_Copy212" Content="Tipo de Retención" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="187.292,4900.72,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy213" Content="Clasif. Sánchez Torres" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="187.292,4994.219,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy214" Content="Clasif. Pell y Gregory" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="185.959,5087.225,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy215" Content="Clasif. de Winter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="187.292,5176.273,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <RadioButton Content="Inclusión" HorizontalAlignment="Left" Height="15.2" Margin="198.631,4931.68,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD28 Retencion" Tag="Inclusión" IsChecked="True"/>
+                <RadioButton Content="Impactación" HorizontalAlignment="Left" Height="15.2" Margin="198.621,4951.88,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD28 Retencion" Tag="Impactación"/>
+                <RadioButton Content="Retención" HorizontalAlignment="Left" Height="15.2" Margin="198.631,4972.08,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD28 Retencion" Tag="Retención"/>
+                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="258.651,5023.672,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD28 Sanchez Clase" Tag="Clase I" IsChecked="True"/>
+                <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="258.641,5043.872,0,0" VerticalAlignment="Top" Width="64.075" GroupName="OD28 Sanchez Clase" Tag="Clase II"/>
+                <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="258.651,5064.072,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD28 Sanchez Clase" Tag="Clase III"/>
+                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="198.611,5114.339,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD28 Pell" Tag="Clase I" IsChecked="True"/>
+                <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="198.601,5134.539,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD28 Pell" Tag="Clase II"/>
+                <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="198.611,5154.739,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD28 Pell" Tag="Clase III"/>
+                <RadioButton Content="Mesioangular" HorizontalAlignment="Left" Height="15.2" Margin="198.601,5203.007,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD28 Winter" Tag="Mesioangular" IsChecked="True"/>
+                <RadioButton Content="Distoangular" HorizontalAlignment="Left" Height="15.2" Margin="198.591,5223.207,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD28 Winter" Tag="Distoangular"/>
+                <RadioButton Content="Horizontal" HorizontalAlignment="Left" Height="15.2" Margin="198.601,5243.407,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD28 Winter" Tag="Horizontal"/>
+                <RadioButton Content="Vertical" HorizontalAlignment="Left" Height="15.2" Margin="198.931,5263.607,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD28 Winter" Tag="Vertical"/>
+                <RadioButton Content="Invertido" HorizontalAlignment="Left" Height="15.2" Margin="198.931,5283.807,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD28 Winter" Tag="Invertido"/>
+                <RadioButton Content="Pos. A" HorizontalAlignment="Left" Height="15.2" Margin="184.339,5023.672,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD28 Sanchez Posicion" Tag="Posición A" IsChecked="True"/>
+                <RadioButton Content="Pos. B" HorizontalAlignment="Left" Height="15.2" Margin="184.339,5043.872,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD28 Sanchez Posicion" Tag="Posición B"/>
+                <RadioButton Content="Pos. C" HorizontalAlignment="Left" Height="15.2" Margin="184.339,5064.072,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD28 Sanchez Posicion" Tag="Posición C"/>
+                <Label x:Name="lblFullName_Copy216" Content="Tipo de Retención" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346.292,4900.72,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy217" Content="Clasif. Sánchez Torres" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346.292,4994.219,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy219" Content="Clasif. Pell y Gregory" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344.959,5087.225,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy220" Content="Clasif. de Winter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="346.292,5176.273,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <RadioButton Content="Inclusión" HorizontalAlignment="Left" Height="15.2" Margin="357.631,4931.68,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD38 Retencion" Tag="Inclusión" IsChecked="True"/>
+                <RadioButton Content="Impactación" HorizontalAlignment="Left" Height="15.2" Margin="357.621,4951.88,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD38 Retencion" Tag="Impactación"/>
+                <RadioButton Content="Retención" HorizontalAlignment="Left" Height="15.2" Margin="357.631,4972.08,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD38 Retencion" Tag="Retención"/>
+                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="412.982,5023.672,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD38 Sanchez Clase" Tag="Clase I" IsChecked="True"/>
+                <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="412.972,5043.872,0,0" VerticalAlignment="Top" Width="64.075" GroupName="OD38 Sanchez Clase" Tag="Clase II"/>
+                <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="412.982,5064.072,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD38 Sanchez Clase" Tag="Clase III"/>
+                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="357.611,5114.339,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD38 Pell" Tag="Clase I" IsChecked="True"/>
+                <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="357.601,5134.539,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD38 Pell" Tag="Clase II"/>
+                <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="357.611,5154.739,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD38 Pell" Tag="Clase III"/>
+                <RadioButton Content="Mesioangular" HorizontalAlignment="Left" Height="15.2" Margin="357.601,5203.007,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD38 Winter" Tag="Mesioangular" IsChecked="True"/>
+                <RadioButton Content="Distoangular" HorizontalAlignment="Left" Height="15.2" Margin="357.591,5223.207,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD38 Winter" Tag="Distoangular"/>
+                <RadioButton Content="Horizontal" HorizontalAlignment="Left" Height="15.2" Margin="357.601,5243.407,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD38 Winter" Tag="Horizontal"/>
+                <RadioButton Content="Vertical" HorizontalAlignment="Left" Height="15.2" Margin="357.931,5263.607,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD38 Winter" Tag="Vertical"/>
+                <RadioButton Content="Invertido" HorizontalAlignment="Left" Height="15.2" Margin="357.931,5283.807,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD38 Winter" Tag="Invertido"/>
+                <RadioButton Content="Pos. A" HorizontalAlignment="Left" Height="15.2" Margin="343.339,5023.672,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD38 Sanchez Posicion" Tag="Posición A" IsChecked="True"/>
+                <RadioButton Content="Pos. B" HorizontalAlignment="Left" Height="15.2" Margin="343.339,5043.872,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD38 Sanchez Posicion" Tag="Posición B"/>
+                <RadioButton Content="Pos. C" HorizontalAlignment="Left" Height="15.2" Margin="343.339,5064.072,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD38 Sanchez Posicion" Tag="Posición C"/>
+                <Label x:Name="lblFullName_Copy221" Content="Tipo de Retención" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="493.292,4900.72,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy223" Content="Clasif. Sánchez Torres" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="493.292,4994.219,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy224" Content="Clasif. Pell y Gregory" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="491.959,5087.225,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy225" Content="Clasif. de Winter" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="493.292,5176.273,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <RadioButton Content="Inclusión" HorizontalAlignment="Left" Height="15.2" Margin="504.631,4931.68,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD48 Retencion" Tag="Inclusión" IsChecked="True"/>
+                <RadioButton Content="Impactación" HorizontalAlignment="Left" Height="15.2" Margin="504.621,4951.88,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD48 Retencion" Tag="Impactación"/>
+                <RadioButton Content="Retención" HorizontalAlignment="Left" Height="15.2" Margin="504.631,4972.08,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD48 Retencion" Tag="Retención"/>
+                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="564.651,5023.672,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD48 Sanchez Clase" Tag="Clase I" IsChecked="True"/>
+                <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="564.641,5043.872,0,0" VerticalAlignment="Top" Width="64.075" GroupName="OD48 Sanchez Clase" Tag="Clase II"/>
+                <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="564.651,5064.072,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD48 Sanchez Clase" Tag="Clase III"/>
+                <RadioButton Content="Clase I" HorizontalAlignment="Left" Height="15.2" Margin="504.611,5114.339,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD48 Pell" Tag="Clase I" IsChecked="True"/>
+                <RadioButton Content="Clase II" HorizontalAlignment="Left" Height="15.2" Margin="504.601,5134.539,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD48 Pell" Tag="Clase II"/>
+                <RadioButton Content="Clase III" HorizontalAlignment="Left" Height="15.2" Margin="504.611,5154.739,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD48 Pell" Tag="Clase III"/>
+                <RadioButton Content="Mesioangular" HorizontalAlignment="Left" Height="15.2" Margin="504.601,5203.007,0,0" VerticalAlignment="Top" Width="90.851" GroupName="OD48 Winter" Tag="Mesioangular" IsChecked="True"/>
+                <RadioButton Content="Distoangular" HorizontalAlignment="Left" Height="15.2" Margin="504.591,5223.207,0,0" VerticalAlignment="Top" Width="90.861" GroupName="OD48 Winter" Tag="Distoangular"/>
+                <RadioButton Content="Horizontal" HorizontalAlignment="Left" Height="15.2" Margin="504.601,5243.407,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD48 Winter" Tag="Horizontal"/>
+                <RadioButton Content="Vertical" HorizontalAlignment="Left" Height="15.2" Margin="504.931,5263.607,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD48 Winter" Tag="Vertical"/>
+                <RadioButton Content="Invertido" HorizontalAlignment="Left" Height="15.2" Margin="504.931,5283.807,0,0" VerticalAlignment="Top" Width="85.851" GroupName="OD48 Winter" Tag="Invertido"/>
+                <RadioButton Content="Pos. A" HorizontalAlignment="Left" Height="15.2" Margin="494.341,5023.672,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD48 Sanchez Posicion" Tag="Posición A" IsChecked="True"/>
+                <RadioButton Content="Pos. B" HorizontalAlignment="Left" Height="15.2" Margin="494.341,5043.872,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD48 Sanchez Posicion" Tag="Posición B"/>
+                <RadioButton Content="Pos. C" HorizontalAlignment="Left" Height="15.2" Margin="494.341,5064.072,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD48 Sanchez Posicion" Tag="Posición C"/>
+                <TextBox x:Name="txtAreaName_Copy5" Height="27" Margin="102.566,5314.645,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="479.943" Tag="Retenciones dentarias comentario"/>
+                <Label x:Name="lblFullName_Copy227" Content="Comentario:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20.839,5314.645,0,0" Height="25.96" Width="76.727"/>
             </Grid>
         </ScrollViewer>
         <ScrollViewer x:Name="svDiagnostic" Grid.Column="1" Margin="0,0,0,57" VerticalScrollBarVisibility="Auto">
