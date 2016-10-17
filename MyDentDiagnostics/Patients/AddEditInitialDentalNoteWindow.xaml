@@ -330,7 +330,7 @@
                     <System:String>limitado</System:String>
                 </ComboBox>
                 <Label x:Name="lblFullName_Copy69" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="104.186,1759.805,0,0" Height="25.96" Width="88.783"/>
-                <TextBox x:Name="txtMovimientoFlexion" Height="27" Margin="197.969,1761.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="187.917" Tag="Cuello comentario" Text="Si selecciona limitado" IsEnabled="False"/>
+                <TextBox x:Name="txtMovimientoFlexion" Height="27" Margin="197.969,1761.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="187.917" Tag="Cuello flexion" Text="Si selecciona limitado" IsEnabled="False"/>
                 <Label x:Name="lblFullName_Copy70" Content="de configuración" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="390.886,1759.805,0,0" Height="25.96" Width="98.743"/>
                 <ComboBox x:Name="cbFilter_Copy36" Height="26" Margin="494.629,1761.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="82.903" SelectedIndex="0" Tag="Cuello configuracion">
                     <System:String>normal</System:String>
@@ -358,7 +358,7 @@
                     <System:String>sí</System:String>
                     <System:String>adherida</System:String>
                 </ComboBox>
-                <TextBox x:Name="txtGangliosMovilidad" Height="27" Margin="197.969,1859.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="282.237" Tag="Cuello lesiones comentario" Text="Si selecciona adherida" IsEnabled="False"/>
+                <TextBox x:Name="txtGangliosMovilidad" Height="27" Margin="197.969,1859.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="282.237" Tag="Ganglios movilidad comentario" Text="Si selecciona adherida" IsEnabled="False"/>
                 <ComboBox x:Name="cbFilter_Copy41" Height="26" Margin="485.206,1859.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="78.326" SelectedIndex="0" Tag="Ganglios movilidad 2">
                     <System:String>aislados</System:String>
                     <System:String>confluentes</System:String>
@@ -624,7 +624,7 @@
                 <Label x:Name="lblFullName_Copy147" Content="a expensas de:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="293.913,2978.898,0,0" Height="25.96" Width="87.687"/>
                 <TextBox x:Name="txtDenticion" Height="27" Margin="386.6,2978.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="171.913" Tag="Denticion completa comentario" Text="activo si selecciona 2 y 3" IsEnabled="False"/>
                 <Label x:Name="lblFullName_Copy71" Content="," HorizontalAlignment="Left" VerticalAlignment="Top" Margin="559.613,2978.898,0,0" Height="25.96" Width="17.33"/>
-                <Label x:Name="lblFullName_Copy148" Content="órganos dentales con " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12.773,3011.898,0,0" Height="25.96" Width="127.244"/>
+                <Label x:Name="lblFullName_Copy148" Content="Órganos dentales con " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12.773,3011.898,0,0" Height="25.96" Width="127.244"/>
                 <ComboBox x:Name="cbFilter_Copy3" Height="26" Margin="145.017,3011.858,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="99.814" SelectedIndex="0" Tag="Organos dentales">
                 	<System:String>hipodoncia</System:String>
                 	<System:String>anodoncia parcial</System:String>
@@ -778,7 +778,7 @@
                 <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="17.873" Margin="565.717,4157.399,0,0" VerticalAlignment="Top" Width="16.411" Tag="Fluorosis severo 9"/>
                 <TextBox x:Name="txtAreaName_Copy4" Height="27" Margin="104.186,4209.645,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="479.943" Tag="Fluorosis comentario"/>
                 <Label x:Name="lblFullName_Copy196" Content="Comentario:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,4209.645,0,0" Height="25.96" Width="76.727"/>
-                <Label x:Name="lblFullName_Copy201" Content="ÓRGANO DENTAL 18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.459,4869.76,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
+                <Label x:Name="lblFullName_Copy201" Content="ÓRGANO DENTAL 18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="22.789,4869.76,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
                 <Label x:Name="lblFullName_Copy208" Content="ÓRGANO DENTAL 28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="176.969,4869.76,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
                 <Label x:Name="lblFullName_Copy209" Content="ÓRGANO DENTAL 38" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="334.842,4869.76,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
                 <Label x:Name="lblFullName_Copy210" Content="ÓRGANO DENTAL 48" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="488.024,4869.76,0,0" Height="25.96" Width="131.851" FontWeight="Bold" FontStyle="Italic"/>
@@ -868,6 +868,10 @@
                 <RadioButton Content="Pos. C" HorizontalAlignment="Left" Height="15.2" Margin="494.341,5064.072,0,0" VerticalAlignment="Top" Width="64.065" GroupName="OD48 Sanchez Posicion" Tag="Posición C"/>
                 <TextBox x:Name="txtAreaName_Copy5" Height="27" Margin="102.566,5314.645,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="479.943" Tag="Retenciones dentarias comentario"/>
                 <Label x:Name="lblFullName_Copy227" Content="Comentario:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20.839,5314.645,0,0" Height="25.96" Width="76.727"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="15" Margin="11.116,4876.335,0,0" VerticalAlignment="Top" Width="17.218" IsChecked="True" Tag="OD18"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="15" Margin="166.644,4875.76,0,0" VerticalAlignment="Top" Width="17.218" IsChecked="True" Tag="OD28"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="15" Margin="324.29,4876.335,0,0" VerticalAlignment="Top" Width="17.218" IsChecked="True" Tag="OD38"/>
+                <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="15" Margin="476.362,4875.76,0,0" VerticalAlignment="Top" Width="17.218" IsChecked="True" Tag="OD48"/>
             </Grid>
         </ScrollViewer>
         <ScrollViewer x:Name="svDiagnostic" Grid.Column="1" Margin="0,0,0,57" VerticalScrollBarVisibility="Auto">

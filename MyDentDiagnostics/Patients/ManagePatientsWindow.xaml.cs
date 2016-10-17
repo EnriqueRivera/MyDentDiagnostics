@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Controllers;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Linq;
 
 namespace MyDentDiagnostics
 {
@@ -21,6 +26,10 @@ namespace MyDentDiagnostics
         private Controllers.CustomViewModel<Model.Patient> _patients;
         private Controllers.CustomViewModel<Model.Patient> _patientsDcm;
         private bool _lastSearchAllPatients = true;
+        private static BaseFont _baseFont = BaseFont.CreateFont(Environment.GetEnvironmentVariable("windir") + @"\fonts\ARIALUNI.TTF", BaseFont.IDENTITY_H, true);
+        private static iTextSharp.text.Font _font = new iTextSharp.text.Font(_baseFont, 11, iTextSharp.text.Font.NORMAL);
+        private static iTextSharp.text.Font _boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
+        private List<Model.InitialDentalNote> _initialDentalNote = new List<Model.InitialDentalNote>();
         #endregion
 
         #region Constructors
@@ -65,7 +74,24 @@ namespace MyDentDiagnostics
 
             if (selectedPatient != null)
             {
-                //TODO: Export Initial Dental Note to PDF
+                try
+                {
+                    // Configure save file dialog box
+                    Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+                    dlg.FileName = selectedPatient.FullName + "_" + DateTime.Now.ToString("dd-MMMM-yyyy"); // Default file name
+                    dlg.DefaultExt = ".pdf"; // Default file extension
+                    dlg.Filter = "Text documents (.pdf)|*.pdf"; // Filter files by extension
+
+                    if (dlg.ShowDialog() == true)
+                    {
+                        ExportToPdf(dlg.FileName, selectedPatient);
+                        MessageBox.Show("PDF generado", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo generar el PDF.\n\n Detalle del error:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
 		}
 
@@ -159,6 +185,374 @@ namespace MyDentDiagnostics
                 dgPatientsDcm.DataContext = _patientsDcm;
             }
         }
+
+        private void ExportToPdf(string path, Model.Patient selectedPatient)
+        {
+            _initialDentalNote = BusinessController.Instance.FindBy<Model.InitialDentalNote>(p => p.PatientId == selectedPatient.PatientId).ToList();
+
+            iTextSharp.text.Paragraph pdfContent = GetNotaInicialDentalPdfContent(selectedPatient); 
+
+            //Create the PDF Document
+            using (Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f))
+            {
+                using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    using (var writer = PdfWriter.GetInstance(pdfDoc, fs))
+                    {
+                        pdfDoc.Open();
+
+                        //byte[] pngByteArrayImage = MainWindow.ImageToByteArray("pack://application:,,,/MyDentApplication;component/Images/Budget_image_1.PNG");
+                        //iTextSharp.text.Image pngImage = iTextSharp.text.Image.GetInstance(pngByteArrayImage);
+                        //pngImage.ScalePercent(80f);
+                        //pngImage.SetAbsolutePosition(10f, pdfDoc.PageSize.Height - 90f);
+                        //pdfDoc.Add(pngImage);
+
+                        pdfDoc.Add(pdfContent);
+
+                        pdfDoc.Close();
+                    }
+                }
+            }
+        }
+
+        private iTextSharp.text.Paragraph GetNotaInicialDentalPdfContent(Model.Patient selectedPatient)
+        {
+            string gender = string.Empty;
+            var paragraph = new iTextSharp.text.Paragraph("");
+
+            paragraph.Add(GetTitle());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetPatinetInfo(selectedPatient, out gender));
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetAntecedentesHeredofamiliares());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetAntecedentesPersonalesNoPatologicos());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetAntecedentesGinecoObstetricos(gender));
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetAntecedentesPersonalesPatologicos());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetAntecedentesPadecimientoActual());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetExploracionFisica());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetMusculosPalpacion());
+
+            return paragraph;
+        }
+        #endregion
+
+        #region Nota inicial dental
+        private IElement GetMusculosPalpacion()
+        {
+            var musculos = new iTextSharp.text.Paragraph("");
+
+            musculos.Add(GetMusculoPalpacion("Masetero superficial"));
+            musculos.Add(GetMusculoPalpacion("Masetero profundo"));
+            musculos.Add(GetMusculoPalpacion("Fibras anteriores"));
+            musculos.Add(GetMusculoPalpacion("Fibras medias"));
+            musculos.Add(GetMusculoPalpacion("Fibras posteriores"));
+            musculos.Add(GetMusculoPalpacion("Superficial"));
+            musculos.Add(GetMusculoPalpacion("Profundo"));
+            musculos.Add(GetMusculoPalpacion("Trapecio"));
+            musculos.Add(GetMusculoPalpacion("Anterior"));
+            musculos.Add(GetMusculoPalpacion("Medio"));
+            musculos.Add(GetMusculoPalpacion("Posterior"));
+
+            string header = string.Format("Músculos {0}{1}",
+                                            GetNote("Musculos palpacion"),
+                                            musculos.ToString() == "" ? "" : " en ");
+
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk(header, _font));
+            paragraph.Add(musculos);
+
+            return paragraph;
+        }
+
+        private iTextSharp.text.Paragraph GetMusculoPalpacion(string nombreMusculo)
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("", _font));
+            
+            string izquierdo = GetNote(nombreMusculo + " izquierdo");
+            string derecho = GetNote(nombreMusculo + " derecho");
+
+            izquierdo = (string.IsNullOrEmpty(izquierdo)) ? "" : "\nIzquierdo: " + izquierdo;
+            derecho = (string.IsNullOrEmpty(derecho)) ? "" : "\nDerecho: " + derecho;
+
+            if (!string.IsNullOrEmpty(izquierdo) || !string.IsNullOrEmpty(derecho))
+            {
+                paragraph.Add(
+                    new iTextSharp.text.Paragraph(
+                        string.Format("{0}{1}{2}", nombreMusculo, izquierdo, derecho)
+                    )
+                );
+            }
+
+            return paragraph;
+        }
+
+        private IElement GetExploracionFisica()
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("EXPLORACIÓN FÍSICA", _boldFont));
+
+            string explorationInfo = string.Format("\nA la exploración extraoral, se observa cráneo {0}, suturas craneales {1}{2} cráneo {3}{4}. " +
+                                                   "Rostro {5}{6}, cabello color {7}{8}, consistencia {9}, " +
+                                                   "cantidad {10}{11}, carácter {12}{13}, implantación {14}, " +
+                                                   "pabellones auriculares {15} de tamaño {16} con {17}{18}. Ojos {19}{20}, " +
+                                                   "pupilas de tamaño {21} y forma {22}, reflejo fotomotor {23} a estímulos luminosos, " +
+                                                   "reflejo consensual {24}, nariz {25} y {26}{27}, labios {28} {29}{30} {31}, " +
+                                                   "de grosor {32} {33} y función {34}{35} perfil facial {36}. Cuello {37}{38}, " +
+                                                   "movimientos de flexión {39}{40} de configuración {41} {42}{43}. " +
+                                                   "Tráquea en posición {44}, ganglios linfáticos {45}, con movilidad {46}{47} {48} de consistencia {49}, " +
+                                                   "de localización {50}. Pares craneales con {51}. \nArticulación temporomandibular {52}{53}, " +
+                                                   "con {54}{55}, {56}{57}, cóndilo derecho {58}, cóndilo izquierdo {59}, " +
+                                                   "lateralidad derecha con {60}, lateralidad izquierda con {61}, apertura bucal {62} de {63}.",
+                                                    GetNote("Observa Craneo"),
+                                                    GetNote("Sutura craneal"),
+                                                    GetNote("Sutura craneal comentario", " "),
+                                                    GetNote("Craneo"),
+                                                    GetNote("Craneo comentario", " "),
+                                                    GetNote("Rostro"),
+                                                    GetNote("Rostro comentario", " a expensas de: "),
+                                                    GetNote("Cabello color", "otros", true),
+                                                    GetNote("Color cabello comentario", " "),
+                                                    GetNote("Cabello consistencia"),
+                                                    GetNote("Cabello cantidad", "otros", true),
+                                                    GetNote("Cabello cantidad comentario", " "),
+                                                    GetNote("Cabello caracter", "otros", true),
+                                                    GetNote("Cabello caracter comentario", " "),
+                                                    GetNote("Implantacion"),
+                                                    GetNote("Pabellones auriculares"),
+                                                    GetNote("Pabellones tamaño"),
+                                                    GetNote("Pabellones secrecion"),
+                                                    GetNote("Cabello caracter comentario", " "),
+                                                    GetNote("Ojos"),
+                                                    GetNote("Ojos comentario", " a expensas de: "),
+                                                    GetNote("Pupilas tamaño"),
+                                                    GetNote("Pupilas forma"),
+                                                    GetNote("Pupilas reflejo"),
+                                                    GetNote("Reflejo consensual"),
+                                                    GetNote("Nariz posicion"),
+                                                    GetNote("Nariz simetrica"),
+                                                    GetNote("Nariz simetrica comentario", " a expensas de: "),
+                                                    GetNote("Labios"),
+                                                    GetNote("Labios simetricos"),
+                                                    GetNote("Labios simetricos comentario", " a expensas de: "),
+                                                    GetNote("Labios tamaño"),
+                                                    GetNote("Labios grosor"),
+                                                    GetNote("Labios grosor 2"),
+                                                    GetNote("Labios funcion"),
+                                                    GetNote("Labios funcion comentario", " "),
+                                                    GetNote("Perfil facial"),
+                                                    GetNote("Cuello"),
+                                                    GetNote("Cuello comentario", " a expensas de: "),
+                                                    GetNote("Cuello movimiento"),
+                                                    GetNote("Cuello flexion", " a expensas de: "),
+                                                    GetNote("Cuello configuracion"),
+                                                    GetNote("Cuello lesiones"),
+                                                    GetNote("Cuello lesiones comentario", " "),
+                                                    GetNote("Traquea posicion"),
+                                                    GetNote("Ganglios linfaticos"),
+                                                    GetNote("Ganglios movilidad"),
+                                                    GetNote("Ganglios movilidad comentario", " "),
+                                                    GetNote("Ganglios movilidad 2"),
+                                                    GetNote("Ganglios consistencia"),
+                                                    GetNote("Ganglios localizacion"),
+                                                    GetNote("Pares craneales"),
+                                                    GetNote("Articulacion temporomandibular"),
+                                                    GetNote("Articulacion temporomandibular comentario", " "),
+                                                    GetNote("Articulacion temporomandibular articular"),
+                                                    GetNote("Articulacion temporomandibular articular comentario", " "),
+                                                    GetNote("Articulacion temporomandibular masticacion"),
+                                                    GetNote("Articulacion temporomandibular masticacion comentario", " "),
+                                                    GetNote("Condilo derecho"),
+                                                    GetNote("Condilo izquierdo"),
+                                                    GetNote("Lateralidad derecha"),
+                                                    GetNote("Lateralidad izquierda"),
+                                                    GetNote("Apertura bucal"),
+                                                    GetNote("Apertura bucal de")
+                                                    );
+
+            paragraph.Add(new Chunk(explorationInfo, _font));
+
+            return paragraph;
+        }
+
+        private IElement GetAntecedentesPadecimientoActual()
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("PADECIMIENTO ACTUAL:", _boldFont));
+
+            paragraph.Add(new Chunk("\n" + GetNote("Padecimiento actual"), _font));
+
+            return paragraph;
+        }
+
+        private IElement GetAntecedentesPersonalesPatologicos()
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES PERSONALES PATOLÓGICOS:", _boldFont));
+
+            paragraph.Add(new Chunk("\n" + GetNote("Antecedentes personales patológicos"), _font));
+
+            return paragraph;
+        }
+
+        private IElement GetAntecedentesGinecoObstetricos(string gender)
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES GINECO-OBSTÉTRICOS", _boldFont));
+
+            if (gender == "femenino")
+            {
+                string womanInfo = string.Format("\nPrimera menarca {0}" +
+                                                 "\nMenstruación con duración de {1}, " +
+                                                 "frecuencia {2}, FUR (3) {4}",
+                                                GetNote("Primera menarca"),
+                                                GetNote("Duracion de menstruación"),
+                                                GetNote("Frecuencia menstruacion"),
+                                                GetNote("fecha de última regla"),
+                                                GetNote("FUR")
+                                                );
+
+                paragraph.Add(new Chunk(womanInfo, _font));
+            }
+
+            string sexualLife = string.Format("\nVida sexual {0}, {1} embarazos, {2} gestaciones y {3} abortos." +
+                                              "\nMétodos anticonceptivos {4}",
+                                                GetNote("Vida sexual"),
+                                                GetNote("Embarazos"),
+                                                GetNote("Gestaciones"),
+                                                GetNote("Abortos"),
+                                                GetNote("Metodo anticonceptivo")
+                                                );
+
+            paragraph.Add(new Chunk(sexualLife, _font));
+
+            string observations = string.Format("\nObservaciones: \n{0}",
+                                                GetNote("Gineco-Obstétrico Obervaciones")
+                                                );
+
+            paragraph.Add(new Chunk(observations, _font));
+
+            return paragraph;
+        }
+
+        private IElement GetAntecedentesPersonalesNoPatologicos()
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES PERSONALES NO PATOLÓGICOS", _boldFont));
+
+            string patientInfo = string.Format("\nOriginario de {0} residente en {1} desde hace {2} años, " +
+                                                "actualmente {3}, vive con su {4} escolaridad {5}, vivienda {6} {7}.",
+                                                GetNote("Originario de"),
+                                                GetNote("Residente en"),
+                                                GetNote("Residente hace"),
+                                                GetNote("Estado civil"),
+                                                GetNote("Vive con"),
+                                                GetNote("Escolaridad"),
+                                                GetNote("Vivienda (1)"),
+                                                GetNote("Vivienda (2)")
+                                                );
+
+            paragraph.Add(new Chunk(patientInfo, _font));
+
+            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Alcoholismo: ", "APNP_Alcoholismo_SiNo", "APNP_Alcoholismo_Observacion", false), _font));
+            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Tabaquismo: ", "APNP_Tabaquismo_SiNo", "APNP_Tabaquismo_Observacion", false), _font));
+            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Toxicomanías: ", "APNP_Toxicomanias_SiNo", "APNP_Toxicomanias_Observacion", false), _font));
+            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Hospitalizaciones o cirugías: ", "APNP_Cirugias_SiNo", "APNP_Cirugias_Observacion", false), _font));
+
+            return paragraph;
+        }
+
+        private string GetAntecedentePersonalNoPatologico(string antecedente, string yesNoName, string parteDeName, bool heredofamiliar)
+        {
+            return Convert.ToBoolean(GetNote(yesNoName))
+                        ? antecedente + GetNote(parteDeName)
+                        : antecedente + "Negado";
+        }
+
+        private IElement GetAntecedentesHeredofamiliares()
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES HEREDOFAMILIARES", _boldFont));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Hipertensión arterial:", "AH_HipertensionArterial_SiNo", "AH_HipertensionArterial_PorParteDe", "AH_HipertensionArterial_Finado"), _font));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Diabetes Mellitus:", "AH_DiabetesMellitus_SiNo", "AH_DiabetesMellitus_PorParteDe", "AH_DiabetesMellitus_Finado"), _font));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Cáncer:", "AH_Cancer_SiNo", "AH_Cancer_PorParteDe", "AH_Cancer_Finado"), _font));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Discracias sanguíneas:", "AH_DiscranciasSanguineas_SiNo", "AH_DiscranciasSanguineas_PorParteDe", "AH_DiscranciasSanguineas_Finado"), _font));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Enfermedades cardiacas:", "AH_Cardiacas_SiNo", "AH_Cardiacas_PorParteDe", "AH_Cardiacas_Finado"), _font));
+
+            string otroPadecimiento = GetNote("AH_OtroPadecimiento_Padecimiento");
+            if (!string.IsNullOrEmpty(otroPadecimiento))
+            {
+                paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-" + otroPadecimiento + ": ", "AH_OtroPadecimiento_SiNo", "AH_OtroPadecimiento_PorParteDe", "AH_OtroPadecimiento_Finado"), _font));
+            }
+
+            return paragraph;
+        }
+
+        private string GetAntecedenteHeredofamiliar(string antecedente, string yesNoName, string parteDeName, string finadoName)
+        {
+            if (Convert.ToBoolean(GetNote(yesNoName)))
+            {
+                return string.Format("{0} Por parte de {1}{2}", 
+                                    antecedente, 
+                                    GetNote(parteDeName),
+                                    (Convert.ToBoolean(GetNote(finadoName)) ? " (Finado)" : "")
+                                    );
+            }
+
+            return antecedente + " No";
+        }
+
+        private IElement GetPatinetInfo(Model.Patient selectedPatient, out string gender)
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("NOMBRE DEL PACIENTE: ", _boldFont));
+            paragraph.Add(new Chunk(selectedPatient.FullName, _font));
+            gender = GetNote("Genero");
+
+            string patientInfo = string.Format("\nPaciente {0} de {1} años de edad, acude a consulta por {2}",
+                                                gender,
+                                                GetNote("Edad"),
+                                                GetNote("Motivo de la consulta")
+                                                );
+
+            paragraph.Add(new Chunk(patientInfo, _font));
+            return paragraph;
+        }
+
+        private IElement GetTitle()
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("NOTA INICIAL DENTAL", _boldFont));
+            paragraph.Alignment = Element.ALIGN_CENTER;
+            return paragraph;
+        }
+
+        private string GetNote(string noteName, string beforeNote, bool hideWithBeforeNote = false)
+        {
+            string noteValue = GetNote(noteName);
+
+            if (hideWithBeforeNote)
+            {
+                if (noteValue == beforeNote)
+                {
+                    return string.Empty;
+                }
+
+                return noteValue;
+            }
+
+            return string.IsNullOrEmpty(noteValue) ? string.Empty : (beforeNote + noteValue);
+        }
+
+        private string GetNote(string note)
+        {
+            var itemToRemove = _initialDentalNote.FirstOrDefault(r => r.Name == note);
+
+            if (itemToRemove != null)
+            {
+                _initialDentalNote.Remove(itemToRemove);
+                return itemToRemove.Value;
+            }
+
+            return string.Empty;
+        }
+
         #endregion
     }
 }
