@@ -26,7 +26,7 @@ namespace MyDentDiagnostics
         private Controllers.CustomViewModel<Model.Patient> _patients;
         private Controllers.CustomViewModel<Model.Patient> _patientsDcm;
         private bool _lastSearchAllPatients = true;
-        private static BaseFont _baseFont = BaseFont.CreateFont(Environment.GetEnvironmentVariable("windir") + @"\fonts\ARIALUNI.TTF", BaseFont.IDENTITY_H, true);
+        private static BaseFont _baseFont = BaseFont.CreateFont("arialuni.ttf", BaseFont.CP1252, BaseFont.EMBEDDED, BaseFont.CACHED, MyDentDiagnostics.Properties.Resources.ARIALUNI, null);
         private static iTextSharp.text.Font _font = new iTextSharp.text.Font(_baseFont, 11, iTextSharp.text.Font.NORMAL);
         private static iTextSharp.text.Font _boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
         private List<Model.InitialDentalNote> _initialDentalNote = new List<Model.InitialDentalNote>();

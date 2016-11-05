@@ -7,3 +7,12 @@ C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\obj\Debug\Controllers.csprojResolveAssemblyReference.cache
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\obj\Debug\Controllers.dll
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\obj\Debug\Controllers.pdb
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\bin\Debug\Controllers.dll
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\bin\Debug\Controllers.pdb
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\bin\Debug\Model.dll
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\bin\Debug\EntityFramework.dll
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\bin\Debug\Model.pdb
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\bin\Debug\EntityFramework.xml
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\obj\Debug\Controllers.csprojResolveAssemblyReference.cache
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\obj\Debug\Controllers.dll
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Controllers\obj\Debug\Controllers.pdb

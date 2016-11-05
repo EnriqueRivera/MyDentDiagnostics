@@ -8,3 +8,12 @@ C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\obj\Debug\Model.dll
 C:\Users\Enrique Rivera\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\obj\Debug\Model.pdb
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\bin\Debug\Model.dll.config
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\bin\Debug\Model.dll
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\bin\Debug\Model.pdb
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\bin\Debug\EntityFramework.dll
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\bin\Debug\EntityFramework.xml
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\obj\Debug\Model.dll
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\obj\Debug\Model.pdb
