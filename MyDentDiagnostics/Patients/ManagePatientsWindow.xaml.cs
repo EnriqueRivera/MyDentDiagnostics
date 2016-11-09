@@ -215,6 +215,9 @@ namespace MyDentDiagnostics
             }
         }
 
+        #endregion
+
+        #region Nota inicial dental
         private iTextSharp.text.Paragraph GetNotaInicialDentalPdfContent(Model.Patient selectedPatient)
         {
             string gender = string.Empty;
@@ -237,27 +240,243 @@ namespace MyDentDiagnostics
             paragraph.Add(GetExploracionFisica());
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
             paragraph.Add(GetMusculosPalpacion());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetExploracionFisica2());
+            paragraph.Add(GetFluorosis());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetMaloclusiones());
+            paragraph.Add(GetRetencionesDentarias());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetTratamientos());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetFirma());
 
             return paragraph;
         }
-        #endregion
 
-        #region Nota inicial dental
+        private IElement GetFirma()
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("\n_______________________\nFirma", _boldFont));
+            paragraph.Alignment = Element.ALIGN_RIGHT;
+            return paragraph;
+        }
+
+        private IElement GetTratamientos()
+        {
+            var paragraph = new iTextSharp.text.Paragraph();
+
+
+            string tratamientos = string.Format("Se trata de paciente de la {0}, con diagnostico de {1}, " + 
+                                                "requiere tratamiento de: {2}",
+                                                GetNote("Decada de vida"),
+                                                GetNote("Diagnosticos").Replace("|", ", "),
+                                                GetNote("Requiere tratamiento de")
+                                                );
+
+
+            paragraph.Add(new Chunk(tratamientos, _font));
+
+            return paragraph;
+        }
+
+        private IElement GetRetencionesDentarias()
+        {
+            var paragraph = new iTextSharp.text.Paragraph("");
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(new Chunk("CLASIFICACIÓN DE LAS RETENCIONES DENTARIAS", _boldFont));
+
+            string observaciones = GetNote("Retenciones dentarias comentario");
+            string retenciones = string.Format("{0}{1}{2}{3}",
+                                                GetRetencion("OD18"),
+                                                GetRetencion("OD28"),
+                                                GetRetencion("OD38"),
+                                                GetRetencion("OD48")
+                                                );
+
+
+            paragraph.Add(new Chunk(retenciones, _font));
+
+            if (!string.IsNullOrEmpty(observaciones))
+            {
+                paragraph.Add(new Chunk("\nObservaciones: " + observaciones, _font));
+            }
+
+            return string.IsNullOrEmpty(observaciones) && string.IsNullOrEmpty(retenciones)
+                    ? new iTextSharp.text.Paragraph()
+                    : paragraph;
+        }
+
+        private object GetRetencion(string retencion)
+        {
+            if (Convert.ToBoolean(GetNote(retencion)))
+            {
+                return string.Format("\nRetención tipo {0} de {1} {2} {3} según Sanchez Torres, " +
+                                     "{4} según Pell y Gregory, posición {5} según Winter.",
+                                    GetNote(retencion + " Retencion"),
+                                    retencion,
+                                    GetNote(retencion + " Sanchez Posicion"),
+                                    GetNote(retencion + " Sanchez Clase"),
+                                    GetNote(retencion + " Pell"),
+                                    GetNote(retencion + " Winter")
+                                    );
+            }
+
+            return string.Empty;
+        }
+
+        private IElement GetMaloclusiones()
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("CLASIFICACIÓN DE LAS MALOCLUSIONES\n", _boldFont));
+
+            string maloclusion = string.Format("Maloclusión {0} de Angle, relación canina {1}.",
+                                            GetNote("Clasificacion Angle"),
+                                            GetNote("Relacion Canina")
+                                            );
+
+            paragraph.Add(new Chunk(maloclusion, _font));
+
+            return paragraph;
+        }
+
+        private IElement GetFluorosis()
+        {
+            var paragraph = new iTextSharp.text.Paragraph("");
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(new Chunk("FLUOROSIS", _boldFont));
+
+            string observaciones = GetNote("Fluorosis comentario");
+            string escalaDean = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}",
+                                            Convert.ToBoolean(GetNote("Fluorosis normal")) ? ", TF0" : "",
+                                            Convert.ToBoolean(GetNote("Fluorosis cuestionable")) ? ", TF1" : "",
+                                            Convert.ToBoolean(GetNote("Fluorosis muy leve")) ? ", TF2" : "",
+                                            Convert.ToBoolean(GetNote("Fluorosis leve")) ? ", TF3" : "",
+                                            Convert.ToBoolean(GetNote("Fluorosis moderado")) ? ", TF4" : "",
+                                            Convert.ToBoolean(GetNote("Fluorosis severo 5")) ? ", TF5" : "",
+                                            Convert.ToBoolean(GetNote("Fluorosis severo 6")) ? ", TF6" : "",
+                                            Convert.ToBoolean(GetNote("Fluorosis severo 7")) ? ", TF7" : "",
+                                            Convert.ToBoolean(GetNote("Fluorosis severo 8")) ? ", TF8" : "",
+                                            Convert.ToBoolean(GetNote("Fluorosis severo 9")) ? ", TF9" : ""
+                                            );
+
+            bool flourosisPresent = escalaDean.Length > 0;
+            if (flourosisPresent)
+            {
+                escalaDean = escalaDean.Substring(1);
+                paragraph.Add(new Chunk("\nFluorosis con" + escalaDean + " según escala de Dean.", _font));
+            }
+
+            if (!string.IsNullOrEmpty(observaciones))
+            {
+                paragraph.Add(new Chunk("\nObservaciones: " + observaciones, _font));
+            }
+
+            return string.IsNullOrEmpty(observaciones) && !flourosisPresent
+                    ? new iTextSharp.text.Paragraph()
+                    : paragraph;
+        }
+
+        private IElement GetExploracionFisica2()
+        {
+            var paragraph = new iTextSharp.text.Paragraph();
+
+            string explorationInfo = string.Format("\nMapeo del dolor con alteración en {0} de lado derecho y en {1} de lado izquierdo. " +
+                                                    "{2}" +
+                                                    "\nPlaca dentobacteriana {3} en {4} cantidad, de distribución {5}; " +
+                                                    "calculo dental {6} en {7} cantidad, de distribucion {8} " +
+                                                    "y localización {9}, higiene bucal {10} con un índice " + 
+                                                    "de Higiene Oral Simplificado de {11}." +
+                                                    "\nDentición {12} {13}{14}. Órganos dentales con {15} {16},{17} {18}{19} {20}," +
+                                                    " dientes con movilidad {21}, {22}{23} " +
+                                                    "de intensidad {24}, {25} {26}, {27}{28} {29}{30}.",
+                                                    GetNote("Mapeo alteracion derecho"),
+                                                    GetNote("Mapeo alteracion izquierdo"),
+                                                    GetExploracionIntraoral(),
+                                                    GetNote("Placa dentobacteriana"),
+                                                    GetNote("Placa dentobacteriana cantidad"),
+                                                    GetNote("Placa dentobacteriana distribucion"),
+                                                    GetNote("Calculo dental"),
+                                                    GetNote("Calculo dental cantidad"),
+                                                    GetNote("Calculo dental distribucion"),
+                                                    GetNote("Calculo dental localizacion"),
+                                                    GetNote("Higiene bucal"),
+                                                    GetNote("Higiene bucal indice"),
+                                                    GetNote("Denticion temporal"),
+                                                    GetNote("Denticion completa"),
+                                                    GetNote("Denticion completa comentario", " a expensas de: "),
+                                                    GetNote("Organos dentales"),
+                                                    GetNote("Organos dentales comentario"),
+                                                    GetPosicionDental(),
+                                                    GetNote("Denticion posicion alteracion"),
+                                                    GetNote("Denticion posicion alteracion comentario", " "),
+                                                    GetNote("Denticion posicion alteracion color"),
+                                                    GetNote("Dientes movilidad grado"),
+                                                    GetNote("Denticion movilidad dolor"),
+                                                    GetNote("Denticion movilidad dolor comentario", " "),
+                                                    GetNote("Dolor dientes intensidad"),
+                                                    GetNote("Dolor dientes palpacion"),
+                                                    GetNote("Dolor dientes palpacion comentario"),
+                                                    GetNote("Dolor dientes restauraciones"),
+                                                    GetNote("Dolor Dientes Restauraciones Comentario", " "),
+                                                    GetNote("Dolor dientes caries"),
+                                                    GetNote("Dolor Dientes Caries Comentario", " ")
+                                                    );
+
+            paragraph.Add(new Chunk(explorationInfo, _font));
+
+            return paragraph;
+        }
+
+        private object GetPosicionDental()
+        {
+            string posicion = string.Format("{0}{1}{2}{3}",
+                                            Convert.ToBoolean(GetNote("Posicion apinamiento")) ? ", apiñamiento" : "",
+                                            Convert.ToBoolean(GetNote("Posicion diastemas")) ? ", diastemas" : "",
+                                            Convert.ToBoolean(GetNote("Posicion mesializacion")) ? ", mesializacion" : "",
+                                            Convert.ToBoolean(GetNote("Posicion distalizacion")) ? ", distalizacion" : ""
+                                            );
+            if (posicion.Length > 0)
+            {
+                posicion = posicion.Substring(1);
+                return " posición" + posicion;
+            }
+
+            return string.Empty;
+        }
+
+        private string GetExploracionIntraoral()
+        {
+            string exploracion = string.Format("{0}{1}{2}{3}{4}{5}",
+                                            GetNote("Exploracion lengua", ", lengua "),
+                                            GetNote("Paladar duro", ", paladar duro "),
+                                            GetNote("Paladar blando", ", paladar blando "),
+                                            GetNote("Vestibulos", ", vestíbulos "),
+                                            GetNote("Piso de boca", ", piso de boca "),
+                                            GetNote("Glandulas salivales", ", glándulas salivales ")
+                                            );
+            if (exploracion.Length > 0)
+            {
+                exploracion = exploracion.Substring(1);
+                return "A la exploración intraoral se observa" + exploracion + ".";
+            }
+
+            return string.Empty;
+        }
+
         private IElement GetMusculosPalpacion()
         {
             var musculos = new iTextSharp.text.Paragraph("");
 
             musculos.Add(GetMusculoPalpacion("Masetero superficial"));
             musculos.Add(GetMusculoPalpacion("Masetero profundo"));
-            musculos.Add(GetMusculoPalpacion("Fibras anteriores"));
-            musculos.Add(GetMusculoPalpacion("Fibras medias"));
-            musculos.Add(GetMusculoPalpacion("Fibras posteriores"));
-            musculos.Add(GetMusculoPalpacion("Superficial"));
-            musculos.Add(GetMusculoPalpacion("Profundo"));
-            musculos.Add(GetMusculoPalpacion("Trapecio"));
-            musculos.Add(GetMusculoPalpacion("Anterior"));
-            musculos.Add(GetMusculoPalpacion("Medio"));
-            musculos.Add(GetMusculoPalpacion("Posterior"));
+            musculos.Add(GetMusculoPalpacion("Temporal fibras anteriores"));
+            musculos.Add(GetMusculoPalpacion("Temporal fibras medias"));
+            musculos.Add(GetMusculoPalpacion("Temporal fibras posteriores"));
+            musculos.Add(GetMusculoPalpacion("Esternocleidomastoideo superficial"));
+            musculos.Add(GetMusculoPalpacion("Esternocleidomastoideo profundo"));
+            musculos.Add(GetMusculoPalpacion("Esternocleidomastoideo trapecio"));
+            musculos.Add(GetMusculoPalpacion("Escaleno anterior"));
+            musculos.Add(GetMusculoPalpacion("Escaleno medio"));
+            musculos.Add(GetMusculoPalpacion("Escaleno posterior"));
 
             string header = string.Format("Músculos {0}{1}",
                                             GetNote("Musculos palpacion"),
@@ -281,11 +500,8 @@ namespace MyDentDiagnostics
 
             if (!string.IsNullOrEmpty(izquierdo) || !string.IsNullOrEmpty(derecho))
             {
-                paragraph.Add(
-                    new iTextSharp.text.Paragraph(
-                        string.Format("{0}{1}{2}", nombreMusculo, izquierdo, derecho)
-                    )
-                );
+                paragraph.Add(new Chunk("\n" + nombreMusculo, _boldFont));
+                paragraph.Add(new Chunk(string.Format("{0}{1}", izquierdo, derecho), _font));
             }
 
             return paragraph;
