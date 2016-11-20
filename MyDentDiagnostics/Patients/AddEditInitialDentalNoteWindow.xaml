@@ -233,7 +233,7 @@
                     <System:String>presencia de secresión patológica por conducto auditivo externo</System:String>
                     <System:String>altos</System:String>
                 </ComboBox>
-                <TextBox x:Name="txtPabellonSecresion" Height="27" Margin="441.026,1499.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="167.19" Tag="Cabello caracter comentario" Text="Si selecciona 2da opcion" IsEnabled="False"/>
+                <TextBox x:Name="txtPabellonSecresion" Height="27" Margin="441.026,1499.805,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" HorizontalAlignment="Left" Width="167.19" Tag="Pabellon secrecion comentario" Text="Si selecciona 2da opcion" IsEnabled="False"/>
                 <Label x:Name="lblFullName_Copy49" Content="Ojos" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16.083,1530.805,0,0" Height="25.96" Width="35.259"/>
                 <Label x:Name="lblFullName_Copy50" Content="." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="608.216,1499.805,0,0" Height="25.96" Width="12.773"/>
                 <ComboBox x:Name="cbFilter_Copy20" Height="26" Margin="56.342,1532.805,0,0" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="88.694" SelectedIndex="0" Tag="Ojos|1|txtOjosAsimetricos" SelectionChanged="ComboBox_SelectionChanged">

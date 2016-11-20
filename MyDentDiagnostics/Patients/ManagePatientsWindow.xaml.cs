@@ -256,7 +256,7 @@ namespace MyDentDiagnostics
 
         private IElement GetFirma()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("\n_______________________\nFirma", _boldFont));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("\n_______________________\nFirma del odontólogo tratante", _boldFont));
             paragraph.Alignment = Element.ALIGN_RIGHT;
             return paragraph;
         }
@@ -379,15 +379,15 @@ namespace MyDentDiagnostics
         {
             var paragraph = new iTextSharp.text.Paragraph();
 
-            string explorationInfo = string.Format("\nMapeo del dolor con alteración en {0} de lado derecho y en {1} de lado izquierdo. " +
+            string explorationInfo = string.Format("Mapeo del dolor con alteración en {0} de lado derecho y en {1} de lado izquierdo. " +
                                                     "{2}" +
                                                     "\nPlaca dentobacteriana {3} en {4} cantidad, de distribución {5}; " +
                                                     "calculo dental {6} en {7} cantidad, de distribucion {8} " +
                                                     "y localización {9}, higiene bucal {10} con un índice " + 
                                                     "de Higiene Oral Simplificado de {11}." +
-                                                    "\nDentición {12} {13}{14}. Órganos dentales con {15} {16},{17} {18}{19} {20}," +
-                                                    " dientes con movilidad {21}, {22}{23} " +
-                                                    "de intensidad {24}, {25} {26}, {27}{28} {29}{30}.",
+                                                    "\nDentición {12} {13}{14}. Órganos dentales con {15} {16},{17} {18}{19}, {20}," +
+                                                    " dientes con movilidad {21}, {22}{23}, " +
+                                                    "de intensidad {24}, {25} {26}, {27}{28}, {29}{30}.",
                                                     GetNote("Mapeo alteracion derecho"),
                                                     GetNote("Mapeo alteracion izquierdo"),
                                                     GetExploracionIntraoral(),
@@ -402,7 +402,7 @@ namespace MyDentDiagnostics
                                                     GetNote("Higiene bucal indice"),
                                                     GetNote("Denticion temporal"),
                                                     GetNote("Denticion completa"),
-                                                    GetNote("Denticion completa comentario", " a expensas de: "),
+                                                    GetNote("Denticion completa comentario", " a expensas de "),
                                                     GetNote("Organos dentales"),
                                                     GetNote("Organos dentales comentario"),
                                                     GetPosicionDental(),
@@ -456,7 +456,7 @@ namespace MyDentDiagnostics
             if (exploracion.Length > 0)
             {
                 exploracion = exploracion.Substring(1);
-                return "A la exploración intraoral se observa" + exploracion + ".";
+                return "\nA la exploración intraoral se observa" + exploracion + ".";
             }
 
             return string.Empty;
@@ -511,15 +511,15 @@ namespace MyDentDiagnostics
         {
             var paragraph = new iTextSharp.text.Paragraph(new Chunk("EXPLORACIÓN FÍSICA", _boldFont));
 
-            string explorationInfo = string.Format("\nA la exploración extraoral, se observa cráneo {0}, suturas craneales {1}{2} cráneo {3}{4}. " +
+            string explorationInfo = string.Format("\nA la exploración extraoral, se observa cráneo {0}, suturas craneales {1}{2}, cráneo {3}{4}. " +
                                                    "Rostro {5}{6}, cabello color {7}{8}, consistencia {9}, " +
                                                    "cantidad {10}{11}, carácter {12}{13}, implantación {14}, " +
                                                    "pabellones auriculares {15} de tamaño {16} con {17}{18}. Ojos {19}{20}, " +
                                                    "pupilas de tamaño {21} y forma {22}, reflejo fotomotor {23} a estímulos luminosos, " +
                                                    "reflejo consensual {24}, nariz {25} y {26}{27}, labios {28} {29}{30} {31}, " +
-                                                   "de grosor {32} {33} y función {34}{35} perfil facial {36}. Cuello {37}{38}, " +
-                                                   "movimientos de flexión {39}{40} de configuración {41} {42}{43}. " +
-                                                   "Tráquea en posición {44}, ganglios linfáticos {45}, con movilidad {46}{47} {48} de consistencia {49}, " +
+                                                   "de grosor {32} {33} y función {34}{35}, perfil facial {36}. Cuello {37}{38}, " +
+                                                   "movimientos de flexión {39}{40}, de configuración {41} {42}{43}. " +
+                                                   "Tráquea en posición {44}, ganglios linfáticos {45}, con movilidad {46}{47}, {48}, de consistencia {49}, " +
                                                    "de localización {50}. Pares craneales con {51}. \nArticulación temporomandibular {52}{53}, " +
                                                    "con {54}{55}, {56}{57}, cóndilo derecho {58}, cóndilo izquierdo {59}, " +
                                                    "lateralidad derecha con {60}, lateralidad izquierda con {61}, apertura bucal {62} de {63}.",
@@ -529,7 +529,7 @@ namespace MyDentDiagnostics
                                                     GetNote("Craneo"),
                                                     GetNote("Craneo comentario", " "),
                                                     GetNote("Rostro"),
-                                                    GetNote("Rostro comentario", " a expensas de: "),
+                                                    GetNote("Rostro comentario", " a expensas de "),
                                                     GetNote("Cabello color", "otros", true),
                                                     GetNote("Color cabello comentario", " "),
                                                     GetNote("Cabello consistencia"),
@@ -541,19 +541,19 @@ namespace MyDentDiagnostics
                                                     GetNote("Pabellones auriculares"),
                                                     GetNote("Pabellones tamaño"),
                                                     GetNote("Pabellones secrecion"),
-                                                    GetNote("Cabello caracter comentario", " "),
+                                                    GetNote("Pabellon secrecion comentario", " "),
                                                     GetNote("Ojos"),
-                                                    GetNote("Ojos comentario", " a expensas de: "),
+                                                    GetNote("Ojos comentario", " a expensas de "),
                                                     GetNote("Pupilas tamaño"),
                                                     GetNote("Pupilas forma"),
                                                     GetNote("Pupilas reflejo"),
                                                     GetNote("Reflejo consensual"),
                                                     GetNote("Nariz posicion"),
                                                     GetNote("Nariz simetrica"),
-                                                    GetNote("Nariz simetrica comentario", " a expensas de: "),
+                                                    GetNote("Nariz simetrica comentario", " a expensas de "),
                                                     GetNote("Labios"),
                                                     GetNote("Labios simetricos"),
-                                                    GetNote("Labios simetricos comentario", " a expensas de: "),
+                                                    GetNote("Labios simetricos comentario", " a expensas de "),
                                                     GetNote("Labios tamaño"),
                                                     GetNote("Labios grosor"),
                                                     GetNote("Labios grosor 2"),
@@ -561,9 +561,9 @@ namespace MyDentDiagnostics
                                                     GetNote("Labios funcion comentario", " "),
                                                     GetNote("Perfil facial"),
                                                     GetNote("Cuello"),
-                                                    GetNote("Cuello comentario", " a expensas de: "),
+                                                    GetNote("Cuello comentario", " a expensas de "),
                                                     GetNote("Cuello movimiento"),
-                                                    GetNote("Cuello flexion", " a expensas de: "),
+                                                    GetNote("Cuello flexion", " a expensas de "),
                                                     GetNote("Cuello configuracion"),
                                                     GetNote("Cuello lesiones"),
                                                     GetNote("Cuello lesiones comentario", " "),
@@ -620,11 +620,10 @@ namespace MyDentDiagnostics
             {
                 string womanInfo = string.Format("\nPrimera menarca {0}" +
                                                  "\nMenstruación con duración de {1}, " +
-                                                 "frecuencia {2}, FUR (3) {4}",
+                                                 "frecuencia {2}, FUR (fecha de última regla) {3}",
                                                 GetNote("Primera menarca"),
                                                 GetNote("Duracion de menstruación"),
                                                 GetNote("Frecuencia menstruacion"),
-                                                GetNote("fecha de última regla"),
                                                 GetNote("FUR")
                                                 );
 
@@ -734,7 +733,7 @@ namespace MyDentDiagnostics
 
         private IElement GetTitle()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("NOTA INICIAL DENTAL", _boldFont));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("NOTA INICIAL ODONTOLÓGICA", _boldFont));
             paragraph.Alignment = Element.ALIGN_CENTER;
             return paragraph;
         }
