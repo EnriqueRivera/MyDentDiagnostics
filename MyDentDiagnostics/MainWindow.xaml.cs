@@ -91,6 +91,14 @@ namespace MyDentDiagnostics
         }
         #endregion
 
+        #region Logic used in another window
+        public static byte[] ImageToByte(System.Drawing.Image img)
+        {
+            System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+        #endregion
+
         #region Methods for multiple windows
         public static void SetImage(string imagePath, Image imageControl)
         {

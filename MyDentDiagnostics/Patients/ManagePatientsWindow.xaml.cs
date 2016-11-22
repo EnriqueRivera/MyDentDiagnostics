@@ -193,22 +193,14 @@ namespace MyDentDiagnostics
             iTextSharp.text.Paragraph pdfContent = GetNotaInicialDentalPdfContent(selectedPatient); 
 
             //Create the PDF Document
-            using (Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f))
+            using (Document pdfDoc = new Document(PageSize.A4, 30f, 30f, 30f, 30f))
             {
                 using (FileStream fs = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
                 {
                     using (var writer = PdfWriter.GetInstance(pdfDoc, fs))
                     {
                         pdfDoc.Open();
-
-                        //byte[] pngByteArrayImage = MainWindow.ImageToByteArray("pack://application:,,,/MyDentApplication;component/Images/Budget_image_1.PNG");
-                        //iTextSharp.text.Image pngImage = iTextSharp.text.Image.GetInstance(pngByteArrayImage);
-                        //pngImage.ScalePercent(80f);
-                        //pngImage.SetAbsolutePosition(10f, pdfDoc.PageSize.Height - 90f);
-                        //pdfDoc.Add(pngImage);
-
                         pdfDoc.Add(pdfContent);
-
                         pdfDoc.Close();
                     }
                 }
@@ -249,6 +241,7 @@ namespace MyDentDiagnostics
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
             paragraph.Add(GetTratamientos());
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
             paragraph.Add(GetFirma());
 
             return paragraph;
@@ -256,8 +249,16 @@ namespace MyDentDiagnostics
 
         private IElement GetFirma()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("\n_______________________\nFirma del odontólogo tratante", _boldFont));
+            byte[] pngByteArrayImage = MainWindow.ImageToByte(MyDentDiagnostics.Properties.Resources.Firma);
+            iTextSharp.text.Image pngImage = iTextSharp.text.Image.GetInstance(pngByteArrayImage);
+            pngImage.ScalePercent(30f);
+            pngImage.Alignment = 2;
+
+            var paragraph = new iTextSharp.text.Paragraph();
             paragraph.Alignment = Element.ALIGN_RIGHT;
+            paragraph.Add(pngImage);
+            paragraph.Add(new Chunk("______________________________\nFirma del odontólogo tratante", _boldFont));
+
             return paragraph;
         }
 
