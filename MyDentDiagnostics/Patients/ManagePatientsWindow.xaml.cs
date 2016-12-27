@@ -257,7 +257,7 @@ namespace MyDentDiagnostics
             var paragraph = new iTextSharp.text.Paragraph();
             paragraph.Alignment = Element.ALIGN_RIGHT;
             paragraph.Add(pngImage);
-            paragraph.Add(new Chunk("______________________________\nFirma del odontólogo tratante", _boldFont));
+            paragraph.Add(new Chunk("_____________________________\nFirma del odontólogo tratante", _boldFont));
 
             return paragraph;
         }
