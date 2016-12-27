@@ -655,7 +655,7 @@ namespace MyDentDiagnostics
         {
             var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES PERSONALES NO PATOLÓGICOS", _boldFont));
 
-            string patientInfo = string.Format("\nOriginario de {0} residente en {1} desde hace {2} años, " +
+            string patientInfo = string.Format("\nOriginario de {0}, residente en {1} desde hace {2} años, " +
                                                 "actualmente {3}, vive con su {4} escolaridad {5}, vivienda {6} {7}.",
                                                 GetNote("Originario de"),
                                                 GetNote("Residente en"),
