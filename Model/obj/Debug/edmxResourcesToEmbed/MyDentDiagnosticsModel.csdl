@@ -9,6 +9,8 @@
     <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Diagnostics" Relationship="MyDentDiagnosticsDBModel.FK_Diagnostics_AreaId" FromRole="Area" ToRole="Diagnostic" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="MyDentDiagnosticsDBModel.FK_Areas_UserId" FromRole="Area" ToRole="User" />
   </EntityType>
   <EntityContainer Name="MyDentDiagnosticsDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Areas" EntityType="Self.Area" />
@@ -27,6 +29,23 @@
     <EntitySet Name="ProgressNotes" EntityType="MyDentDiagnosticsDBModel.ProgressNote" />
     <AssociationSet Name="FK_ProgressNotes_PatientId" Association="MyDentDiagnosticsDBModel.FK_ProgressNotes_PatientId">
       <End Role="Patient" EntitySet="Patients" />
+      <End Role="ProgressNote" EntitySet="ProgressNotes" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="MyDentDiagnosticsDBModel.User" />
+    <AssociationSet Name="FK_Areas_UserId" Association="MyDentDiagnosticsDBModel.FK_Areas_UserId">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Area" EntitySet="Areas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diagnostics_UserId" Association="MyDentDiagnosticsDBModel.FK_Diagnostics_UserId">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Diagnostic" EntitySet="Diagnostics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patients_UserId" Association="MyDentDiagnosticsDBModel.FK_Patients_UserId">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Patient" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProgressNotes_UserId" Association="MyDentDiagnosticsDBModel.FK_ProgressNotes_UserId">
+      <End Role="User" EntitySet="Users" />
       <End Role="ProgressNote" EntitySet="ProgressNotes" />
     </AssociationSet>
   </EntityContainer>
@@ -53,6 +72,8 @@
     <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Area" Relationship="MyDentDiagnosticsDBModel.FK_Diagnostics_AreaId" FromRole="Diagnostic" ToRole="Area" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="MyDentDiagnosticsDBModel.FK_Diagnostics_UserId" FromRole="Diagnostic" ToRole="User" />
   </EntityType>
   <Association Name="FK_Diagnostics_AreaId">
     <End Type="MyDentDiagnosticsDBModel.Area" Role="Area" Multiplicity="1" />
@@ -87,6 +108,8 @@
     <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="InitialDentalNotes" Relationship="MyDentDiagnosticsDBModel.FK_InitialDentalNotes_PatientId" FromRole="Patient" ToRole="InitialDentalNote" />
     <NavigationProperty Name="ProgressNotes" Relationship="MyDentDiagnosticsDBModel.FK_ProgressNotes_PatientId" FromRole="Patient" ToRole="ProgressNote" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="MyDentDiagnosticsDBModel.FK_Patients_UserId" FromRole="Patient" ToRole="User" />
   </EntityType>
   <Association Name="FK_InitialDentalNotes_PatientId">
     <End Type="MyDentDiagnosticsDBModel.Patient" Role="Patient" Multiplicity="1" />
@@ -111,6 +134,8 @@
     <Property Name="PatientId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Patient" Relationship="MyDentDiagnosticsDBModel.FK_ProgressNotes_PatientId" FromRole="ProgressNote" ToRole="Patient" />
     <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="MyDentDiagnosticsDBModel.FK_ProgressNotes_UserId" FromRole="ProgressNote" ToRole="User" />
   </EntityType>
   <Association Name="FK_ProgressNotes_PatientId">
     <End Type="MyDentDiagnosticsDBModel.Patient" Role="Patient" Multiplicity="1" />
@@ -121,6 +146,67 @@
       </Principal>
       <Dependent Role="ProgressNote">
         <PropertyRef Name="PatientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Areas" Relationship="MyDentDiagnosticsDBModel.FK_Areas_UserId" FromRole="User" ToRole="Area" />
+    <NavigationProperty Name="Diagnostics" Relationship="MyDentDiagnosticsDBModel.FK_Diagnostics_UserId" FromRole="User" ToRole="Diagnostic" />
+    <NavigationProperty Name="Patients" Relationship="MyDentDiagnosticsDBModel.FK_Patients_UserId" FromRole="User" ToRole="Patient" />
+    <NavigationProperty Name="ProgressNotes" Relationship="MyDentDiagnosticsDBModel.FK_ProgressNotes_UserId" FromRole="User" ToRole="ProgressNote" />
+  </EntityType>
+  <Association Name="FK_Areas_UserId">
+    <End Type="MyDentDiagnosticsDBModel.User" Role="User" Multiplicity="1" />
+    <End Type="MyDentDiagnosticsDBModel.Area" Role="Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Area">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diagnostics_UserId">
+    <End Type="MyDentDiagnosticsDBModel.User" Role="User" Multiplicity="1" />
+    <End Type="MyDentDiagnosticsDBModel.Diagnostic" Role="Diagnostic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Diagnostic">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patients_UserId">
+    <End Type="MyDentDiagnosticsDBModel.User" Role="User" Multiplicity="1" />
+    <End Type="MyDentDiagnosticsDBModel.Patient" Role="Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProgressNotes_UserId">
+    <End Type="MyDentDiagnosticsDBModel.User" Role="User" Multiplicity="1" />
+    <End Type="MyDentDiagnosticsDBModel.ProgressNote" Role="ProgressNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ProgressNote">
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

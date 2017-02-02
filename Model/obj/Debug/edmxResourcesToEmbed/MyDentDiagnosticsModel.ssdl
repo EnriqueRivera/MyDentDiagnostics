@@ -8,6 +8,7 @@
     <Property Name="Name" Type="varchar(max)" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Diagnostics">
     <Key>
@@ -21,6 +22,7 @@
     <Property Name="PicturePath2" Type="varchar(max)" />
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="InitialDentalNotes">
     <Key>
@@ -50,6 +52,7 @@
     <Property Name="IsDCM" Type="bit" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ProgressNotes">
     <Key>
@@ -61,7 +64,29 @@
     <Property Name="Description" Type="varchar(max)" Nullable="false" />
     <Property Name="PatientId" Type="int" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="varchar(max)" Nullable="false" />
+    <Property Name="Password" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Areas_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Areas" Type="Self.Areas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Areas">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Diagnostics_AreaId">
     <End Role="Areas" Type="Self.Areas" Multiplicity="1" />
     <End Role="Diagnostics" Type="Self.Diagnostics" Multiplicity="*" />
@@ -71,6 +96,18 @@
       </Principal>
       <Dependent Role="Diagnostics">
         <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diagnostics_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Diagnostics" Type="Self.Diagnostics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Diagnostics">
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -86,6 +123,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Patients_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Patients">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ProgressNotes_PatientId">
     <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
     <End Role="ProgressNotes" Type="Self.ProgressNotes" Multiplicity="*" />
@@ -98,6 +147,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProgressNotes_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="ProgressNotes" Type="Self.ProgressNotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ProgressNotes">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="MyDentDiagnosticsDBModelStoreContainer">
     <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Diagnostics" EntityType="Self.Diagnostics" Schema="dbo" store:Type="Tables" />
@@ -105,16 +166,33 @@
     <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProgressNotes" EntityType="Self.ProgressNotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Areas_UserId" Association="Self.FK_Areas_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Areas" EntitySet="Areas" />
+    </AssociationSet>
     <AssociationSet Name="FK_Diagnostics_AreaId" Association="Self.FK_Diagnostics_AreaId">
       <End Role="Areas" EntitySet="Areas" />
+      <End Role="Diagnostics" EntitySet="Diagnostics" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diagnostics_UserId" Association="Self.FK_Diagnostics_UserId">
+      <End Role="Users" EntitySet="Users" />
       <End Role="Diagnostics" EntitySet="Diagnostics" />
     </AssociationSet>
     <AssociationSet Name="FK_InitialDentalNotes_PatientId" Association="Self.FK_InitialDentalNotes_PatientId">
       <End Role="Patients" EntitySet="Patients" />
       <End Role="InitialDentalNotes" EntitySet="InitialDentalNotes" />
     </AssociationSet>
+    <AssociationSet Name="FK_Patients_UserId" Association="Self.FK_Patients_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
     <AssociationSet Name="FK_ProgressNotes_PatientId" Association="Self.FK_ProgressNotes_PatientId">
       <End Role="Patients" EntitySet="Patients" />
+      <End Role="ProgressNotes" EntitySet="ProgressNotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProgressNotes_UserId" Association="Self.FK_ProgressNotes_UserId">
+      <End Role="Users" EntitySet="Users" />
       <End Role="ProgressNotes" EntitySet="ProgressNotes" />
     </AssociationSet>
   </EntityContainer>

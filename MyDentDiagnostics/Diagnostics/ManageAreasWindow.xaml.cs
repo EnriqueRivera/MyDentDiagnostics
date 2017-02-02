@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace MyDentDiagnostics
 {
-	/// <summary>
-	/// Interaction logic for ManageAreasWindow.xaml
-	/// </summary>
-	public partial class ManageAreasWindow : Window
+    /// <summary>
+    /// Interaction logic for ManageAreasWindow.xaml
+    /// </summary>
+    public partial class ManageAreasWindow : Window
     {
         #region Instance variables
         private Controllers.CustomViewModel<Model.Area> _areasViewModel;

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Areas">
       <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.Area">
         <MappingFragment StoreEntitySet="Areas">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="AreaId" ColumnName="AreaId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -25,6 +26,7 @@
     <EntitySetMapping Name="Diagnostics">
       <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.Diagnostic">
         <MappingFragment StoreEntitySet="Diagnostics">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="PicturePath2" ColumnName="PicturePath2" />
@@ -48,6 +50,7 @@
     <EntitySetMapping Name="Patients">
       <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.Patient">
         <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="IsDCM" ColumnName="IsDCM" />
@@ -59,12 +62,23 @@
     <EntitySetMapping Name="ProgressNotes">
       <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.ProgressNote">
         <MappingFragment StoreEntitySet="ProgressNotes">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="PatientId" ColumnName="PatientId" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="VitalSigns" ColumnName="VitalSigns" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ProgressNoteId" ColumnName="ProgressNoteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

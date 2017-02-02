@@ -25,8 +25,10 @@ namespace Model
         public bool IsDCM { get; set; }
         public bool IsDeleted { get; set; }
         public System.DateTime CreatedDate { get; set; }
+        public int UserId { get; set; }
     
         public virtual ICollection<InitialDentalNote> InitialDentalNotes { get; set; }
         public virtual ICollection<ProgressNote> ProgressNotes { get; set; }
+        public virtual User User { get; set; }
     }
 }

@@ -4,31 +4,21 @@ using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Linq;
 
 namespace MyDentDiagnostics
 {
-	/// <summary>
-	/// Interaction logic for ManagePatientsWindow.xaml
-	/// </summary>
-	public partial class ManagePatientsWindow : Window
+    /// <summary>
+    /// Interaction logic for ManagePatientsWindow.xaml
+    /// </summary>
+    public partial class ManagePatientsWindow : Window
     {
         #region Instance variables
         private Controllers.CustomViewModel<Model.Patient> _patients;
         private Controllers.CustomViewModel<Model.Patient> _patientsDcm;
         private bool _lastSearchAllPatients = true;
-        private static BaseFont _baseFont = BaseFont.CreateFont("arialuni.ttf", BaseFont.CP1252, BaseFont.EMBEDDED, BaseFont.CACHED, MyDentDiagnostics.Properties.Resources.ARIALUNI, null);
-        private static iTextSharp.text.Font _font = new iTextSharp.text.Font(_baseFont, 11, iTextSharp.text.Font.NORMAL);
-        private static iTextSharp.text.Font _boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
         private List<Model.InitialDentalNote> _initialDentalNote = new List<Model.InitialDentalNote>();
         #endregion
 
@@ -100,39 +90,6 @@ namespace MyDentDiagnostics
             new AddEditInitialDentalNoteWindow(null).ShowDialog();
             UpdateGrid();
 		}
-
-		private void btnEdit_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-            Model.Patient selectedPatient = GetSelectedPatient();
-
-            if (selectedPatient != null)
-            {
-                new AddEditInitialDentalNoteWindow(selectedPatient).ShowDialog();
-                UpdateGrid();
-            }
-		}
-
-		private void btnDelete_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-            Model.Patient selectedPatient = GetSelectedPatient();
-
-            if (selectedPatient != null 
-                && MessageBox.Show
-                                (string.Format("¿Está seguro(a) que desea eliminar el paciente '{0}'?",
-                                        selectedPatient.FullName),
-                                    "Advertencia",
-                                    MessageBoxButton.YesNo,
-                                    MessageBoxImage.Warning
-                                ) == MessageBoxResult.Yes)
-            {
-                selectedPatient.IsDeleted = true;
-
-                if (Controllers.BusinessController.Instance.Update<Model.Patient>(selectedPatient))
-                    UpdateGrid();
-                else
-                    MessageBox.Show("No se pudo eliminar el paciente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
         #endregion
 
         #region Window's logic
@@ -217,6 +174,8 @@ namespace MyDentDiagnostics
 
             paragraph.Add(GetTitle());
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
+            paragraph.Add(GetCurrentDate());
+            paragraph.Add(new iTextSharp.text.Paragraph(" "));
             paragraph.Add(GetPatinetInfo(selectedPatient, out gender));
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
             paragraph.Add(GetAntecedentesHeredofamiliares());
@@ -249,15 +208,9 @@ namespace MyDentDiagnostics
 
         private IElement GetFirma()
         {
-            byte[] pngByteArrayImage = MainWindow.ImageToByte(MyDentDiagnostics.Properties.Resources.Firma);
-            iTextSharp.text.Image pngImage = iTextSharp.text.Image.GetInstance(pngByteArrayImage);
-            pngImage.ScalePercent(30f);
-            pngImage.Alignment = 2;
-
             var paragraph = new iTextSharp.text.Paragraph();
             paragraph.Alignment = Element.ALIGN_RIGHT;
-            paragraph.Add(pngImage);
-            paragraph.Add(new Chunk("______________________________\nFirma del odontólogo tratante", _boldFont));
+            paragraph.Add(new Chunk("_____________________________________\nNombre y firma del odontólogo tratante", MainWindow.BoldFont));
 
             return paragraph;
         }
@@ -275,7 +228,7 @@ namespace MyDentDiagnostics
                                                 );
 
 
-            paragraph.Add(new Chunk(tratamientos, _font));
+            paragraph.Add(new Chunk(tratamientos, MainWindow.Font));
 
             return paragraph;
         }
@@ -284,7 +237,7 @@ namespace MyDentDiagnostics
         {
             var paragraph = new iTextSharp.text.Paragraph("");
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
-            paragraph.Add(new Chunk("CLASIFICACIÓN DE LAS RETENCIONES DENTARIAS", _boldFont));
+            paragraph.Add(new Chunk("CLASIFICACIÓN DE LAS RETENCIONES DENTARIAS", MainWindow.BoldFont));
 
             string observaciones = GetNote("Retenciones dentarias comentario");
             string retenciones = string.Format("{0}{1}{2}{3}",
@@ -295,11 +248,11 @@ namespace MyDentDiagnostics
                                                 );
 
 
-            paragraph.Add(new Chunk(retenciones, _font));
+            paragraph.Add(new Chunk(retenciones, MainWindow.Font));
 
             if (!string.IsNullOrEmpty(observaciones))
             {
-                paragraph.Add(new Chunk("\nObservaciones: " + observaciones, _font));
+                paragraph.Add(new Chunk("\nObservaciones: " + observaciones, MainWindow.Font));
             }
 
             return string.IsNullOrEmpty(observaciones) && string.IsNullOrEmpty(retenciones)
@@ -327,14 +280,14 @@ namespace MyDentDiagnostics
 
         private IElement GetMaloclusiones()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("CLASIFICACIÓN DE LAS MALOCLUSIONES\n", _boldFont));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("CLASIFICACIÓN DE LAS MALOCLUSIONES\n", MainWindow.BoldFont));
 
             string maloclusion = string.Format("Maloclusión {0} de Angle, relación canina {1}.",
                                             GetNote("Clasificacion Angle"),
                                             GetNote("Relacion Canina")
                                             );
 
-            paragraph.Add(new Chunk(maloclusion, _font));
+            paragraph.Add(new Chunk(maloclusion, MainWindow.Font));
 
             return paragraph;
         }
@@ -343,7 +296,7 @@ namespace MyDentDiagnostics
         {
             var paragraph = new iTextSharp.text.Paragraph("");
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
-            paragraph.Add(new Chunk("FLUOROSIS", _boldFont));
+            paragraph.Add(new Chunk("FLUOROSIS", MainWindow.BoldFont));
 
             string observaciones = GetNote("Fluorosis comentario");
             string escalaDean = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}",
@@ -363,12 +316,12 @@ namespace MyDentDiagnostics
             if (flourosisPresent)
             {
                 escalaDean = escalaDean.Substring(1);
-                paragraph.Add(new Chunk("\nFluorosis con" + escalaDean + " según escala de Dean.", _font));
+                paragraph.Add(new Chunk("\nFluorosis con" + escalaDean + " según escala de Dean.", MainWindow.Font));
             }
 
             if (!string.IsNullOrEmpty(observaciones))
             {
-                paragraph.Add(new Chunk("\nObservaciones: " + observaciones, _font));
+                paragraph.Add(new Chunk("\nObservaciones: " + observaciones, MainWindow.Font));
             }
 
             return string.IsNullOrEmpty(observaciones) && !flourosisPresent
@@ -422,7 +375,7 @@ namespace MyDentDiagnostics
                                                     GetNote("Dolor Dientes Caries Comentario", " ")
                                                     );
 
-            paragraph.Add(new Chunk(explorationInfo, _font));
+            paragraph.Add(new Chunk(explorationInfo, MainWindow.Font));
 
             return paragraph;
         }
@@ -483,7 +436,7 @@ namespace MyDentDiagnostics
                                             GetNote("Musculos palpacion"),
                                             musculos.ToString() == "" ? "" : " en ");
 
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk(header, _font));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk(header, MainWindow.Font));
             paragraph.Add(musculos);
 
             return paragraph;
@@ -491,7 +444,7 @@ namespace MyDentDiagnostics
 
         private iTextSharp.text.Paragraph GetMusculoPalpacion(string nombreMusculo)
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("", _font));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("", MainWindow.Font));
             
             string izquierdo = GetNote(nombreMusculo + " izquierdo");
             string derecho = GetNote(nombreMusculo + " derecho");
@@ -501,8 +454,8 @@ namespace MyDentDiagnostics
 
             if (!string.IsNullOrEmpty(izquierdo) || !string.IsNullOrEmpty(derecho))
             {
-                paragraph.Add(new Chunk("\n" + nombreMusculo, _boldFont));
-                paragraph.Add(new Chunk(string.Format("{0}{1}", izquierdo, derecho), _font));
+                paragraph.Add(new Chunk("\n" + nombreMusculo, MainWindow.BoldFont));
+                paragraph.Add(new Chunk(string.Format("{0}{1}", izquierdo, derecho), MainWindow.Font));
             }
 
             return paragraph;
@@ -510,7 +463,7 @@ namespace MyDentDiagnostics
 
         private IElement GetExploracionFisica()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("EXPLORACIÓN FÍSICA", _boldFont));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("EXPLORACIÓN FÍSICA", MainWindow.BoldFont));
 
             string explorationInfo = string.Format("\nA la exploración extraoral, se observa cráneo {0}, suturas craneales {1}{2}, cráneo {3}{4}. " +
                                                    "Rostro {5}{6}, cabello color {7}{8}, consistencia {9}, " +
@@ -590,32 +543,32 @@ namespace MyDentDiagnostics
                                                     GetNote("Apertura bucal de")
                                                     );
 
-            paragraph.Add(new Chunk(explorationInfo, _font));
+            paragraph.Add(new Chunk(explorationInfo, MainWindow.Font));
 
             return paragraph;
         }
 
         private IElement GetAntecedentesPadecimientoActual()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("PADECIMIENTO ACTUAL:", _boldFont));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("PADECIMIENTO ACTUAL:", MainWindow.BoldFont));
 
-            paragraph.Add(new Chunk("\n" + GetNote("Padecimiento actual"), _font));
+            paragraph.Add(new Chunk("\n" + GetNote("Padecimiento actual"), MainWindow.Font));
 
             return paragraph;
         }
 
         private IElement GetAntecedentesPersonalesPatologicos()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES PERSONALES PATOLÓGICOS:", _boldFont));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES PERSONALES PATOLÓGICOS:", MainWindow.BoldFont));
 
-            paragraph.Add(new Chunk("\n" + GetNote("Antecedentes personales patológicos"), _font));
+            paragraph.Add(new Chunk("\n" + GetNote("Antecedentes personales patológicos"), MainWindow.Font));
 
             return paragraph;
         }
 
         private IElement GetAntecedentesGinecoObstetricos(string gender)
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES GINECO-OBSTÉTRICOS", _boldFont));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES GINECO-OBSTÉTRICOS", MainWindow.BoldFont));
 
             if (gender == "femenino")
             {
@@ -628,7 +581,7 @@ namespace MyDentDiagnostics
                                                 GetNote("FUR")
                                                 );
 
-                paragraph.Add(new Chunk(womanInfo, _font));
+                paragraph.Add(new Chunk(womanInfo, MainWindow.Font));
             }
 
             string sexualLife = string.Format("\nVida sexual {0}, {1} embarazos, {2} gestaciones y {3} abortos." +
@@ -640,20 +593,20 @@ namespace MyDentDiagnostics
                                                 GetNote("Metodo anticonceptivo")
                                                 );
 
-            paragraph.Add(new Chunk(sexualLife, _font));
+            paragraph.Add(new Chunk(sexualLife, MainWindow.Font));
 
             string observations = string.Format("\nObservaciones: \n{0}",
                                                 GetNote("Gineco-Obstétrico Obervaciones")
                                                 );
 
-            paragraph.Add(new Chunk(observations, _font));
+            paragraph.Add(new Chunk(observations, MainWindow.Font));
 
             return paragraph;
         }
 
         private IElement GetAntecedentesPersonalesNoPatologicos()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES PERSONALES NO PATOLÓGICOS", _boldFont));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES PERSONALES NO PATOLÓGICOS", MainWindow.BoldFont));
 
             string patientInfo = string.Format("\nOriginario de {0}, residente en {1} desde hace {2} años, " +
                                                 "actualmente {3}, vive con su {4} escolaridad {5}, vivienda {6} {7}.",
@@ -667,12 +620,12 @@ namespace MyDentDiagnostics
                                                 GetNote("Vivienda (2)")
                                                 );
 
-            paragraph.Add(new Chunk(patientInfo, _font));
+            paragraph.Add(new Chunk(patientInfo, MainWindow.Font));
 
-            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Alcoholismo: ", "APNP_Alcoholismo_SiNo", "APNP_Alcoholismo_Observacion", false), _font));
-            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Tabaquismo: ", "APNP_Tabaquismo_SiNo", "APNP_Tabaquismo_Observacion", false), _font));
-            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Toxicomanías: ", "APNP_Toxicomanias_SiNo", "APNP_Toxicomanias_Observacion", false), _font));
-            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Hospitalizaciones o cirugías: ", "APNP_Cirugias_SiNo", "APNP_Cirugias_Observacion", false), _font));
+            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Alcoholismo: ", "APNP_Alcoholismo_SiNo", "APNP_Alcoholismo_Observacion", false), MainWindow.Font));
+            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Tabaquismo: ", "APNP_Tabaquismo_SiNo", "APNP_Tabaquismo_Observacion", false), MainWindow.Font));
+            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Toxicomanías: ", "APNP_Toxicomanias_SiNo", "APNP_Toxicomanias_Observacion", false), MainWindow.Font));
+            paragraph.Add(new Chunk(GetAntecedentePersonalNoPatologico("\n-Hospitalizaciones o cirugías: ", "APNP_Cirugias_SiNo", "APNP_Cirugias_Observacion", false), MainWindow.Font));
 
             return paragraph;
         }
@@ -686,17 +639,17 @@ namespace MyDentDiagnostics
 
         private IElement GetAntecedentesHeredofamiliares()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES HEREDOFAMILIARES", _boldFont));
-            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Hipertensión arterial:", "AH_HipertensionArterial_SiNo", "AH_HipertensionArterial_PorParteDe", "AH_HipertensionArterial_Finado"), _font));
-            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Diabetes Mellitus:", "AH_DiabetesMellitus_SiNo", "AH_DiabetesMellitus_PorParteDe", "AH_DiabetesMellitus_Finado"), _font));
-            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Cáncer:", "AH_Cancer_SiNo", "AH_Cancer_PorParteDe", "AH_Cancer_Finado"), _font));
-            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Discracias sanguíneas:", "AH_DiscranciasSanguineas_SiNo", "AH_DiscranciasSanguineas_PorParteDe", "AH_DiscranciasSanguineas_Finado"), _font));
-            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Enfermedades cardiacas:", "AH_Cardiacas_SiNo", "AH_Cardiacas_PorParteDe", "AH_Cardiacas_Finado"), _font));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("ANTECEDENTES HEREDOFAMILIARES", MainWindow.BoldFont));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Hipertensión arterial:", "AH_HipertensionArterial_SiNo", "AH_HipertensionArterial_PorParteDe", "AH_HipertensionArterial_Finado"), MainWindow.Font));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Diabetes Mellitus:", "AH_DiabetesMellitus_SiNo", "AH_DiabetesMellitus_PorParteDe", "AH_DiabetesMellitus_Finado"), MainWindow.Font));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Cáncer:", "AH_Cancer_SiNo", "AH_Cancer_PorParteDe", "AH_Cancer_Finado"), MainWindow.Font));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Discracias sanguíneas:", "AH_DiscranciasSanguineas_SiNo", "AH_DiscranciasSanguineas_PorParteDe", "AH_DiscranciasSanguineas_Finado"), MainWindow.Font));
+            paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-Enfermedades cardiacas:", "AH_Cardiacas_SiNo", "AH_Cardiacas_PorParteDe", "AH_Cardiacas_Finado"), MainWindow.Font));
 
             string otroPadecimiento = GetNote("AH_OtroPadecimiento_Padecimiento");
             if (!string.IsNullOrEmpty(otroPadecimiento))
             {
-                paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-" + otroPadecimiento + ": ", "AH_OtroPadecimiento_SiNo", "AH_OtroPadecimiento_PorParteDe", "AH_OtroPadecimiento_Finado"), _font));
+                paragraph.Add(new Chunk(GetAntecedenteHeredofamiliar("\n-" + otroPadecimiento + ": ", "AH_OtroPadecimiento_SiNo", "AH_OtroPadecimiento_PorParteDe", "AH_OtroPadecimiento_Finado"), MainWindow.Font));
             }
 
             return paragraph;
@@ -718,8 +671,8 @@ namespace MyDentDiagnostics
 
         private IElement GetPatinetInfo(Model.Patient selectedPatient, out string gender)
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("NOMBRE DEL PACIENTE: ", _boldFont));
-            paragraph.Add(new Chunk(selectedPatient.FullName, _font));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("NOMBRE DEL PACIENTE: ", MainWindow.BoldFont));
+            paragraph.Add(new Chunk(selectedPatient.FullName, MainWindow.Font));
             gender = GetNote("Genero");
 
             string patientInfo = string.Format("\nPaciente {0} de {1} años de edad, acude a consulta por {2}",
@@ -728,13 +681,20 @@ namespace MyDentDiagnostics
                                                 GetNote("Motivo de la consulta")
                                                 );
 
-            paragraph.Add(new Chunk(patientInfo, _font));
+            paragraph.Add(new Chunk(patientInfo, MainWindow.Font));
+            return paragraph;
+        }
+
+        private IElement GetCurrentDate()
+        {
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk(DateTime.Now.ToString("D"), MainWindow.Font));
+            paragraph.Alignment = Element.ALIGN_RIGHT;
             return paragraph;
         }
 
         private IElement GetTitle()
         {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk("NOTA INICIAL ODONTOLÓGICA", _boldFont));
+            var paragraph = new iTextSharp.text.Paragraph(new Chunk("NOTA INICIAL ODONTOLÓGICA", MainWindow.BoldFont));
             paragraph.Alignment = Element.ALIGN_CENTER;
             return paragraph;
         }

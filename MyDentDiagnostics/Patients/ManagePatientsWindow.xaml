@@ -15,9 +15,17 @@
 						ItemsSource="{Binding ObservableData}" AutoGenerateColumns="False" CanUserAddRows="False" 
 						CanUserDeleteRows="False" TabIndex="4">
 						<DataGrid.Columns>
-							<DataGridTextColumn Header="Nombre" Binding="{Binding FullName}" Width="0.085*"/>
-							<DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.085*"/>
-						</DataGrid.Columns>
+							<DataGridTextColumn Header="Nombre" Binding="{Binding FullName}" Width="0.3*"/>
+                            <DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.3*"/>
+                            <DataGridTextColumn Header="Usuario" Width="0.3*">
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat=" {0} {1}">
+                                        <Binding Path="User.FirstName"/>
+                                        <Binding Path="User.LastName"/>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
 					</DataGrid>
 				</Grid>
 			</TabItem>
@@ -27,9 +35,17 @@
 						ItemsSource="{Binding ObservableData}" AutoGenerateColumns="False" CanUserAddRows="False" 
 						CanUserDeleteRows="False" TabIndex="4">
 						<DataGrid.Columns>
-							<DataGridTextColumn Header="Nombre" Binding="{Binding FullName}" Width="0.085*"/>
-							<DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.085*"/>
-						</DataGrid.Columns>
+							<DataGridTextColumn Header="Nombre" Binding="{Binding FullName}" Width="0.3*"/>
+                            <DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.3*"/>
+                            <DataGridTextColumn Header="Usuario" Width="0.3*">
+                                <DataGridTextColumn.Binding>
+                                    <MultiBinding StringFormat=" {0} {1}">
+                                        <Binding Path="User.FirstName"/>
+                                        <Binding Path="User.LastName"/>
+                                    </MultiBinding>
+                                </DataGridTextColumn.Binding>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
 					</DataGrid>
 				</Grid>
 			</TabItem>
@@ -39,9 +55,7 @@
 			<Image Source="/MyDentDiagnostics;component/Images/find_icon.png" Stretch="Fill"/>
 		</Button>
 		<Button x:Name="btnViewAll" Width="63.333" VerticalAlignment="Top" Margin="0,14.5,10,0" Height="25" HorizontalAlignment="Right" Content="Ver todo" Cursor="Hand" TabIndex="3" Click="btnViewAll_Click"/>
-		<Button x:Name="btnDelete" Content="Eliminar" Margin="0,0,10,10" Cursor="Hand" TabIndex="8" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Click="btnDelete_Click"/>
-		<Button x:Name="btnEdit" Content="Editar" Margin="0,0,106,10" Cursor="Hand" TabIndex="7" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Click="btnEdit_Click"/>
-		<Button x:Name="btnAdd" Content="Agregar" Margin="0,0,202,10" Cursor="Hand" TabIndex="6" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Click="btnAdd_Click"/>
+        <Button x:Name="btnAdd" Content="Agregar" Margin="0,0,10,10" Cursor="Hand" TabIndex="6" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Click="btnAdd_Click"/>
 		<Button x:Name="btnViewNotes" Content="Ver notas" Margin="10,0,0,10" Cursor="Hand" TabIndex="6" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="91" Click="btnViewNotes_Click"/>
 		<Button x:Name="btnExportToPdf" Content="Exportar a PDF" Margin="106,0,0,10" Cursor="Hand" TabIndex="6" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="104" Click="btnExportToPdf_Click"/>
 		<ComboBox x:Name="cbFilter" Height="26" Margin="84,12,0,0" VerticalAlignment="Top" FontWeight="Normal" TabIndex="1" HorizontalAlignment="Left" Width="100.5" SelectedIndex="0">

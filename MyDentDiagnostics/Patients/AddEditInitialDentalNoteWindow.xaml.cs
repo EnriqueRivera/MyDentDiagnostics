@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Linq;
 using Controllers;
 using System.Diagnostics;
 
 namespace MyDentDiagnostics
 {
-	/// <summary>
-	/// Interaction logic for AddEditInitialDentalNoteWindow.xaml
-	/// </summary>
-	public partial class AddEditInitialDentalNoteWindow : Window
+    /// <summary>
+    /// Interaction logic for AddEditInitialDentalNoteWindow.xaml
+    /// </summary>
+    public partial class AddEditInitialDentalNoteWindow : Window
 	{
         #region Instance variables
         private Model.Patient _patientToUpdate;
@@ -128,6 +121,32 @@ namespace MyDentDiagnostics
 
         private void btnAddUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            if (MessageBox.Show("Después de guardar una nota inicial dental no será posible editarla o eliminarla."
+                                + "\n¿Seguro(a) que desea guardar esta nota inicial dental?",
+                                    "Advertencia",
+                                    MessageBoxButton.YesNo,
+                                    MessageBoxImage.Warning
+                                ) == MessageBoxResult.Yes)
+            {
+                SaveInitialDentalNote();
+            }
+        }
+
+        private void btnCancel_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region Window's logic
+        private void SaveInitialDentalNote()
+        {
+            if (string.IsNullOrEmpty(txtFullName.Text))
+            {
+                MessageBox.Show("Indique el nombre del paciente.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             if (!_isUpdateDentalInitialNote)
             {
                 _patientToUpdate = new Model.Patient()
@@ -135,7 +154,8 @@ namespace MyDentDiagnostics
                     FullName = txtFullName.Text.Trim(),
                     IsDCM = false,
                     IsDeleted = false,
-                    CreatedDate = DateTime.Now
+                    CreatedDate = DateTime.Now,
+                    UserId = MainWindow.UserLoggedIn.UserId
                 };
 
                 if (!Controllers.BusinessController.Instance.Add<Model.Patient>(_patientToUpdate))
@@ -151,13 +171,6 @@ namespace MyDentDiagnostics
                 MessageBox.Show("Error al guardar la nota inicial dental del paciente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        private void btnCancel_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            this.Close();
-        }
-        #endregion
-
-        #region Window's logic
         private void EnableDisableControls(string[] controls, bool enable)
         {
             foreach (var item in controls)

@@ -14,6 +14,11 @@
         <AssociationConnector Association="MyDentDiagnosticsDBModel.FK_InitialDentalNotes_PatientId" />
         <EntityTypeShape EntityType="MyDentDiagnosticsDBModel.ProgressNote" Width="1.5" PointX="7.625" PointY="4" />
         <AssociationConnector Association="MyDentDiagnosticsDBModel.FK_ProgressNotes_PatientId" />
+        <EntityTypeShape EntityType="MyDentDiagnosticsDBModel.User" Width="1.5" PointX="0.625" PointY="4" />
+        <AssociationConnector Association="MyDentDiagnosticsDBModel.FK_Areas_UserId" />
+        <AssociationConnector Association="MyDentDiagnosticsDBModel.FK_Diagnostics_UserId" />
+        <AssociationConnector Association="MyDentDiagnosticsDBModel.FK_Patients_UserId" />
+        <AssociationConnector Association="MyDentDiagnosticsDBModel.FK_ProgressNotes_UserId" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

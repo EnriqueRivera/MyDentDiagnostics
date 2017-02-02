@@ -80,3 +80,8 @@ C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDen
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\MyDentDiagnostics.g.resources
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\MyDentDiagnostics.Properties.Resources.resources
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\MyDentDiagnostics.csproj.GenerateResource.Cache
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\LoginWindow.g.cs
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\MyDentDiagnostics_MarkupCompile.lref
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\LoginWindow.baml
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\ChangePasswordModal.g.cs
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\ChangePasswordModal.baml

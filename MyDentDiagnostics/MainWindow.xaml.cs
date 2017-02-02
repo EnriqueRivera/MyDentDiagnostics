@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using iTextSharp.text.pdf;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MyDentDiagnostics
 {
@@ -19,10 +12,18 @@ namespace MyDentDiagnostics
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Class variables
+        public static Model.User UserLoggedIn { get; set; }
+        #endregion
+
         #region Instance variables
         //Windows
         private ManageAreasWindow _manageAreasWindow;
         private ManagePatientsWindow _managePatientNotesWindow;
+
+        private static BaseFont _baseFont = BaseFont.CreateFont("arialuni.ttf", BaseFont.CP1252, BaseFont.EMBEDDED, BaseFont.CACHED, MyDentDiagnostics.Properties.Resources.ARIALUNI, null);
+        public static iTextSharp.text.Font Font = new iTextSharp.text.Font(_baseFont, 11, iTextSharp.text.Font.NORMAL);
+        public static iTextSharp.text.Font BoldFont = iTextSharp.text.FontFactory.GetFont(iTextSharp.text.FontFactory.HELVETICA_BOLD, 12);
         #endregion
 
         #region Constructors
@@ -68,26 +69,37 @@ namespace MyDentDiagnostics
 
         private void btnManageAreas_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (_manageAreasWindow == null)
+            if (IsUserLoggedIn())
             {
-                _manageAreasWindow = new ManageAreasWindow();
-                _manageAreasWindow.Closed += Window_Closed;
-            }
+                if (_manageAreasWindow == null)
+                {
+                    _manageAreasWindow = new ManageAreasWindow();
+                    _manageAreasWindow.Closed += Window_Closed;
+                }
 
-            _manageAreasWindow.Show();
-            _manageAreasWindow.WindowState = WindowState.Normal;
+                _manageAreasWindow.Show();
+                _manageAreasWindow.WindowState = WindowState.Normal;
+            }
         }
 
         private void btnManagePatientNotes_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (_managePatientNotesWindow == null)
+            if (IsUserLoggedIn())
             {
-                _managePatientNotesWindow = new ManagePatientsWindow();
-                _managePatientNotesWindow.Closed += Window_Closed;
-            }
+                if (_managePatientNotesWindow == null)
+                {
+                    _managePatientNotesWindow = new ManagePatientsWindow();
+                    _managePatientNotesWindow.Closed += Window_Closed;
+                }
 
-            _managePatientNotesWindow.Show();
-            _managePatientNotesWindow.WindowState = WindowState.Normal;
+                _managePatientNotesWindow.Show();
+                _managePatientNotesWindow.WindowState = WindowState.Normal;
+            }
+        }
+
+        private void btnChangePassword_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            new ChangePasswordModal().ShowDialog();
         }
         #endregion
 
@@ -117,6 +129,35 @@ namespace MyDentDiagnostics
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo cargar la imagen\n\nDetalle del error:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        #endregion
+
+        #region Window's logic
+        public bool IsUserLoggedIn()
+        {
+            if (UserLoggedIn == null)
+            {
+                new LoginWindow().ShowDialog();
+                DisplayUserLoggedInOptions();
+            }
+            
+            return UserLoggedIn != null;
+        }
+
+        private void DisplayUserLoggedInOptions()
+        {
+            if (UserLoggedIn == null)
+            {
+                lblLogin.Content = string.Empty;
+                btnChangePassword.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                lblLogin.Content = string.Format("Bienvenido, {0} {1}",
+                                                    UserLoggedIn.FirstName,
+                                                    UserLoggedIn.LastName);
+                btnChangePassword.Visibility = Visibility.Visible;
             }
         }
         #endregion

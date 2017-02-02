@@ -10,7 +10,16 @@
 	<Grid x:Name="LayoutRoot">
 		<DataGrid x:Name="dgAreas" TabIndex="4" SelectionMode="Single" Margin="10,56.252,10,44" ItemsSource="{Binding ObservableData}" IsReadOnly="True" CanUserAddRows="False" CanUserSortColumns="True" CanUserDeleteRows="False" AutoGenerateColumns="False">
 			<DataGrid.Columns>
-				<DataGridTextColumn Binding="{Binding Name}" Header="Nombre del área" Width="0.17*"/>
+				<DataGridTextColumn Binding="{Binding Name}" Header="Nombre del área" Width="0.3*"/>
+                <DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.3*"/>
+                <DataGridTextColumn Header="Usuario" Width="0.3*">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat=" {0} {1}">
+                            <Binding Path="User.FirstName"/>
+                            <Binding Path="User.LastName"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
 			</DataGrid.Columns>
 		</DataGrid>
 		<Label Width="74" VerticalAlignment="Top" Margin="10,14.02,0,0" Height="27" HorizontalAlignment="Left" Content="Buscar área:"/>

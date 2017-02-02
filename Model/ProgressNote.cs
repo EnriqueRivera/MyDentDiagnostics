@@ -20,7 +20,9 @@ namespace Model
         public string Description { get; set; }
         public int PatientId { get; set; }
         public bool IsDeleted { get; set; }
+        public int UserId { get; set; }
     
         public virtual Patient Patient { get; set; }
+        public virtual User User { get; set; }
     }
 }

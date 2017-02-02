@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MyDentDiagnostics
 {
-	/// <summary>
-	/// Interaction logic for AddEditProgressNoteModal.xaml
-	/// </summary>
-	public partial class AddEditProgressNoteModal : Window
+    /// <summary>
+    /// Interaction logic for AddEditProgressNoteModal.xaml
+    /// </summary>
+    public partial class AddEditProgressNoteModal : Window
 	{
         #region Instance variables
         private Model.ProgressNote _selectedProgressNote;
@@ -40,6 +31,26 @@ namespace MyDentDiagnostics
         #region Window event handlers
         private void btnAddUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
+            if (MessageBox.Show("Después de guardar una nota de evolución no será posible editarla o eliminarla."
+                                + "\n¿Seguro(a) que desea guardar esta nota de evolución?",
+                                    "Advertencia",
+                                    MessageBoxButton.YesNo,
+                                    MessageBoxImage.Warning
+                                ) == MessageBoxResult.Yes)
+            {
+                SaveProgressNote();
+            }
+		}
+
+        private void btnCancel_Click(object sender, System.Windows.RoutedEventArgs e)
+		{
+            this.Close();
+        }
+        #endregion
+
+        #region Window's logic
+        private void SaveProgressNote()
+        {
             string vitalSigns = txtVitalSigns.Text.Trim();
             string description = txtDescription.Text.Trim();
 
@@ -71,7 +82,8 @@ namespace MyDentDiagnostics
                     VitalSigns = vitalSigns,
                     Description = description,
                     PatientId = _patient.PatientId,
-                    IsDeleted = false
+                    IsDeleted = false,
+                    UserId = MainWindow.UserLoggedIn.UserId
                 };
 
                 if (Controllers.BusinessController.Instance.Add<Model.ProgressNote>(progressNoteToAdd))
@@ -79,15 +91,8 @@ namespace MyDentDiagnostics
                 else
                     MessageBox.Show("No se pudo agregar la nota de evolución", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-		}
-
-		private void btnCancel_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-            this.Close();
         }
-        #endregion
 
-        #region Window's logic
         private void PrepareWindowForUpdates()
         {
             txtVitalSigns.Text = _selectedProgressNote.VitalSigns;

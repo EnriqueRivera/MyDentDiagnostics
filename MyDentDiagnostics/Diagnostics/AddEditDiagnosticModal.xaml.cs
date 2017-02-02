@@ -1,23 +1,15 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MyDentDiagnostics
 {
-	/// <summary>
-	/// Interaction logic for AddEditDiagnosticModal.xaml
-	/// </summary>
-	public partial class AddEditDiagnosticModal : Window
+    /// <summary>
+    /// Interaction logic for AddEditDiagnosticModal.xaml
+    /// </summary>
+    public partial class AddEditDiagnosticModal : Window
 	{
         #region Instance variables
         private Model.Diagnostic _selectedDiagnostic;
@@ -104,7 +96,8 @@ namespace MyDentDiagnostics
                     PicturePath1 = picturePath1,
                     PicturePath2 = picturePath2,
                     CreatedDate = DateTime.Now,
-                    IsDeleted = false
+                    IsDeleted = false,
+                    UserId = MainWindow.UserLoggedIn.UserId
                 };
 
                 if (Controllers.BusinessController.Instance.Add<Model.Diagnostic>(diagnosticToAdd))

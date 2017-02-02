@@ -17,3 +17,4 @@ C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\obj\Debug\Model.dll
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\obj\Debug\Model.pdb
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

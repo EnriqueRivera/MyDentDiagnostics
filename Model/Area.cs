@@ -23,7 +23,9 @@ namespace Model
         public string Name { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public bool IsDeleted { get; set; }
+        public int UserId { get; set; }
     
         public virtual ICollection<Diagnostic> Diagnostics { get; set; }
+        public virtual User User { get; set; }
     }
 }
