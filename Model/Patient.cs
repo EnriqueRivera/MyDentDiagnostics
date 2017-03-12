@@ -26,6 +26,7 @@ namespace Model
         public bool IsDeleted { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public int UserId { get; set; }
+        public int AssignedPatientId { get; set; }
     
         public virtual ICollection<InitialDentalNote> InitialDentalNotes { get; set; }
         public virtual ICollection<ProgressNote> ProgressNotes { get; set; }

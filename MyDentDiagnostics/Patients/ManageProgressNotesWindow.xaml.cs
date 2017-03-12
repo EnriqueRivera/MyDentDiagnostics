@@ -39,26 +39,12 @@ namespace MyDentDiagnostics
 
 		private void btnExportToPDF_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
-            Model.ProgressNote selectedProgressNote = dgProgressNotes.SelectedItem == null ? null : dgProgressNotes.SelectedItem as Model.ProgressNote;
+            List<Model.ProgressNote> selectedProgressNotes = dgProgressNotes.SelectedItems.Cast<Model.ProgressNote>().ToList();
 
-            if (selectedProgressNote == null)
+            if (selectedProgressNotes.Count == 0)
                 MessageBox.Show("Seleccione una nota de evolución", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
             else
-            {
-                List<Model.ProgressNote> progressNotes = new List<ProgressNote>();
-                progressNotes.Add(selectedProgressNote);
-                ExportNotes(progressNotes);
-            }
-        }
-
-        private void btnExportAllToPDF_Click(object sender, RoutedEventArgs e)
-        {
-            List<Model.ProgressNote> progressNotes = _progressNotesViewModel.ObservableData.ToList();
-
-            if (progressNotes.Count > 0)
-                ExportNotes(progressNotes);
-            else
-                MessageBox.Show("No hay notas de evolución para exportar", "Información", MessageBoxButton.OK, MessageBoxImage.Information);
+                ExportNotes(selectedProgressNotes);
         }
         #endregion
 
@@ -113,14 +99,10 @@ namespace MyDentDiagnostics
 
             paragraph.Add(GetTitle());
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
-            paragraph.Add(GetCurrentDate());
-            paragraph.Add(new iTextSharp.text.Paragraph(" "));
             paragraph.Add(GetPatinetInfo(patient));
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
             paragraph.Add(GetProgressNotes(progressNotes));
             paragraph.Add(new iTextSharp.text.Paragraph(" "));
-            paragraph.Add(new iTextSharp.text.Paragraph(" "));
-            paragraph.Add(GetFirma());
 
             return paragraph;
         }
@@ -129,15 +111,8 @@ namespace MyDentDiagnostics
         {
             var paragraph = new iTextSharp.text.Paragraph(new Chunk("Nombre del paciente: ", MainWindow.BoldFont));
             paragraph.Add(new Chunk(patient.FullName, MainWindow.Font));
-
-            return paragraph;
-        }
-
-        private IElement GetFirma()
-        {
-            var paragraph = new iTextSharp.text.Paragraph();
-            paragraph.Alignment = Element.ALIGN_RIGHT;
-            paragraph.Add(new Chunk("_____________________________________\nNombre y firma del odontólogo tratante", MainWindow.BoldFont));
+            paragraph.Add(new Chunk("\nExpediente No. ", MainWindow.BoldFont));
+            paragraph.Add(new Chunk(patient.AssignedPatientId.ToString(), MainWindow.Font));
 
             return paragraph;
         }
@@ -166,16 +141,18 @@ namespace MyDentDiagnostics
                 paragraph.Add(new Chunk("Descripción: ", MainWindow.BoldFont));
                 paragraph.Add(new Chunk(note.Description, MainWindow.Font));
 
+                paragraph.Add("\n");
+                paragraph.Add("\n");
+
+                var signatureParagraph = new iTextSharp.text.Paragraph();
+                signatureParagraph.Alignment = Element.ALIGN_RIGHT;
+                signatureParagraph.Add(new Chunk("_____________________________________\nNombre y firma del odontólogo tratante", MainWindow.BoldFont));
+
+                paragraph.Add(signatureParagraph);
+
                 paragraph.Add(new iTextSharp.text.Paragraph(" "));
             }
 
-            return paragraph;
-        }
-
-        private IElement GetCurrentDate()
-        {
-            var paragraph = new iTextSharp.text.Paragraph(new Chunk(DateTime.Now.ToString("D"), MainWindow.Font));
-            paragraph.Alignment = Element.ALIGN_RIGHT;
             return paragraph;
         }
 

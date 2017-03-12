@@ -8,7 +8,7 @@
 	Width="528.06" Height="363.343" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen">
 
     <Grid x:Name="LayoutRoot">
-        <DataGrid x:Name="dgProgressNotes" TabIndex="4" SelectionMode="Single" Margin="10,10,10,44" ItemsSource="{Binding ObservableData}" IsReadOnly="True" CanUserAddRows="False" CanUserSortColumns="True" CanUserDeleteRows="False" AutoGenerateColumns="False">
+        <DataGrid x:Name="dgProgressNotes" TabIndex="4" Margin="10,10,10,44" ItemsSource="{Binding ObservableData}" IsReadOnly="True" CanUserAddRows="False" CanUserSortColumns="True" CanUserDeleteRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding ProgressNoteId}" Header="Número de folio" Width="0.3*"/>
                 <DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.3*"/>
@@ -24,6 +24,5 @@
         </DataGrid>
         <Button x:Name="btnAdd" Content="Agregar" Cursor="Hand" TabIndex="6" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="91" Click="btnAdd_Click" Margin="0,0,10,10" d:LayoutOverrides="HorizontalAlignment"/>
         <Button x:Name="btnExportToPDF" Content="Exportar a PDF" Margin="10,0,0,10" Cursor="Hand" TabIndex="5" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="111" Click="btnExportToPDF_Click"/>
-        <Button x:Name="btnExportAllToPDF" Content="Exportar todas a PDF" Margin="126,0,0,10" Cursor="Hand" TabIndex="5" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="134" Click="btnExportAllToPDF_Click"/>
     </Grid>
 </Window>

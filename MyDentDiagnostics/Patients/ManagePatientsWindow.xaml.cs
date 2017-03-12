@@ -673,6 +673,8 @@ namespace MyDentDiagnostics
         {
             var paragraph = new iTextSharp.text.Paragraph(new Chunk("NOMBRE DEL PACIENTE: ", MainWindow.BoldFont));
             paragraph.Add(new Chunk(selectedPatient.FullName, MainWindow.Font));
+            paragraph.Add(new Chunk("\nExpediente No. ", MainWindow.BoldFont));
+            paragraph.Add(new Chunk(selectedPatient.AssignedPatientId.ToString(), MainWindow.Font));
             gender = GetNote("Genero");
 
             string patientInfo = string.Format("\nPaciente {0} de {1} años de edad, acude a consulta por {2}",

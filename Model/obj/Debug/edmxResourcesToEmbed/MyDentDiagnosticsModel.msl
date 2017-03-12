@@ -50,6 +50,7 @@
     <EntitySetMapping Name="Patients">
       <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.Patient">
         <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="AssignedPatientId" ColumnName="AssignedPatientId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />

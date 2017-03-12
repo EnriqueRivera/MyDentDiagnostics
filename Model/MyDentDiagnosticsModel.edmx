@@ -58,6 +58,7 @@
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="AssignedPatientId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ProgressNotes">
           <Key>
@@ -315,6 +316,7 @@
           <NavigationProperty Name="ProgressNotes" Relationship="MyDentDiagnosticsDBModel.FK_ProgressNotes_PatientId" FromRole="Patient" ToRole="ProgressNote" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="User" Relationship="MyDentDiagnosticsDBModel.FK_Patients_UserId" FromRole="Patient" ToRole="User" />
+          <Property Name="AssignedPatientId" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_InitialDentalNotes_PatientId">
           <End Type="MyDentDiagnosticsDBModel.Patient" Role="Patient" Multiplicity="1" />
@@ -470,6 +472,7 @@
           <EntitySetMapping Name="Patients">
             <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.Patient">
               <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="AssignedPatientId" ColumnName="AssignedPatientId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />

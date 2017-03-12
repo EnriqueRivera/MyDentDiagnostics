@@ -15,6 +15,7 @@
 						ItemsSource="{Binding ObservableData}" AutoGenerateColumns="False" CanUserAddRows="False" 
 						CanUserDeleteRows="False" TabIndex="4">
 						<DataGrid.Columns>
+                            <DataGridTextColumn Header="Expediente No." Binding="{Binding AssignedPatientId}" Width="0.17*"/>
 							<DataGridTextColumn Header="Nombre" Binding="{Binding FullName}" Width="0.3*"/>
                             <DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.3*"/>
                             <DataGridTextColumn Header="Usuario" Width="0.3*">

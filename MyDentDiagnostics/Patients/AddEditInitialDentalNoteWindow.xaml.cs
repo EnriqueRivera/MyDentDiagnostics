@@ -121,6 +121,15 @@ namespace MyDentDiagnostics
 
         private void btnAddUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(txtFullName.Text))
+            {
+                MessageBox.Show("Indique el nombre del paciente.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!IsValidAssignedPatientId())
+                return;
+
             if (MessageBox.Show("Después de guardar una nota inicial dental no será posible editarla o eliminarla."
                                 + "\n¿Seguro(a) que desea guardar esta nota inicial dental?",
                                     "Advertencia",
@@ -141,12 +150,6 @@ namespace MyDentDiagnostics
         #region Window's logic
         private void SaveInitialDentalNote()
         {
-            if (string.IsNullOrEmpty(txtFullName.Text))
-            {
-                MessageBox.Show("Indique el nombre del paciente.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
             if (!_isUpdateDentalInitialNote)
             {
                 _patientToUpdate = new Model.Patient()
@@ -155,7 +158,8 @@ namespace MyDentDiagnostics
                     IsDCM = false,
                     IsDeleted = false,
                     CreatedDate = DateTime.Now,
-                    UserId = MainWindow.UserLoggedIn.UserId
+                    UserId = MainWindow.UserLoggedIn.UserId,
+                    AssignedPatientId = Convert.ToInt32(txtAssignedPatientId.Text)
                 };
 
                 if (!Controllers.BusinessController.Instance.Add<Model.Patient>(_patientToUpdate))
@@ -169,6 +173,26 @@ namespace MyDentDiagnostics
                 this.Close();
             else
                 MessageBox.Show("Error al guardar la nota inicial dental del paciente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private bool IsValidAssignedPatientId()
+        {
+            int assignedPatientId;
+            if (!int.TryParse(txtAssignedPatientId.Text, out assignedPatientId))
+            {
+                MessageBox.Show("Indique un número de expediente válido.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            int patientsWithSameId = Controllers.BusinessController.Instance.FindBy<Model.Patient>(p => p.AssignedPatientId == assignedPatientId).Count();
+
+            if (patientsWithSameId > 0)
+            {
+                MessageBox.Show("Ya existe un paciente que tiene asignado el mismo número de expediente.", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+
+            return true;
         }
 
         private void EnableDisableControls(string[] controls, bool enable)

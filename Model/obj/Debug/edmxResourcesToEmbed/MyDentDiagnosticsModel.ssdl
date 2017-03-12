@@ -53,6 +53,7 @@
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="AssignedPatientId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ProgressNotes">
     <Key>
