@@ -82,6 +82,9 @@
     <Compile Include="ProgressNote.cs">
       <DependentUpon>MyDentDiagnosticsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProgressNoteDetail.cs">
+      <DependentUpon>MyDentDiagnosticsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider.cs" />
     <Compile Include="User.cs">

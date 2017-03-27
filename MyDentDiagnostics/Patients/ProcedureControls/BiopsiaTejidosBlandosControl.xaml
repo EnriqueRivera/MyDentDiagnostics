@@ -1,0 +1,98 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyDentDiagnostics.Patients.ProcedureControls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="MyDentDiagnostics.Patients.ProcedureControls.BiopsiaTejidosBlandosControl"
+             mc:Ignorable="d" Height="262" Width="635">
+    <Grid x:Name="gdContent">
+        <Label x:Name="lblFullName_Copy227" Content="Con el paciente en posición " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="156.804"/>
+        <ComboBox x:Name="cbPosicion" Height="26" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0"  Margin="156.804,2,0,0">
+            <System:String>decúbito dorsal</System:String>
+            <System:String>Fowler</System:String>
+            <System:String>semi Fowler</System:String>
+            <System:String>Trendelenburg</System:String>
+            <System:String>Trendelenburg invertida</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy" Content=", bajo anestesia mucosa con " VerticalAlignment="Top" Height="25.96" Margin="295.642,0,177.554,0"/>
+        <TextBox x:Name="txtAnestesia" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="176.467" HorizontalAlignment="Right" Margin="0,1,1.087,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy1" Content=", y bajo anestesia local " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="129.804" Margin="0,33,0,0"/>
+        <ComboBox x:Name="cbAnestesia" Height="26" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0"  Margin="129.804,35,0,0">
+            <System:String>infiltrativa</System:String>
+            <System:String>regional/troncular</System:String>
+            <System:String>subperióstica</System:String>
+            <System:String>supraperióstica</System:String>
+            <System:String>intrapulpar</System:String>
+            <System:String>intraligamentaria</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy2" Content=" con " VerticalAlignment="Top" Height="25.96" Margin="266.642,33,0,0" HorizontalAlignment="Left" Width="33.804"/>
+        <ComboBox x:Name="cbAnestesiaCon" Height="26" VerticalAlignment="Top" FontWeight="Normal" SelectedIndex="0"  Margin="300.446,35,195.716,0">
+            <System:String>lidocaína con epinefrina al 2%</System:String>
+            <System:String>mepivacaína con epinefrina al 2%</System:String>
+            <System:String>mepivacaína al 3% sin vasoconstrictor</System:String>
+            <System:String>articaína con epinefrina al 4%</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy3" Content=" a una dosis de " VerticalAlignment="Top" Height="25.96" Margin="0,33,102.912,0" HorizontalAlignment="Right" Width="92.804"/>
+        <TextBox x:Name="txtDosis" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="60.108" HorizontalAlignment="Right" Margin="0,31.96,42.804,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy4" Content=" mg," VerticalAlignment="Top" Height="25.96" Margin="0,33,10,0" HorizontalAlignment="Right" Width="32.804"/>
+        <Label x:Name="lblFullName_Copy5" Content=" con técnica de " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="92.804" Margin="0,67.04,0,0"/>
+        <TextBox x:Name="txtTecnica" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="60.108" HorizontalAlignment="Left" Margin="92.804,66,0,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy6" Content=", con aplicación de " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="108.471" Margin="152.912,67.04,0,0"/>
+        <ComboBox x:Name="cbAplicacion" Height="26" VerticalAlignment="Top" FontWeight="Normal" SelectedIndex="0"  Margin="261.383,66,242.779,0">
+            <System:String>aguja corta</System:String>
+            <System:String>aguja larga</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy17" Content=" " HorizontalAlignment="Right" VerticalAlignment="Top" Height="25.96" Width="8" Margin="0,64,234.779,0"/>
+        <TextBox x:Name="txtAplicacion" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="181.467" HorizontalAlignment="Right" Margin="0,65,53.312,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy7" Content=", previa antisepsia oral con " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="152.912" Margin="0,98,0,0"/>
+        <TextBox x:Name="txtAntisepia" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="152.912,97,310.338,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy8" Content=", se realiza biopsia " HorizontalAlignment="Right" VerticalAlignment="Top" Height="25.96" Width="107.579" Margin="0,98,202.759,0"/>
+        <ComboBox x:Name="cbBiopsia" Height="26" VerticalAlignment="Top" FontWeight="Normal" SelectedIndex="0"  Margin="0,97,63.921,0" HorizontalAlignment="Right" Width="138.838">
+            <System:String>incisional</System:String>
+            <System:String>excisional</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy9" Content=" de " VerticalAlignment="Top" Height="25.96" Margin="0,95,31.117,0" HorizontalAlignment="Right" Width="32.804"/>
+        <TextBox x:Name="txtBiopsia" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="0,129,1.087,0"/>
+        <Label x:Name="lblFullName_Copy10" Content=" con mango para bisturí no. " HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="25.96" Width="152.912" Margin="0,0,0,75.707"/>
+        <ComboBox x:Name="cbMangoNumero" Height="26" VerticalAlignment="Bottom" FontWeight="Normal" SelectedIndex="0"  Margin="152.912,0,0,73.667" HorizontalAlignment="Left" Width="35.505">
+            <System:String>3</System:String>
+            <System:String>4</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy11" Content=" y hoja para bisturí no. " VerticalAlignment="Bottom" Height="25.96" Margin="183.417,0,0,75.707" HorizontalAlignment="Left" Width="129.912"/>
+        <ComboBox x:Name="cbHojaNumero" Height="26" VerticalAlignment="Bottom" FontWeight="Normal" SelectedIndex="0"  Margin="313.329,0,275.499,73.667">
+            <System:String>11</System:String>
+            <System:String>12</System:String>
+            <System:String>15</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy12" Content=", realizando incisión " VerticalAlignment="Bottom" Height="25.96" Margin="0,0,158.587,75.707" HorizontalAlignment="Right" Width="116.912"/>
+        <ComboBox x:Name="cbInsicion" Height="26" VerticalAlignment="Bottom" FontWeight="Normal" SelectedIndex="0"  Margin="0,0,18.42,73.667" HorizontalAlignment="Right" Width="140.167">
+            <System:String>lineal</System:String>
+            <System:String>de Partsh</System:String>
+            <System:String>de Newmann completa</System:String>
+            <System:String>de Newmann parcial</System:String>
+            <System:String>de Newmann modificada</System:String>
+            <System:String>Festoneada</System:String>
+            <System:String>en doble Y</System:String>
+            <System:String>de Winter</System:String>
+            <System:String>de Winter modificada</System:String>
+            <System:String>tipo Magnus</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy14" Content="." VerticalAlignment="Bottom" Height="25.96" Margin="0,0,0,75.707" HorizontalAlignment="Right" Width="18.42"/>
+        <Label x:Name="lblFullName_Copy13" Content=" Finalmente se realiza lavado con solución estéril y se sutura con " VerticalAlignment="Bottom" Height="25.96" Margin="0,0,283.587,44.707"/>
+        <ComboBox x:Name="cbLavado" Height="26" VerticalAlignment="Bottom" FontWeight="Normal" SelectedIndex="0"  Margin="0,0,148.42,42.667" HorizontalAlignment="Right" Width="140.167">
+            <System:String>catgut crómico 3/0</System:String>
+            <System:String>ácido poliglicólico 3/0</System:String>
+            <System:String>seda 3/0</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy15" Content=", colocando puntos " VerticalAlignment="Bottom" Height="25.96" Margin="0,0,1.087,44.707" HorizontalAlignment="Right" Width="146.942"/>
+        <ComboBox x:Name="cbPuntos" Height="26" VerticalAlignment="Bottom" FontWeight="Normal" SelectedIndex="0"  Margin="0,0,0,11.706" HorizontalAlignment="Left" Width="140.167">
+            <System:String>simples</System:String>
+            <System:String>continuos</System:String>
+            <System:String>en X</System:String>
+            <System:String>en colchonero</System:String>
+            <System:String>discontinuos</System:String>
+            <System:String>entrelazados</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy16" Content=". Se coloca gasa estéril para favorecer hemostasia." VerticalAlignment="Bottom" Height="25.96" Margin="140.167,0,217.753,13.746"/>
+    </Grid>
+</UserControl>

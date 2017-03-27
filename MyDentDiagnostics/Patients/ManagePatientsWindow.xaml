@@ -13,7 +13,7 @@
 				<Grid Background="#FFE5E5E5">
 					<DataGrid x:Name="dgPatients" Margin="10" IsReadOnly="True" CanUserSortColumns="True"
 						ItemsSource="{Binding ObservableData}" AutoGenerateColumns="False" CanUserAddRows="False" 
-						CanUserDeleteRows="False" TabIndex="4">
+						CanUserDeleteRows="False" TabIndex="4" SelectionMode="Single">
 						<DataGrid.Columns>
                             <DataGridTextColumn Header="Expediente No." Binding="{Binding AssignedPatientId}" Width="0.17*"/>
 							<DataGridTextColumn Header="Nombre" Binding="{Binding FullName}" Width="0.3*"/>

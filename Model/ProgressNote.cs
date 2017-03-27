@@ -14,15 +14,20 @@ namespace Model
     
     public partial class ProgressNote
     {
+        public ProgressNote()
+        {
+            this.ProgressNoteDetails = new HashSet<ProgressNoteDetail>();
+        }
+    
         public int ProgressNoteId { get; set; }
         public System.DateTime CreatedDate { get; set; }
-        public string VitalSigns { get; set; }
-        public string Description { get; set; }
         public int PatientId { get; set; }
         public bool IsDeleted { get; set; }
         public int UserId { get; set; }
+        public string Type { get; set; }
     
         public virtual Patient Patient { get; set; }
         public virtual User User { get; set; }
+        public virtual ICollection<ProgressNoteDetail> ProgressNoteDetails { get; set; }
     }
 }

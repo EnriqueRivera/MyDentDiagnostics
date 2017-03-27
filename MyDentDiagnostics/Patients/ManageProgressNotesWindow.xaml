@@ -10,9 +10,10 @@
     <Grid x:Name="LayoutRoot">
         <DataGrid x:Name="dgProgressNotes" TabIndex="4" Margin="10,10,10,44" ItemsSource="{Binding ObservableData}" IsReadOnly="True" CanUserAddRows="False" CanUserSortColumns="True" CanUserDeleteRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding ProgressNoteId}" Header="Número de folio" Width="0.3*"/>
+                <DataGridTextColumn Header="Número de folio" Binding="{Binding ProgressNoteId}" Width="0.2*"/>
+                <DataGridTextColumn Header="Tipo de nota" Binding="{Binding Type}" Width="0.25*"/>
                 <DataGridTextColumn Header="Fecha y hora de creación" Binding="{Binding CreatedDate}" Width="0.3*"/>
-                <DataGridTextColumn Header="Usuario" Width="0.3*">
+                <DataGridTextColumn Header="Usuario" Width="0.2*">
                     <DataGridTextColumn.Binding>
                         <MultiBinding StringFormat=" {0} {1}">
                             <Binding Path="User.FirstName"/>

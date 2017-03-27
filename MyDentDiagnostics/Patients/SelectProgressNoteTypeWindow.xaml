@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyDentDiagnostics"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="MyDentDiagnostics.SelectProgressNoteTypeWindow"
+        mc:Ignorable="d"
+	Title="Seleccionar tipo de nota de evolución"
+	Width="363.5" Height="124.5" Icon="/MyDentDiagnostics;component/Images/app.ico" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Button x:Name="btnAccept" Content="Aceptar" Margin="85.17,0,0,10" Cursor="Hand" TabIndex="2" HorizontalAlignment="Left" Width="91" Click="btnAccept_Click" Height="31" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnCancel" Content="Cancelar" Margin="181.17,0,0,10" Cursor="Hand" TabIndex="3" HorizontalAlignment="Left" Width="91" Click="btnCancel_Click" Height="31" VerticalAlignment="Bottom"/>
+        <ComboBox x:Name="cbNoteType" Margin="97.334,14,10,0" Height="24.96" VerticalAlignment="Top"/>
+        <Label x:Name="lblTreatmentName_Copy4" Content="Tipo de nota:" Height="27" Margin="10,12,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="82.334" d:LayoutOverrides="HorizontalAlignment"/>
+    </Grid>
+</Window>

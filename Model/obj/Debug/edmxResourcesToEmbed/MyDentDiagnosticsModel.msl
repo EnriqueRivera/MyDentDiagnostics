@@ -63,11 +63,10 @@
     <EntitySetMapping Name="ProgressNotes">
       <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.ProgressNote">
         <MappingFragment StoreEntitySet="ProgressNotes">
+          <ScalarProperty Name="Type" ColumnName="Type" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="PatientId" ColumnName="PatientId" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="VitalSigns" ColumnName="VitalSigns" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="ProgressNoteId" ColumnName="ProgressNoteId" />
         </MappingFragment>
@@ -80,6 +79,16 @@
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgressNoteDetails">
+      <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.ProgressNoteDetail">
+        <MappingFragment StoreEntitySet="ProgressNoteDetails">
+          <ScalarProperty Name="DetailDescription" ColumnName="DetailDescription" />
+          <ScalarProperty Name="DetailName" ColumnName="DetailName" />
+          <ScalarProperty Name="ProgressNoteId" ColumnName="ProgressNoteId" />
+          <ScalarProperty Name="ProgressNoteDetailId" ColumnName="ProgressNoteDetailId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

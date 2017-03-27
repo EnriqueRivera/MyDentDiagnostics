@@ -32,8 +32,7 @@ namespace MyDentDiagnostics
         #region Window event handlers
 		private void btnAdd_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
-
-            new AddEditProgressNoteModal(null, _patient).ShowDialog();
+            new SelectProgressNoteTypeWindow(_patient).ShowDialog();
             UpdateGrid();
 		}
 
@@ -119,6 +118,8 @@ namespace MyDentDiagnostics
 
         private IElement GetProgressNotes(List<ProgressNote> progressNotes)
         {
+            //TODO: Return progress note content depending the type
+
             var paragraph = new iTextSharp.text.Paragraph();
 
             foreach (var note in progressNotes)
@@ -134,12 +135,12 @@ namespace MyDentDiagnostics
                 paragraph.Add("\n");
 
                 paragraph.Add(new Chunk("Signos vitales: ", MainWindow.BoldFont));
-                paragraph.Add(new Chunk(note.VitalSigns, MainWindow.Font));
+                //paragraph.Add(new Chunk(note.VitalSigns, MainWindow.Font));
 
                 paragraph.Add("\n");
 
                 paragraph.Add(new Chunk("Descripción: ", MainWindow.BoldFont));
-                paragraph.Add(new Chunk(note.Description, MainWindow.Font));
+                //paragraph.Add(new Chunk(note.Description, MainWindow.Font));
 
                 paragraph.Add("\n");
                 paragraph.Add("\n");

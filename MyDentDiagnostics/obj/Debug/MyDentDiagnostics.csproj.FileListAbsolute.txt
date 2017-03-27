@@ -61,7 +61,6 @@ C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDen
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Diagnostics\ManageDiagnosticsWindow.baml
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\MainWindow.baml
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\AddEditInitialDentalNoteWindow.baml
-C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\AddEditProgressNoteModal.baml
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\ManagePatientsWindow.baml
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\ManageProgressNotesWindow.baml
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Simple Styles.baml
@@ -72,7 +71,6 @@ C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDen
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Diagnostics\ManageDiagnosticsWindow.g.cs
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\MainWindow.g.cs
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\AddEditInitialDentalNoteWindow.g.cs
-C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\AddEditProgressNoteModal.g.cs
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\ManagePatientsWindow.g.cs
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\ManageProgressNotesWindow.g.cs
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\App.g.cs
@@ -85,3 +83,11 @@ C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDen
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\LoginWindow.baml
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\ChangePasswordModal.g.cs
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\ChangePasswordModal.baml
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\SelectProgressNoteTypeWindow.g.cs
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\AddGeneralProgressNoteModal.baml
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\AddGeneralProgressNoteModal.g.cs
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\SelectProgressNoteTypeWindow.baml
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\AddSpecificProgressNoteModal.g.cs
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\AddSpecificProgressNoteModal.baml
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\ProcedureControls\BiopsiaTejidosBlandosControl.g.cs
+C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\obj\Debug\Patients\ProcedureControls\BiopsiaTejidosBlandosControl.baml

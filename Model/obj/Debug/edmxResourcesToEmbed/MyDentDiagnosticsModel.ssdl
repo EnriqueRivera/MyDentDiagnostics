@@ -55,17 +55,25 @@
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="AssignedPatientId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="ProgressNoteDetails">
+    <Key>
+      <PropertyRef Name="ProgressNoteDetailId" />
+    </Key>
+    <Property Name="ProgressNoteDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProgressNoteId" Type="int" Nullable="false" />
+    <Property Name="DetailName" Type="varchar(max)" Nullable="false" />
+    <Property Name="DetailDescription" Type="varchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="ProgressNotes">
     <Key>
       <PropertyRef Name="ProgressNoteId" />
     </Key>
     <Property Name="ProgressNoteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" Nullable="false" />
-    <Property Name="VitalSigns" Type="varchar(max)" Nullable="false" />
-    <Property Name="Description" Type="varchar(max)" Nullable="false" />
     <Property Name="PatientId" Type="int" Nullable="false" />
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Type" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -136,6 +144,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProgressNoteDetails_ProgressNoteId">
+    <End Role="ProgressNotes" Type="Self.ProgressNotes" Multiplicity="1" />
+    <End Role="ProgressNoteDetails" Type="Self.ProgressNoteDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProgressNotes">
+        <PropertyRef Name="ProgressNoteId" />
+      </Principal>
+      <Dependent Role="ProgressNoteDetails">
+        <PropertyRef Name="ProgressNoteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ProgressNotes_PatientId">
     <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
     <End Role="ProgressNotes" Type="Self.ProgressNotes" Multiplicity="*" />
@@ -166,6 +186,7 @@
     <EntitySet Name="InitialDentalNotes" EntityType="Self.InitialDentalNotes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProgressNoteDetails" EntityType="Self.ProgressNoteDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProgressNotes" EntityType="Self.ProgressNotes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Areas_UserId" Association="Self.FK_Areas_UserId">
@@ -187,6 +208,10 @@
     <AssociationSet Name="FK_Patients_UserId" Association="Self.FK_Patients_UserId">
       <End Role="Users" EntitySet="Users" />
       <End Role="Patients" EntitySet="Patients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProgressNoteDetails_ProgressNoteId" Association="Self.FK_ProgressNoteDetails_ProgressNoteId">
+      <End Role="ProgressNotes" EntitySet="ProgressNotes" />
+      <End Role="ProgressNoteDetails" EntitySet="ProgressNoteDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_ProgressNotes_PatientId" Association="Self.FK_ProgressNotes_PatientId">
       <End Role="Patients" EntitySet="Patients" />

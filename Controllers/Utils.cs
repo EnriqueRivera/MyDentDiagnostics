@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -31,6 +32,29 @@ namespace Controllers
 
             return dlg;
         }
+
+        public static bool AddDetailsToProgressNote(ProgressNote progressNote, Dictionary<string, string> noteDetials)
+        {
+            bool detailsAdded = true;
+            foreach (var item in noteDetials)
+            {
+                Model.ProgressNoteDetail noteDetail = new Model.ProgressNoteDetail()
+                {
+                    ProgressNoteId = progressNote.ProgressNoteId,
+                    DetailName = item.Key,
+                    DetailDescription = item.Value
+                };
+
+                detailsAdded &= BusinessController.Instance.Add(noteDetail);
+            }
+
+            return detailsAdded;
+        }
+    }
+
+    public interface IProcedureInfo
+    {
+        string GetProcedureContent();
     }
 
     public class ComboBoxItem
@@ -42,6 +66,31 @@ namespace Controllers
         {
             return Text;
         }
+    }
+
+    public enum ProgressNoteType
+    {
+        GENERAL,
+        BIOPSIA_DE_TEJIDOS_BLANDOS,
+        CIRUGIA_BUCAL,
+        DETARTRAJE_Y_CURETAJE,
+        OBTURACION_DENTAL,
+        ODONTECTOMIA,
+        PROFILAXIS_DENTAL,
+        PROTESIS_PARCIAL_FIJA
+    }
+
+    public enum ProgressNoteDetail
+    {
+        GENERAL_VITAL_SIGNS,
+        GENERAL_DESCRIPTION,
+        ESPECIFICA_PROCEDIMIENTO,
+        ESPECIFICA_INDICACIONES,
+        ESPECIFICA_MEDICAMENTO,
+        ESPECIFICA_HALLAZGOS,
+        ESPECIFICA_PRONOSTICOS,
+        ESPECIFICA_DIAGNOSTICO,
+        ESPECIFICA_TRATAMIENTO_PROX_CITA
     }
 
     public class CustomViewModel<T> where T : class

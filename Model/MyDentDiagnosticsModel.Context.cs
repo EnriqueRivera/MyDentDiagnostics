@@ -32,5 +32,6 @@ namespace Model
         public virtual DbSet<Patient> Patients { get; set; }
         public virtual DbSet<ProgressNote> ProgressNotes { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<ProgressNoteDetail> ProgressNoteDetails { get; set; }
     }
 }

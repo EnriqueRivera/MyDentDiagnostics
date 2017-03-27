@@ -142,9 +142,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Patients\AddEditProgressNoteModal.xaml">
+    <Page Include="Patients\AddGeneralProgressNoteModal.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Patients\AddSpecificProgressNoteModal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Patients\ManagePatientsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -153,6 +157,14 @@
     <Page Include="Patients\ManageProgressNotesWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Patients\ProcedureControls\BiopsiaTejidosBlandosControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patients\SelectProgressNoteTypeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Simple Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -163,14 +175,23 @@
     <Compile Include="Patients\AddEditInitialDentalNoteWindow.xaml.cs">
       <DependentUpon>AddEditInitialDentalNoteWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Patients\AddEditProgressNoteModal.xaml.cs">
-      <DependentUpon>AddEditProgressNoteModal.xaml</DependentUpon>
+    <Compile Include="Patients\AddGeneralProgressNoteModal.xaml.cs">
+      <DependentUpon>AddGeneralProgressNoteModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\AddSpecificProgressNoteModal.xaml.cs">
+      <DependentUpon>AddSpecificProgressNoteModal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Patients\ManagePatientsWindow.xaml.cs">
       <DependentUpon>ManagePatientsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Patients\ManageProgressNotesWindow.xaml.cs">
       <DependentUpon>ManageProgressNotesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\ProcedureControls\BiopsiaTejidosBlandosControl.xaml.cs">
+      <DependentUpon>BiopsiaTejidosBlandosControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\SelectProgressNoteTypeWindow.xaml.cs">
+      <DependentUpon>SelectProgressNoteTypeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -256,13 +277,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Firma.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Images\Firma.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
