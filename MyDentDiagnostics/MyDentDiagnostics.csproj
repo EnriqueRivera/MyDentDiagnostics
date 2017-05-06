@@ -150,6 +150,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Patients\IndicationsControls\GenericIndicationsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patients\IndicationsControls\ProfilaxisDentalIndicationsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Patients\ManagePatientsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -159,6 +167,30 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Patients\ProcedureControls\BiopsiaTejidosBlandosControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patients\ProcedureControls\CirujiaBucalControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patients\ProcedureControls\DetratrajeCuretajeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patients\ProcedureControls\ObturacionDentalControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patients\ProcedureControls\OdontectomiaControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patients\ProcedureControls\ProfilaxisDentalControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Patients\ProcedureControls\ProtesisParcialFijaControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,6 +213,12 @@
     <Compile Include="Patients\AddSpecificProgressNoteModal.xaml.cs">
       <DependentUpon>AddSpecificProgressNoteModal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Patients\IndicationsControls\GenericIndicationsControl.xaml.cs">
+      <DependentUpon>GenericIndicationsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\IndicationsControls\ProfilaxisDentalIndicationsControl.xaml.cs">
+      <DependentUpon>ProfilaxisDentalIndicationsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Patients\ManagePatientsWindow.xaml.cs">
       <DependentUpon>ManagePatientsWindow.xaml</DependentUpon>
     </Compile>
@@ -189,6 +227,24 @@
     </Compile>
     <Compile Include="Patients\ProcedureControls\BiopsiaTejidosBlandosControl.xaml.cs">
       <DependentUpon>BiopsiaTejidosBlandosControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\ProcedureControls\CirujiaBucalControl.xaml.cs">
+      <DependentUpon>CirujiaBucalControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\ProcedureControls\DetratrajeCuretajeControl.xaml.cs">
+      <DependentUpon>DetratrajeCuretajeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\ProcedureControls\ObturacionDentalControl.xaml.cs">
+      <DependentUpon>ObturacionDentalControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\ProcedureControls\OdontectomiaControl.xaml.cs">
+      <DependentUpon>OdontectomiaControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\ProcedureControls\ProfilaxisDentalControl.xaml.cs">
+      <DependentUpon>ProfilaxisDentalControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\ProcedureControls\ProtesisParcialFijaControl.xaml.cs">
+      <DependentUpon>ProtesisParcialFijaControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Patients\SelectProgressNoteTypeWindow.xaml.cs">
       <DependentUpon>SelectProgressNoteTypeWindow.xaml</DependentUpon>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Jose Luis\Documents\Visual Studio 2013\Projects\MyDentDiagnostics\MyDentDiagnostics\App.xaml
-15-1234944937
+23-1090911875
 
-19-505617218
+27-560296849
 19653098232
-ChangePasswordModal.xaml;Diagnostics\AddEditAreaModal.xaml;Diagnostics\AddEditDiagnosticModal.xaml;Diagnostics\ManageAreasWindow.xaml;Diagnostics\ManageDiagnosticsWindow.xaml;LoginWindow.xaml;MainWindow.xaml;Patients\AddEditInitialDentalNoteWindow.xaml;Patients\AddGeneralProgressNoteModal.xaml;Patients\AddSpecificProgressNoteModal.xaml;Patients\ManagePatientsWindow.xaml;Patients\ManageProgressNotesWindow.xaml;Patients\ProcedureControls\BiopsiaTejidosBlandosControl.xaml;Patients\SelectProgressNoteTypeWindow.xaml;Simple Styles.xaml;
+ChangePasswordModal.xaml;Diagnostics\AddEditAreaModal.xaml;Diagnostics\AddEditDiagnosticModal.xaml;Diagnostics\ManageAreasWindow.xaml;Diagnostics\ManageDiagnosticsWindow.xaml;LoginWindow.xaml;MainWindow.xaml;Patients\AddEditInitialDentalNoteWindow.xaml;Patients\AddGeneralProgressNoteModal.xaml;Patients\AddSpecificProgressNoteModal.xaml;Patients\IndicationsControls\GenericIndicationsControl.xaml;Patients\IndicationsControls\ProfilaxisDentalIndicationsControl.xaml;Patients\ManagePatientsWindow.xaml;Patients\ManageProgressNotesWindow.xaml;Patients\ProcedureControls\BiopsiaTejidosBlandosControl.xaml;Patients\ProcedureControls\CirujiaBucalControl.xaml;Patients\ProcedureControls\DetratrajeCuretajeControl.xaml;Patients\ProcedureControls\ObturacionDentalControl.xaml;Patients\ProcedureControls\OdontectomiaControl.xaml;Patients\ProcedureControls\ProfilaxisDentalControl.xaml;Patients\ProcedureControls\ProtesisParcialFijaControl.xaml;Patients\SelectProgressNoteTypeWindow.xaml;Simple Styles.xaml;
 
-True
+False
 

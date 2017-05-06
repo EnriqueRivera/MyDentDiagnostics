@@ -5,26 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyDentDiagnostics"
         mc:Ignorable="d"
-	Width="665" Height="1314" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized" MinWidth="665">
+	Width="665" Height="1444.5" Icon="/MyDentDiagnostics;component/Images/app.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized" MinWidth="665">
     <Grid x:Name="LayoutRoot">
         <ScrollViewer Margin="0,0,2,65.123" VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Label x:Name="lblTitle" Content="Titulo" Height="27" Margin="305.941,10,305.941,0" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin"/>
                 <Label x:Name="lblTitle_Copy" Content="Procedimiento realizado:" Height="27" Margin="10,42,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
                 <Label x:Name="lblTitle_Copy1" Content="Se dan las siguientes indicaciones al paciente:" Height="27" Margin="10,345.5,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                <TextBox x:Name="txtIndications" Margin="10,372.5,10,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black" Height="101.335" VerticalAlignment="Top"/>
-                <Label x:Name="lblTitle_Copy2" Content="Medicamentos:" Height="27" Margin="10,489.5,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                <TextBox x:Name="txtMedicaments" Margin="10,516.5,10,597.667" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black"/>
-                <Label x:Name="lblTitle_Copy3" Content="Hallazgos:" Height="27" Margin="10,639.5,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                <TextBox x:Name="txtFoundOut" Margin="10,666.5,10,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black" Height="101.335" VerticalAlignment="Top"/>
-                <Label x:Name="lblTitle_Copy4" Content="Pronósticos:" Height="27" Margin="10,786.5,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                <TextBox x:Name="txtPronostics" Margin="10,813.5,10,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black" Height="101.335" VerticalAlignment="Top"/>
-                <Label x:Name="lblTitle_Copy5" Content="Diagnóstico:" Height="27" Margin="10,935,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                <TextBox x:Name="txtDiagnostic" Margin="10,962,10,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black" Height="101.335" VerticalAlignment="Top"/>
-                <Label x:Name="lblTitle_Copy6" Content="Tratamientos a realizar la próxima cita:" Height="27" Margin="10,1083,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                <TextBox x:Name="txtNextTreatment" Margin="10,1110,10,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black" Height="101.335" VerticalAlignment="Top"/>
+                <Label x:Name="lblTitle_Copy2" Content="Medicamentos:" Height="27" Margin="10,616.542,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="txtMedicaments" Margin="10,643.542,10,601.125" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black"/>
+                <Label x:Name="lblTitle_Copy3" Content="Hallazgos:" Margin="10,0,10,554.835" FontWeight="Bold" Height="27" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="txtFoundOut" Margin="10,793.542,10,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black" Height="101.335" VerticalAlignment="Top"/>
+                <Label x:Name="lblTitle_Copy4" Content="Pronósticos:" Height="27" Margin="10,913.542,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="txtPronostics" Margin="10,940.542,10,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black" Height="101.335" VerticalAlignment="Top"/>
+                <Label x:Name="lblTitle_Copy5" Content="Diagnóstico:" Height="27" Margin="10,1062.042,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="txtDiagnostic" Margin="10,1089.042,10,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black" Height="101.335" VerticalAlignment="Top"/>
+                <Label x:Name="lblTitle_Copy6" Content="Tratamientos a realizar la próxima cita:" Height="27" Margin="10,1210.042,10,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <TextBox x:Name="txtNextTreatment" Margin="10,1237.042,10,0" FontStyle="Italic" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" BorderBrush="Black" Height="101.335" VerticalAlignment="Top"/>
                 <ScrollViewer Height="261.667" Margin="10,69,10,0" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto">
                     <Grid x:Name="grdProcedure"/>
+                </ScrollViewer>
+                <ScrollViewer Height="239.042" Margin="10,372.5,10,0" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto">
+                    <Grid x:Name="grdIndications"/>
                 </ScrollViewer>
             </Grid>
         </ScrollViewer>

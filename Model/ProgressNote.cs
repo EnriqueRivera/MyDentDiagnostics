@@ -25,6 +25,7 @@ namespace Model
         public bool IsDeleted { get; set; }
         public int UserId { get; set; }
         public string Type { get; set; }
+        public string TypeEnum { get; set; }
     
         public virtual Patient Patient { get; set; }
         public virtual User User { get; set; }

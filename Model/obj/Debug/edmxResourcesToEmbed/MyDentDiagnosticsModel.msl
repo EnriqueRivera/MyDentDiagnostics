@@ -63,6 +63,7 @@
     <EntitySetMapping Name="ProgressNotes">
       <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.ProgressNote">
         <MappingFragment StoreEntitySet="ProgressNotes">
+          <ScalarProperty Name="TypeEnum" ColumnName="TypeEnum" />
           <ScalarProperty Name="Type" ColumnName="Type" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />

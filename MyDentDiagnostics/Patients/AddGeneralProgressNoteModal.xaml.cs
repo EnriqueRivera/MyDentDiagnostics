@@ -69,7 +69,8 @@ namespace MyDentDiagnostics
                 PatientId = _patient.PatientId,
                 IsDeleted = false,
                 UserId = MainWindow.UserLoggedIn.UserId,
-                Type = _noteType
+                Type = _noteType,
+                TypeEnum = ProgressNoteType.GENERAL.ToString()
             };
 
             if (BusinessController.Instance.Add(progressNoteToAdd))

@@ -23,33 +23,12 @@ namespace MyDentDiagnostics.Patients.ProcedureControls
         public BiopsiaTejidosBlandosControl()
         {
             InitializeComponent();
-            AddEmptyItemToComboBoxes();
-        }
-
-        private void AddEmptyItemToComboBoxes()
-        {
-            var controls = gdContent.Children.OfType<ComboBox>().ToList();
-
-            foreach (var item in controls)
-            {
-                item.Items.Insert(0, string.Empty);
-                item.SelectedIndex = 0;
-            }
+            Utils.AddEmptyItemToComboBoxes(gdContent);
         }
 
         public string GetProcedureContent()
         {
-            StringBuilder content = new StringBuilder();
-            foreach (var item in gdContent.Children)
-            {
-                if (item is Label)
-                    content.Append((item as Label).Content);
-                else if (item is TextBox)
-                    content.Append((item as TextBox).Text);
-                else if (item is ComboBox)
-                    content.Append((item as ComboBox).SelectedValue.ToString());
-            }
-            return content.ToString();
+            return Utils.GetGridControlsContent(gdContent);
         }
     }
 }

@@ -1,0 +1,66 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyDentDiagnostics.Patients.ProcedureControls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="MyDentDiagnostics.Patients.ProcedureControls.ProtesisParcialFijaControl"
+             mc:Ignorable="d" d:DesignWidth="300" Width="635" Height="256">
+    <Grid x:Name="gdContent">
+
+        <Label x:Name="lblFullName_Copy227" Content="Con el paciente en posición " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="156.804"/>
+
+        <ComboBox x:Name="cbPosicion" Height="26" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0"  Margin="156.804,2,0,0">
+            <System:String>decúbito dorsal</System:String>
+            <System:String>Fowler</System:String>
+            <System:String>semi Fowler</System:String>
+            <System:String>Trendelenburg</System:String>
+            <System:String>Trendelenburg invertida</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy" Content=", bajo anestesia mucosa con " VerticalAlignment="Top" Height="25.96" Margin="295.642,0,177.554,0"/>
+        <TextBox x:Name="txtAnestesia" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="176.467" HorizontalAlignment="Right" Margin="0,1,1.087,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy1" Content=", y bajo anestesia local " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="129.804" Margin="0,33,0,0"/>
+        <ComboBox x:Name="cbAnestesia" Height="26" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0"  Margin="129.804,35,0,0">
+            <System:String>infiltrativa</System:String>
+            <System:String>regional/troncular</System:String>
+            <System:String>subperióstica</System:String>
+            <System:String>supraperióstica</System:String>
+            <System:String>intrapulpar</System:String>
+            <System:String>intraligamentaria</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy2" Content=" con " VerticalAlignment="Top" Height="25.96" Margin="266.642,33,0,0" HorizontalAlignment="Left" Width="33.804"/>
+        <ComboBox x:Name="cbAnestesiaCon" Height="26" VerticalAlignment="Top" FontWeight="Normal" SelectedIndex="0"  Margin="300.446,35,195.716,0">
+            <System:String>lidocaína con epinefrina al 2%</System:String>
+            <System:String>mepivacaína con epinefrina al 2%</System:String>
+            <System:String>mepivacaína al 3% sin vasoconstrictor</System:String>
+            <System:String>articaína con epinefrina al 4%</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy3" Content=" a una dosis de " VerticalAlignment="Top" Height="25.96" Margin="0,33,102.912,0" HorizontalAlignment="Right" Width="92.804"/>
+        <TextBox x:Name="txtDosis" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="60.108" HorizontalAlignment="Right" Margin="0,31.96,42.804,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy4" Content=" mg," VerticalAlignment="Top" Height="25.96" Margin="0,33,10,0" HorizontalAlignment="Right" Width="32.804"/>
+        <Label x:Name="lblFullName_Copy5" Content=" con técnica de " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="92.804" Margin="0,67.04,0,0"/>
+        <TextBox x:Name="txtTecnica" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="60.108" HorizontalAlignment="Left" Margin="92.804,66,0,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy6" Content=", con aplicación de " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="108.471" Margin="152.912,67.04,0,0"/>
+        <ComboBox x:Name="cbAplicacion" Height="26" VerticalAlignment="Top" FontWeight="Normal" SelectedIndex="0"  Margin="261.383,66,242.779,0">
+            <System:String>aguja corta</System:String>
+            <System:String>aguja larga</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy17" Content=" " HorizontalAlignment="Right" VerticalAlignment="Top" Height="25.96" Width="8" Margin="0,64,234.779,0"/>
+        <TextBox x:Name="txtAplicacion" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="181.467" HorizontalAlignment="Right" Margin="0,65,53.312,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy7" Content=", se realiza preparación de pilar protésico en OD " HorizontalAlignment="Left" Width="268.642" Margin="0,98,0,76.04"/>
+        <TextBox x:Name="txtAplicacion_Copy" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="266.642,98,286.224,0"/>
+        <Label x:Name="lblFullName_Copy8" Content=", realizando reducción axial con fresa de " HorizontalAlignment="Right" Width="221.975" Margin="0,98,64.249,76.04"/>
+        <TextBox x:Name="txtAplicacion_Copy1" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="2.001,128.96,0,0" HorizontalAlignment="Left" Width="172.134"/>
+        <Label x:Name="lblFullName_Copy9" Content=", y reducción oclusal con fresa de " Margin="174.135,128.96,274.89,0" Height="25.96" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtAplicacion_Copy2" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="0,127.92,192.756,0" HorizontalAlignment="Right" Width="82.134"/>
+        <Label x:Name="lblFullName_Copy10" Content=", a alta velocidad y bajo irrigación. " Margin="0,128.96,1.087,0" Height="25.96" VerticalAlignment="Top" HorizontalAlignment="Right" Width="191.669"/>
+        <Label x:Name="lblFullName_Copy11" Content="Se biselan angulos cavos, se prepara el bisel de la cúspide funcional. Finalmente, se elabora provisional de acrílico " Margin="2.001,159.92,10,0" Height="25.96" VerticalAlignment="Top"/>
+        <Label x:Name="lblFullName_Copy12" Content="rápido con técnica de " Margin="2.001,190.88,0,0" Height="25.96" VerticalAlignment="Top" HorizontalAlignment="Left" Width="127.803"/>
+        <TextBox x:Name="txtAplicacion_Copy3" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="129.804,190.88,0,0" HorizontalAlignment="Left" Width="172.134"/>
+        <Label x:Name="lblFullName_Copy13" Content=". Se recortan excedentes de material, se pule con borla y se " Margin="301.938,190.88,1.087,0" Height="25.96" VerticalAlignment="Top"/>
+        <Label x:Name="lblFullName_Copy14" Content="sella con barníz, y se cementa con cemento temporal " Margin="0,222.88,0,0" Height="25.96" VerticalAlignment="Top" HorizontalAlignment="Left" Width="295.642"/>
+        <TextBox x:Name="txtAplicacion_Copy4" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="295.642,221.84,167.224,0"/>
+        <Label x:Name="lblFullName_Copy15" Content="." VerticalAlignment="Bottom" Height="25.96" Margin="0,0,122.42,7.16" HorizontalAlignment="Right" Width="39.804"/>
+
+    </Grid>
+</UserControl>

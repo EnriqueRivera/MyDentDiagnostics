@@ -1,0 +1,92 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyDentDiagnostics.Patients.ProcedureControls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="MyDentDiagnostics.Patients.ProcedureControls.ObturacionDentalControl"
+             mc:Ignorable="d" d:DesignWidth="300" Width="635" Height="415.667">
+    <Grid x:Name="gdContent">
+
+        <Label x:Name="lblFullName_Copy227" Content="Con el paciente en posición " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="156.804"/>
+
+        <ComboBox x:Name="cbPosicion" Height="26" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0"  Margin="156.804,2,0,0">
+            <System:String>decúbito dorsal</System:String>
+            <System:String>Fowler</System:String>
+            <System:String>semi Fowler</System:String>
+            <System:String>Trendelenburg</System:String>
+            <System:String>Trendelenburg invertida</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy" Content=", bajo anestesia mucosa con " VerticalAlignment="Top" Height="25.96" Margin="295.642,0,177.554,0"/>
+        <TextBox x:Name="txtAnestesia" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="176.467" HorizontalAlignment="Right" Margin="0,1,1.087,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy1" Content=", y bajo anestesia local " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="129.804" Margin="0,33,0,0"/>
+        <ComboBox x:Name="cbAnestesia" Height="26" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0"  Margin="129.804,35,0,0">
+            <System:String>infiltrativa</System:String>
+            <System:String>regional/troncular</System:String>
+            <System:String>subperióstica</System:String>
+            <System:String>supraperióstica</System:String>
+            <System:String>intrapulpar</System:String>
+            <System:String>intraligamentaria</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy2" Content=" con " VerticalAlignment="Top" Height="25.96" Margin="266.642,33,0,0" HorizontalAlignment="Left" Width="33.804"/>
+        <ComboBox x:Name="cbAnestesiaCon" Height="26" VerticalAlignment="Top" FontWeight="Normal" SelectedIndex="0"  Margin="300.446,35,195.716,0">
+            <System:String>lidocaína con epinefrina al 2%</System:String>
+            <System:String>mepivacaína con epinefrina al 2%</System:String>
+            <System:String>mepivacaína al 3% sin vasoconstrictor</System:String>
+            <System:String>articaína con epinefrina al 4%</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy3" Content=" a una dosis de " VerticalAlignment="Top" Height="25.96" Margin="0,33,102.912,0" HorizontalAlignment="Right" Width="92.804"/>
+        <TextBox x:Name="txtDosis" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="60.108" HorizontalAlignment="Right" Margin="0,31.96,42.804,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy4" Content=" mg," VerticalAlignment="Top" Height="25.96" Margin="0,33,10,0" HorizontalAlignment="Right" Width="32.804"/>
+        <Label x:Name="lblFullName_Copy5" Content=" con técnica de " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="92.804" Margin="0,67.04,0,0"/>
+        <TextBox x:Name="txtTecnica" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="60.108" HorizontalAlignment="Left" Margin="92.804,66,0,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy6" Content=", con aplicación de " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="108.471" Margin="152.912,67.04,0,0"/>
+        <ComboBox x:Name="cbAplicacion" Height="26" VerticalAlignment="Top" FontWeight="Normal" SelectedIndex="0"  Margin="261.383,66,242.779,0">
+            <System:String>aguja corta</System:String>
+            <System:String>aguja larga</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy17" Content=" " HorizontalAlignment="Right" VerticalAlignment="Top" Height="25.96" Width="8" Margin="0,64,234.779,0"/>
+        <TextBox x:Name="txtAplicacion" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="181.467" HorizontalAlignment="Right" Margin="0,65,53.312,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy7" Content=", previa antisepsia oral con " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="152.912" Margin="0,98,0,0"/>
+        <TextBox x:Name="txtAntisepia" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="152.912,97,310.338,0"/>
+        <Label x:Name="lblFullName_Copy8" Content=", bajo aislado " HorizontalAlignment="Right" VerticalAlignment="Top" Height="25.96" Width="81.579" Margin="0,97,228.759,0"/>
+        <ComboBox x:Name="cbAplicacion_Copy" FontWeight="Normal" SelectedIndex="0"  Margin="0,98,139.921,0" HorizontalAlignment="Right" Width="88.838" Height="26" VerticalAlignment="Top">
+            <System:String>relativo</System:String>
+            <System:String>absoluto</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy9" Content=", " HorizontalAlignment="Right" VerticalAlignment="Top" Height="25.96" Width="81.579" Margin="0,97,53.342,0"/>
+        <TextBox x:Name="txtAntisepia_Copy" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="5,129,0,0" HorizontalAlignment="Left" Width="171.75"/>
+        <Label x:Name="lblFullName_Copy10" Content=", previa antisepsia oral con " VerticalAlignment="Top" Height="25.96" Margin="179.804,130.04,300.617,0"/>
+        <TextBox x:Name="txtAntisepia_Copy1" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="0,129,128.867,0" HorizontalAlignment="Right" Width="171.75"/>
+        <Label x:Name="lblFullName_Copy11" Content=", se realiza " VerticalAlignment="Top" Height="25.96" Margin="0,130.04,53.312,0" HorizontalAlignment="Right" Width="70.555"/>
+        <ComboBox x:Name="cbAplicacion_Copy1" FontWeight="Normal" SelectedIndex="0"  Margin="5,161,0,0" HorizontalAlignment="Left" Width="147.912" Height="26" VerticalAlignment="Top">
+            <System:String>odontoplastía</System:String>
+            <System:String>retratamiento de obturación</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy12" Content=" en OD " VerticalAlignment="Top" Height="25.96" Margin="156.804,161.04,0,0" HorizontalAlignment="Left" Width="50.579"/>
+        <TextBox x:Name="txtAntisepia_Copy2" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="207.383,160,0,0" HorizontalAlignment="Left" Width="88.259"/>
+        <Label x:Name="lblFullName_Copy13" Content=", de " VerticalAlignment="Top" Height="25.96" Margin="300.642,159,291.779,0"/>
+        <TextBox x:Name="txtAntisepia_Copy3" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="0,160,128.867,0" HorizontalAlignment="Right" Width="162.912"/>
+        <Label x:Name="lblFullName_Copy14" Content=". con fresa de " VerticalAlignment="Top" Height="25.96" Margin="0,159,10,0" HorizontalAlignment="Right" Width="113.867"/>
+        <TextBox x:Name="txtAntisepia_Copy4" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="5,192,0,0" HorizontalAlignment="Left" Width="151.804"/>
+        <Label x:Name="lblFullName_Copy15" Content=", a alta velocidad y bajo irrigación. Posteriormente, previa colocación de base con " VerticalAlignment="Top" Height="25.96" Margin="161.804,193.04,34.329,0"/>
+        <TextBox x:Name="txtAntisepia_Copy5" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="5,224,0,0" HorizontalAlignment="Left" Width="151.804"/>
+        <Label x:Name="lblFullName_Copy16" Content=", y previa antisepsia cavitaria con " VerticalAlignment="Top" Height="25.96" Margin="161.804,224,290.279,0"/>
+        <TextBox x:Name="txtAntisepia_Copy6" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="0,224,133.475,0" HorizontalAlignment="Right" Width="151.804"/>
+        <Label x:Name="lblFullName_Copy18" Content=" por 2 minutos, y " VerticalAlignment="Top" Height="25.96" Margin="0,224,24.558,0" HorizontalAlignment="Right" Width="103.917"/>
+        <Label x:Name="lblFullName_Copy19" Content="previo grabado con " VerticalAlignment="Top" Height="25.96" Margin="5,256,0,0" HorizontalAlignment="Left" Width="115.917"/>
+        <TextBox x:Name="txtAntisepia_Copy7" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="120.917,256,0,0" HorizontalAlignment="Left" Width="151.804"/>
+        <Label x:Name="lblFullName_Copy20" Content=" por 15 segundos, y posterior lavando con agua abundante por " VerticalAlignment="Top" Height="25.96" Margin="277.721,256,10,0"/>
+        <Label x:Name="lblFullName_Copy21" Content="30 segundos, y secado con " VerticalAlignment="Top" Height="25.96" Margin="5,288,0,0" HorizontalAlignment="Left" Width="151.804"/>
+        <TextBox x:Name="txtAntisepia_Copy8" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="156.804,288,0,0" HorizontalAlignment="Left" Width="76.804"/>
+        <Label x:Name="lblFullName_Copy22" Content=",  se colocan medios adhesivos con primer, fotocurando por 20 segundos, " VerticalAlignment="Top" Height="25.96" Margin="233.608,289.04,0,0"/>
+        <Label x:Name="lblFullName_Copy23" Content="para finalmente obturar con resina fotocurable " VerticalAlignment="Top" Height="25.96" Margin="4.849,318.96,0,0" HorizontalAlignment="Left" Width="256.534"/>
+        <TextBox x:Name="txtAntisepia_Copy9" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="266.642,317.92,291.554,0"/>
+        <Label x:Name="lblFullName_Copy24" Content=", obturando a capas de 2 mm y fotocurando cada " VerticalAlignment="Top" Height="25.96" Margin="0,317.92,10,0" HorizontalAlignment="Right" Width="281.779"/>
+        <Label x:Name="lblFullName_Copy25" Content="capa por 20 segundos. Finalmente se sella con " VerticalAlignment="Top" Height="25.96" Margin="5,349.92,0,0" HorizontalAlignment="Left" Width="256.383"/>
+        <TextBox x:Name="txtAntisepia_Copy10" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Margin="261.383,348.88,296.813,0"/>
+        <Label x:Name="lblFullName_Copy26" Content=".  Se recortan excedentes y se pule con pasta para " VerticalAlignment="Top" Height="25.96" Margin="0,349.92,10,0" HorizontalAlignment="Right" Width="286.813"/>
+        <Label x:Name="lblFullName_Copy27" Content="pulir resina. Se realiza ajuste oclusal y se valora en próxima cita." VerticalAlignment="Top" Height="25.96" Margin="5,380.88,283.187,0"/>
+
+    </Grid>
+</UserControl>

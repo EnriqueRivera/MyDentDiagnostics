@@ -1,0 +1,33 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyDentDiagnostics.Patients.ProcedureControls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="MyDentDiagnostics.Patients.ProcedureControls.ProfilaxisDentalControl"
+             mc:Ignorable="d" d:DesignWidth="300" Width="635" Height="97">
+    <Grid x:Name="gdContent">
+
+        <Label x:Name="lblFullName_Copy227" Content="Con el paciente en posición " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="156.804"/>
+
+        <ComboBox x:Name="cbPosicion" Height="26" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="138.838" SelectedIndex="0"  Margin="156.804,2,0,0">
+            <System:String>decúbito dorsal</System:String>
+            <System:String>Fowler</System:String>
+            <System:String>semi Fowler</System:String>
+            <System:String>Trendelenburg</System:String>
+            <System:String>Trendelenburg invertida</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy" Content=",  previa antisepsia bucal con " VerticalAlignment="Top" Height="25.96" Margin="295.642,0,169.554,0"/>
+        <TextBox x:Name="txtAnestesia" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="167.554" HorizontalAlignment="Right" Margin="0,1,10,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy1" Content=", presentando un IHOS " VerticalAlignment="Top" Height="25.96" Margin="0,33,0,0" HorizontalAlignment="Left" Width="131.137"/>
+        <ComboBox x:Name="cbPosicion_Copy" Height="26" VerticalAlignment="Top" FontWeight="Normal" HorizontalAlignment="Left" Width="102.171" SelectedIndex="0"  Margin="136.137,35,0,0">
+            <System:String>excelente</System:String>
+            <System:String>bueno</System:String>
+            <System:String>regular</System:String>
+            <System:String>malo</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy2" Content=" se realiza detartraje supragingival con punta ultrasónica bajo irrigación. " VerticalAlignment="Top" Height="25.96" Margin="239.308,33,0,0"/>
+        <Label x:Name="lblFullName_Copy3" Content="Posteriormente se realiza pulido de superficies dentales con pasta profiláctica y cepillo a baja velocidad." VerticalAlignment="Top" Height="25.96" Margin="0,63.96,10,0"/>
+
+    </Grid>
+</UserControl>

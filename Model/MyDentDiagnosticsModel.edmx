@@ -79,6 +79,7 @@
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="Type" Type="varchar(max)" Nullable="false" />
+          <Property Name="TypeEnum" Type="varchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -373,6 +374,7 @@
           <NavigationProperty Name="User" Relationship="MyDentDiagnosticsDBModel.FK_ProgressNotes_UserId" FromRole="ProgressNote" ToRole="User" />
           <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ProgressNoteDetails" Relationship="MyDentDiagnosticsDBModel.FK_ProgressNoteDetails_ProgressNoteId" FromRole="ProgressNote" ToRole="ProgressNoteDetail" />
+          <Property Name="TypeEnum" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_ProgressNotes_PatientId">
           <End Type="MyDentDiagnosticsDBModel.Patient" Role="Patient" Multiplicity="1" />
@@ -537,6 +539,7 @@
           <EntitySetMapping Name="ProgressNotes">
             <EntityTypeMapping TypeName="MyDentDiagnosticsDBModel.ProgressNote">
               <MappingFragment StoreEntitySet="ProgressNotes">
+                <ScalarProperty Name="TypeEnum" ColumnName="TypeEnum" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />

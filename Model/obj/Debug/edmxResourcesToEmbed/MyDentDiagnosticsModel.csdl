@@ -142,6 +142,7 @@
     <NavigationProperty Name="User" Relationship="MyDentDiagnosticsDBModel.FK_ProgressNotes_UserId" FromRole="ProgressNote" ToRole="User" />
     <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ProgressNoteDetails" Relationship="MyDentDiagnosticsDBModel.FK_ProgressNoteDetails_ProgressNoteId" FromRole="ProgressNote" ToRole="ProgressNoteDetail" />
+    <Property Name="TypeEnum" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK_ProgressNotes_PatientId">
     <End Type="MyDentDiagnosticsDBModel.Patient" Role="Patient" Multiplicity="1" />

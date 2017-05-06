@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Controllers;
 using Model;
-using MyDentDiagnostics.Patients;
 using MyDentDiagnostics.Patients.ProcedureControls;
+using MyDentDiagnostics.Patients.IndicationsControls;
 
 namespace MyDentDiagnostics
 {
@@ -27,6 +18,7 @@ namespace MyDentDiagnostics
         private string _noteTypeText;
         private Patient _patient;
         private IProcedureInfo _procedureControl = null;
+        private IProcedureInfo _indicationsControl = new GenericIndicationsControl();
         #endregion
 
         #region Constructors
@@ -34,9 +26,9 @@ namespace MyDentDiagnostics
         {
             InitializeComponent();
 
-            this._patient = patient;
-            this._noteTypeText = noteTypeText;
-            this._noteType = noteType;
+            _patient = patient;
+            _noteTypeText = noteTypeText;
+            _noteType = noteType;
 
             AddProcedureTemplate();
             SetTitle();
@@ -68,7 +60,7 @@ namespace MyDentDiagnostics
         private void SaveNote()
         {
             string procedure = _procedureControl.GetProcedureContent();
-            string indications = txtIndications.Text.Trim();
+            string indications = _indicationsControl.GetProcedureContent();
             string medicaments = txtMedicaments.Text.Trim();
             string foundOut = txtFoundOut.Text.Trim();
             string pronostics = txtPronostics.Text.Trim();
@@ -81,7 +73,8 @@ namespace MyDentDiagnostics
                 PatientId = _patient.PatientId,
                 IsDeleted = false,
                 UserId = MainWindow.UserLoggedIn.UserId,
-                Type = _noteTypeText
+                Type = _noteTypeText,
+                TypeEnum = _noteType.ToString()
             };
 
             if (BusinessController.Instance.Add(progressNoteToAdd))
@@ -122,16 +115,23 @@ namespace MyDentDiagnostics
                     _procedureControl = new BiopsiaTejidosBlandosControl();
                     break;
                 case ProgressNoteType.CIRUGIA_BUCAL:
+                    _procedureControl = new CirujiaBucalControl();
                     break;
                 case ProgressNoteType.DETARTRAJE_Y_CURETAJE:
+                    _procedureControl = new DetratrajeCuretajeControl();
                     break;
                 case ProgressNoteType.OBTURACION_DENTAL:
+                    _procedureControl = new ObturacionDentalControl();
                     break;
                 case ProgressNoteType.ODONTECTOMIA:
+                    _procedureControl = new OdontectomiaControl();
                     break;
                 case ProgressNoteType.PROFILAXIS_DENTAL:
+                    _procedureControl = new ProfilaxisDentalControl();
+                    _indicationsControl = new ProfilaxisDentalIndicationsControl();
                     break;
                 case ProgressNoteType.PROTESIS_PARCIAL_FIJA:
+                    _procedureControl = new ProtesisParcialFijaControl();
                     break;
                 default:
                     break;
@@ -145,6 +145,7 @@ namespace MyDentDiagnostics
             else
             {
                 grdProcedure.Children.Add(_procedureControl as UIElement);
+                grdIndications.Children.Add(_indicationsControl as UIElement);
             }
         }
         #endregion

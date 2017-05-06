@@ -74,6 +74,7 @@
     <Property Name="IsDeleted" Type="bit" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="Type" Type="varchar(max)" Nullable="false" />
+    <Property Name="TypeEnum" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

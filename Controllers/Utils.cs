@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Controllers
 {
@@ -49,6 +50,38 @@ namespace Controllers
             }
 
             return detailsAdded;
+        }
+
+        public static void AddEmptyItemToComboBoxes(Grid gdContent)
+        {
+            var controls = gdContent.Children.OfType<ComboBox>().ToList();
+
+            foreach (var item in controls)
+            {
+                item.Items.Insert(0, string.Empty);
+                item.SelectedIndex = 0;
+            }
+        }
+
+        public static string GetGridControlsContent(Grid gdContent)
+        {
+            StringBuilder content = new StringBuilder();
+            foreach (var item in gdContent.Children)
+            {
+                if (item is Label)
+                    content.Append((item as Label).Content);
+                else if (item is TextBox)
+                    content.Append((item as TextBox).Text);
+                else if (item is ComboBox)
+                    content.Append((item as ComboBox).SelectedValue.ToString());
+            }
+            return content.ToString();
+        }
+
+        public static string GetNoteDetail(Model.ProgressNote note, ProgressNoteDetail detail)
+        {
+            Model.ProgressNoteDetail noteDetail = note.ProgressNoteDetails.Where(d => d.DetailName == detail.ToString()).FirstOrDefault();
+            return noteDetail == null ? "" : noteDetail.DetailDescription;
         }
     }
 

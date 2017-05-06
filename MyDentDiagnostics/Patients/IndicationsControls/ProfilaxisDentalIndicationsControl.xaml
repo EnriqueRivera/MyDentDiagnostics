@@ -1,0 +1,26 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyDentDiagnostics.Patients.IndicationsControls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="MyDentDiagnostics.Patients.IndicationsControls.ProfilaxisDentalIndicationsControl"
+             mc:Ignorable="d" d:DesignWidth="300" Width="635" Height="71">
+    <Grid x:Name="gdContent">
+
+        <Label x:Name="lblFullName_Copy227" Content="Cepillado dental diario con técnica " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25.96" Width="193.804"/>
+        <ComboBox x:Name="cbPosicion" Height="26" VerticalAlignment="Top" FontWeight="Normal" SelectedIndex="0"  Margin="193.804,2,302.358,0">
+            <System:String>barrido horizontal</System:String>
+            <System:String>Bass modificada</System:String>
+            <System:String>Charters</System:String>
+            <System:String>Fones</System:String>
+            <System:String>Stillman modificada</System:String>
+        </ComboBox>
+        <Label x:Name="lblFullName_Copy" Content=". Uso de enjuague bucal " HorizontalAlignment="Right" VerticalAlignment="Top" Height="25.96" Width="136.804" Margin="0,0,165.554,0"/>
+        <TextBox x:Name="txtAnestesia" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="150.554" HorizontalAlignment="Right" Margin="0,-1.04,10,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy1" Content=" 3 veces al dia, uso de hilo dental por lo menos cada 24 horas, cepillo de cerdas " VerticalAlignment="Top" Height="25.96" Margin="0,33,204.554,0"/>
+        <TextBox x:Name="txtAnestesia_Copy" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" TextAlignment="Center" Width="150.554" HorizontalAlignment="Right" Margin="0,31.96,49,0" d:LayoutOverrides="VerticalAlignment"/>
+        <Label x:Name="lblFullName_Copy2" Content="." HorizontalAlignment="Right" VerticalAlignment="Top" Height="25.96" Width="22.804" Margin="0,33,26.196,0"/>
+
+    </Grid>
+</UserControl>
